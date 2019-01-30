@@ -45,6 +45,9 @@ int main() {
 			//tabdebut[i] = tabfin[i-1] + 1;
 			//tabfin[i] = tabdebut[i] + degre - 1;
 	}}
+	
+	
+	
 	free(t);
 	return 0;
 }		
