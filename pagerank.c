@@ -19,19 +19,25 @@ int main() {
 	int nbp;	//nb pages
 	FILE *f= fopen("web1.txt", "r"); 		
 	tab t;
+	int temp; temp = 0;
 	fscanf(f, "%d\n", &nbp);
 	fscanf(f, "%d\n", &m);
-	t = malloc(m);
+	t = malloc(m*(sizeof(struct element))+1);
 	
 	for (i = 0; i < m; i++){
-		fscanf(f, "%d", NULL);
+		fscanf(f, "%d", &page);
 		fscanf(f, "%d", &degre);
 		for (j = 0; j < degre; j++){
-			fscanf(f, "%d", &t[i].j);
-			fscanf(f, "%f", &t[i].val);
-			fprintf(f "%f", &t[i].val);
-	}}
+			t[temp].i = page;
+			fscanf(f, "%d", &t[temp].j);
+			fscanf(f, "%lf", &t[temp].val);
+			temp++;
+		}
+	}
 	
+	for(i = 0; i < m; i++){
+		printf("%d %d %lf \n", t[i].i, t[i].j, t[i].val);
+	}
 }		
 			
 			
