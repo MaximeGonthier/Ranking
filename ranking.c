@@ -10,7 +10,7 @@ typedef struct triplet {
 
 
 int main(int argc, char** argv) {
-	int i, n, m;
+	int j, k, n, m;
 	
     //lecture du ficher
     FILE *web = fopen("web1.txt","r");
@@ -21,10 +21,17 @@ int main(int argc, char** argv) {
 	printf("%d\n", m);
 	
 	// allocation du tableau de triplet
-	TRIPLET *st = malloc(m);
+	TRIPLET *st = malloc(m*sizeof(TRIPLET));
 	
-	int pageC, degS, pageS, proba; // page courante, degré sortant, page suivante
-	for (i = 0; i < n; i++) {
+	// allocation des tableaux debut fin et proba
+	int *deb = malloc(n*sizeof(int));
+	int *fin = malloc(n*sizeof(int));
+	int *proba = malloc(n*sizeof(int));
+	
+	// page courante, degré sortant, page suivante
+	int pageC, degS, pageS;
+	double prob; 
+	for (k = 0; k < m;) {
 		
 		fscanf(web, "%d", &pageC);
 		fscanf(web, "%d", &degS);
@@ -32,12 +39,23 @@ int main(int argc, char** argv) {
 		for (j = 0; j < degS; j++)
 		{
 			fscanf(web, "%d", &pageS);
-			fscanf(web, "%f", &proba);
-			st[i].i = pageC;
-			st[i].j = pageS;
-			st[i].proba = proba;
+			fscanf(web, "%lf", &prob);
+			st[k].i = pageC;
+			st[k].j = pageS;
+			st[k].proba = prob;
+			k++;
 		}
+		
+		fscanf(web, "\n");
 	}
+	
+	// affichage temporaire
+	for (k = 0; k < m; k++)
+	{
+		printf("%d\t %d\t %lf\n", st[k].i, st[k].j, st[k].proba);
+	}
+	
+	fclose(web);
 	
 	free(st);
 	
