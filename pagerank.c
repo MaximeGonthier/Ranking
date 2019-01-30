@@ -9,7 +9,7 @@ typedef struct element
 } ELEMENT;
 
 int main() {
-	printf("a");
+	
 	int i,j; i = 0; j = 0;
 	int degre;	//degre sortant
 	int page;	//page courante
@@ -18,16 +18,21 @@ int main() {
 	FILE *f= fopen("web1.txt", "r"); 		
 	
 	fscanf(f, "%d\n", &nbp);
+	printf("%d\n", nbp);
 	fscanf(f, "%d\n", &m);
+	printf("%d\n", m);
 	ELEMENT *t = malloc(m*sizeof(ELEMENT));
-	printf("a");
-	for (i = 0; i < m; i++){
-		fscanf(f, "%d", NULL);
+	
+	for (i = 0; i < nbp; i++){
+		fscanf(f, "%d", &t[i].i);
+		printf("%d	", t[i].i);
 		fscanf(f, "%d", &degre);
+		printf("%d	", degre);
 		for (j = 0; j < degre; j++){
 			fscanf(f, "%d", &t[i].j);
-			fscanf(f, "%f", &t[i].val);
-			
+			printf("%d	", t[i].j);
+			fscanf(f, "%lf", &t[i].val);
+			printf("%lf\n", t[i].val);
 	}}
 	free(t);
 	return 0;
