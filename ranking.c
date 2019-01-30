@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 typedef struct triplet {
-	int i; // a changer en long plus tard
-	int j; 
+	long i; // a changer en long plus tard
+	long j; 
 	double proba;
 } TRIPLET;
 
@@ -29,20 +29,17 @@ int main(int argc, char** argv) {
 	int *proba = malloc(n*sizeof(int));
 	
 	// page courante, degré sortant, page suivante
-	int pageC, degS, pageS;
-	double prob; 
+	long pageC, degreS;
 	for (k = 0; k < m;) {
 		
-		fscanf(web, "%d", &pageC);
-		fscanf(web, "%d", &degS);
+		fscanf(web, "%ld", &pageC);
+		fscanf(web, "%ld", &degreS);
 		
-		for (j = 0; j < degS; j++)
+		for (j = 0; j < degreS; j++)
 		{
-			fscanf(web, "%d", &pageS);
-			fscanf(web, "%lf", &prob);
 			st[k].i = pageC;
-			st[k].j = pageS;
-			st[k].proba = prob;
+			fscanf(web, "%ld", &st[k].j);
+			fscanf(web, "%lf", &st[k].proba);
 			k++;
 		}
 		
@@ -52,7 +49,7 @@ int main(int argc, char** argv) {
 	// affichage temporaire
 	for (k = 0; k < m; k++)
 	{
-		printf("%d\t %d\t %lf\n", st[k].i, st[k].j, st[k].proba);
+		printf("%ld\t %ld\t %.2lf\n", st[k].i, st[k].j, st[k].proba);
 	}
 	
 	fclose(web);
