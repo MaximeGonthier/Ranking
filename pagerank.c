@@ -38,10 +38,9 @@ int main() {
 	for(i = 0; i < m; i++){
 		printf("%d %d %lf \n", t[i].i, t[i].j, t[i].val);
 	}
-}		
-			
-			
-			
+}	
+
+//// Fin			
 			
 			
 		
