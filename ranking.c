@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 typedef struct triplet {
-	long i; // a changer en long plus tard
-	long j; 
+	int i; // a changer en long plus tard
+	int j; 
 	double proba;
 } TRIPLET;
 
@@ -26,22 +26,31 @@ int main(int argc, char** argv) {
 	// allocation des tableaux debut fin et proba
 	int *deb = malloc(n*sizeof(int));
 	int *fin = malloc(n*sizeof(int));
-	int *proba = malloc(n*sizeof(int));
+	double *p = malloc(n*sizeof(double));
 	
 	// page courante, degré sortant, page suivante
-	long pageC, degreS;
+	int pageC, degreS, pageS;
+	double proba;
 	for (k = 0; k < m;) {
 		
-		fscanf(web, "%ld", &pageC);
-		fscanf(web, "%ld", &degreS);
+		fscanf(web, "%d", &pageC);
+		fscanf(web, "%d", &degreS);
+		
+		deb[pageC-1] = k+1;
 		
 		for (j = 0; j < degreS; j++)
 		{
+			fscanf(web, "%d", &pageS);
+			fscanf(web, "%lf", &proba);
+			
 			st[k].i = pageC;
-			fscanf(web, "%ld", &st[k].j);
-			fscanf(web, "%lf", &st[k].proba);
+			st[k].j = pageS;
+			st[k].proba = proba;
+			
 			k++;
 		}
+		
+		fin[pageC-1] = k;
 		
 		fscanf(web, "\n");
 	}
@@ -49,12 +58,19 @@ int main(int argc, char** argv) {
 	// affichage temporaire
 	for (k = 0; k < m; k++)
 	{
-		printf("%ld\t %ld\t %.2lf\n", st[k].i, st[k].j, st[k].proba);
+		printf("%d\t %d\t %.2lf\n", st[k].i, st[k].j, st[k].proba);
+	}
+	
+	for (j = 0; j < n; j++)
+	{
+		printf("%d\t %d\t\n", deb[j], fin[j]);
 	}
 	
 	fclose(web);
 	
 	free(st);
-	
+	free(deb);
+	free(fin);
+	free(p);	
 	
 }
