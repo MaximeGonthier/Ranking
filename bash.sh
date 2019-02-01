@@ -1,2 +1,2 @@
-gcc ranking.c -g -o ranking
+gcc ranking.c -g -Wall -o ranking
 ./ranking

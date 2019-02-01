@@ -5,9 +5,39 @@ typedef struct triplet {
 	int i;
 	int j; 
 	double proba;
+	struct triplet *next; 
 } TRIPLET;
 
+TRIPLET* inserer_triplet(int pageC, int pageS, double proba, TRIPLET* next) {
+	TRIPLET *t = malloc(sizeof(TRIPLET));
+	t->i = pageC;
+	t->j = pageS;
+	t->proba = proba;
+	t->next = next;
+	return t;
+}
 
+void inserer_liste(TRIPLET** st, int pageC, int pageS, double proba) {
+	TRIPLET *tmp  = *st;
+	*st = inserer_triplet(pageC, pageS, proba, tmp);
+	//printf("%p %d %d\n", (*st)->next, (*st)->i, (*st)->j);
+}
+
+void detruire_liste(TRIPLET* l) {
+	if (l->next == NULL) {
+		free(l);
+	}
+	else {
+		detruire_liste(l->next);
+		free(l);
+	}
+}
+
+void detruire_tableau_listes(TRIPLET** st, int n) {
+	int i;
+	for (i = 0; i < n; i++)	detruire_liste(st[i]);
+	free(st);
+}
 
 int main(int argc, char** argv) {
 	int j, k, n, m;
@@ -20,62 +50,49 @@ int main(int argc, char** argv) {
 	printf("%d\n", n);
 	printf("%d\n", m);
 	
-	// allocation du tableau de triplet
-	TRIPLET *st = malloc(m*sizeof(TRIPLET));
+	// allocation du tableau de pointeurs de triplets
+	TRIPLET **st = calloc(n, sizeof(TRIPLET*));
 	
-	// allocation des tableaux debut fin et proba
-	int *deb = malloc(n*sizeof(int));
-	int *fin = malloc(n*sizeof(int));
+	// allocation du tableaux proba
 	double *p = malloc(n*sizeof(double));
 	
 	// page courante, degré sortant, page suivante
 	int pageC, degreS, pageS;
 	double proba;
 	
-	for (k = 0; k < m;) {
-		
+	for (k = 0; k < m;) 
+	{	
 		fscanf(web, "%d", &pageC);
 		fscanf(web, "%d", &degreS);
-		
-		deb[pageC-1] = k+1;
 		
 		for (j = 0; j < degreS; j++)
 		{
 			fscanf(web, "%d", &pageS);
 			fscanf(web, "%lf", &proba);
 			
-			st[k].i = pageC;
-			st[k].j = pageS;
-			st[k].proba = proba;
+			inserer_liste(&st[pageS-1], pageC, pageS, proba);
 			
 			k++;
 		}
-		
-		fin[pageC-1] = k;
 		
 		fscanf(web, "\n");
 	}
 	
 	// affichage temporaire
-	for (k = 0; k < m; k++)
-	{
-		printf("%d\t %d\t %.2lf\n", st[k].i, st[k].j, st[k].proba);
-	}
-	
+	TRIPLET *l;
 	for (j = 0; j < n; j++)
 	{
-		printf("%d\t %d\t\n", deb[j], fin[j]);
+		l = st[j];
 		
-		for (k = deb[j]; k <= fin[j]; k++) {
-			//do something
+		while (l != NULL) {
+			printf("%d\t%d\t%lf\n", l->j, l->i, l->proba);
+			l = l->next;
 		}
 	}
 	
 	fclose(web);
 	
-	free(st);
-	free(deb);
-	free(fin);
+	detruire_tableau_listes(st, n);
 	free(p);	
 	
 }
