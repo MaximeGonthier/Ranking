@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 typedef struct triplet {
-	int i; // a changer en long plus tard
+	int i;
 	int j; 
 	double proba;
 } TRIPLET;
@@ -31,6 +31,7 @@ int main(int argc, char** argv) {
 	// page courante, degré sortant, page suivante
 	int pageC, degreS, pageS;
 	double proba;
+	
 	for (k = 0; k < m;) {
 		
 		fscanf(web, "%d", &pageC);
@@ -64,6 +65,10 @@ int main(int argc, char** argv) {
 	for (j = 0; j < n; j++)
 	{
 		printf("%d\t %d\t\n", deb[j], fin[j]);
+		
+		for (k = deb[j]; k <= fin[j]; k++) {
+			//do something
+		}
 	}
 	
 	fclose(web);
