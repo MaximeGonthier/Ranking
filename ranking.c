@@ -63,7 +63,7 @@ double difference_norme(double* p, double* old_p, int n) {
 }
 
 void power_method(double* p, TRIPLET** H, int n) {
-	int i, j;
+	int i, j, cpt;
 	TRIPLET *l;
 	double sum, *old_p;
 	
@@ -75,22 +75,25 @@ void power_method(double* p, TRIPLET** H, int n) {
 	}
 
 	// power method
-	while (difference_norme(p, old_p, n) > 10E-2) {
+	cpt = 0;
+	while (difference_norme(p, old_p, n) > 10E-12) {
 		memcpy(old_p, p, n*sizeof(double));
 		
-		for (i = 0; i < n; i++) // somme p(j) H(j, i)
+		for (i = 0; i < n; i++) // p(i) = somme p(j) H(j, i)
 		{
 			sum = 0;
 			l = H[i]; // colonne i
 			
 			while (l != NULL) { // pour tous H(j, i) != 0
 				j = l->i; // ligne j
-				sum += p[j] * l->proba; // produit matriciel
+				sum += old_p[j-1] * l->proba; // produit matriciel
 				l = l->next;
 			}
 			
-			p[i] = sum;
+			p[i] = sum; // p = p*H
+			// p[i] = alpha * sum + (1-alpha) / n; // calcul de p*G = f(p*H)
 		}
+		cpt++;
 	}	
 	
 	free(old_p);
@@ -100,7 +103,7 @@ int main(int argc, char** argv) {
 	int i, j, k, n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("web3.txt","r");
+    FILE *web = fopen("web1.txt","r");
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
    
@@ -146,16 +149,16 @@ int main(int argc, char** argv) {
 			l = l->next;
 		}
 	}
-	
 	fclose(web);
+	
 	power_method(p, st, n);
 	
-	// affichage du tableau proba après power method
+	// affichage du tableau de probas après power method
 	for (i = 0; i < n; i++)
 	{
-		printf("Page %d %lf\n",i+1 , p[i]);		
+		printf("Page %d %lf\n", i+1 , p[i]);		
 	}	
-	
+	printf("Somme probas : %lf\n", somme(p, n));	
 	
 	detruire_tableau_listes(st, n);
 	free(p);	
