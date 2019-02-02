@@ -37,7 +37,9 @@ void detruire_liste(TRIPLET* l) {
 
 void detruire_tableau_listes(TRIPLET** st, int n) {
 	int i;
-	for (i = 0; i < n; i++)	detruire_liste(st[i]);
+	for (i = 0; i < n; i++)	{
+		if (st[i] != NULL) detruire_liste(st[i]);
+	}
 	free(st);
 }
 
@@ -83,7 +85,7 @@ void power_method(double* p, TRIPLET** H, int n) {
 			sum = 0;
 			l = H[i]; // colonne i
 			
-			if (l == NULL) beta += old_p[i-1]; // calcul beta
+			if (l == NULL) beta += old_p[i]; // calcul beta (faux)
 			
 			while (l != NULL)  // pour tous H(j, i) != 0 
 			{
@@ -160,12 +162,13 @@ int main(int argc, char** argv) {
 	//~ afficher_triplets(st, n);
 	
 	power_method(p, st, n);
+	printf("Done!\n");
 	
 	// ecriture du tableau de probas après power method
-	FILE *out = stdout; // fopen("output.txt","w");
+	FILE *out = stdout; //fopen("output.txt","w");
 	for (i = 0; i < n; i++)
 	{
-		fprintf(out, "Page %d %lf\n", i+1 , p[i]);		
+		fprintf(out, "Page %d %lf %le\n", i+1 , p[i], p[i]);		
 	}	
 	fprintf(out, "Somme probas : %lf\n", somme(p, n));	
 	
