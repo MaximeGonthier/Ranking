@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define alpha 0.85
+
 typedef struct triplet {
 	int i;
 	int j; 
@@ -40,37 +42,55 @@ void detruire_tableau_listes(TRIPLET** st, int n) {
 	free(st);
 }
 
-double difference_norme(double* p, double* old_p) {
-	return 1.0;
+double somme(double* t, int n) {
+	int i;
+	double sum = 0;
+	for (i = 0; i < n; i++)
+	{
+		sum += t[i];
+	}
+	return sum;
+}
+
+double valeur_absolue(double x) {
+	return x < 0 ? -x : x; 
+}
+
+double difference_norme(double* p, double* old_p, int n) {
+	double norme_p = somme(p, n);
+	double norme_old_p = somme(old_p, n);
+	return valeur_absolue(norme_p - norme_old_p);
 }
 
 void power_method(double* p, TRIPLET** H, int n) {
 	int i, j;
 	TRIPLET *l;
-	double sum, *old_p = malloc(n*sizeof(double));
+	double sum, *old_p;
 	
-	// initialisation du tableau proba
+	// initialisation des tableaux de probas
+	old_p = calloc(n, sizeof(double));
 	for (i = 0; i < n; i++)
 	{
 		p[i] = 1.0/n;		
 	}
-	
-	i = 0;
+
 	// power method
-	while (difference_norme(p, old_p) > 10E-12 && i < 5) {
+	while (difference_norme(p, old_p, n) > 10E-2) {
 		memcpy(old_p, p, n*sizeof(double));
-		for (j = 0; j < n; j++)
+		
+		for (i = 0; i < n; i++) // somme p(j) H(j, i)
 		{
 			sum = 0;
-			l = H[j];
-			while (l != NULL) {
-				sum += p[j]*l->proba; // formule à revoir
+			l = H[i]; // colonne i
+			
+			while (l != NULL) { // pour tous H(j, i) != 0
+				j = l->i; // ligne j
+				sum += p[j] * l->proba; // produit matriciel
 				l = l->next;
 			}
 			
-			p[j] = sum;
+			p[i] = sum;
 		}
-		i++;
 	}	
 	
 	free(old_p);
@@ -80,7 +100,7 @@ int main(int argc, char** argv) {
 	int i, j, k, n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("web1.txt","r");
+    FILE *web = fopen("web3.txt","r");
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
    
@@ -133,7 +153,7 @@ int main(int argc, char** argv) {
 	// affichage du tableau proba après power method
 	for (i = 0; i < n; i++)
 	{
-		printf("Page %d %lf\n",i , p[i]);		
+		printf("Page %d %lf\n",i+1 , p[i]);		
 	}	
 	
 	
