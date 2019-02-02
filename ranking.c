@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef struct triplet {
 	int i;
@@ -39,10 +40,46 @@ void detruire_tableau_listes(TRIPLET** st, int n) {
 	free(st);
 }
 
-int main(int argc, char** argv) {
-	int j, k, n, m;
+double difference_norme(double* p, double* old_p) {
+	return 1.0;
+}
+
+void power_method(double* p, TRIPLET** H, int n) {
+	int i, j;
+	TRIPLET *l;
+	double sum, *old_p = malloc(n*sizeof(double));
 	
-    //lecture du ficher
+	// initialisation du tableau proba
+	for (i = 0; i < n; i++)
+	{
+		p[i] = 1.0/n;		
+	}
+	
+	i = 0;
+	// power method
+	while (difference_norme(p, old_p) > 10E-12 && i < 5) {
+		memcpy(old_p, p, n*sizeof(double));
+		for (j = 0; j < n; j++)
+		{
+			sum = 0;
+			l = H[j];
+			while (l != NULL) {
+				sum += p[j]*l->proba; // formule à revoir
+				l = l->next;
+			}
+			
+			p[j] = sum;
+		}
+		i++;
+	}	
+	
+	free(old_p);
+}
+
+int main(int argc, char** argv) {
+	int i, j, k, n, m;
+	
+    // lecture du ficher
     FILE *web = fopen("web1.txt","r");
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
@@ -53,8 +90,8 @@ int main(int argc, char** argv) {
 	// allocation du tableau de pointeurs de triplets
 	TRIPLET **st = calloc(n, sizeof(TRIPLET*));
 	
-	// allocation du tableaux proba
-	double *p = malloc(n*sizeof(double));
+	// allocation du tableau proba
+	double *p = malloc(n*sizeof(double));	
 	
 	// page courante, degré sortant, page suivante
 	int pageC, degreS, pageS;
@@ -91,6 +128,14 @@ int main(int argc, char** argv) {
 	}
 	
 	fclose(web);
+	power_method(p, st, n);
+	
+	// affichage du tableau proba après power method
+	for (i = 0; i < n; i++)
+	{
+		printf("Page %d %lf\n",i , p[i]);		
+	}	
+	
 	
 	detruire_tableau_listes(st, n);
 	free(p);	
