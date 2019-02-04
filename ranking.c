@@ -63,7 +63,7 @@ double difference_norme(double* p, double* old_p, int n) {
 	return valeur_absolue(norme_p - norme_old_p);
 }
 
-void power_method(double* p, TRIPLET** H, int n) {
+void power_method(double* p, TRIPLET** H, int* f0,  int n) {
 	int i, j;
 	TRIPLET *l;
 	double sum, beta, *old_p;
@@ -85,7 +85,7 @@ void power_method(double* p, TRIPLET** H, int n) {
 			sum = 0;
 			l = H[i]; // colonne i
 			
-			if (l == NULL) beta += old_p[i]; // calcul beta (faux)
+			beta += f0[i]*old_p[i]; // calcul beta		
 			
 			while (l != NULL)  // pour tous H(j, i) != 0 
 			{
@@ -95,7 +95,7 @@ void power_method(double* p, TRIPLET** H, int n) {
 			}
 			
 			p[i] = sum; // p = p*H
-		}
+		}		
 		for (i = 0; i < n; i++) // calcul de p = p*G = f(p*H) 
 		{ 
 			p[i] = alpha * p[i] + (1 - alpha) / n + (alpha * beta) / n; 
@@ -123,7 +123,7 @@ int main(int argc, char** argv) {
 	int n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("web1.txt","r");
+    FILE *web = fopen("graphe0.txt","r");
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
    
@@ -133,8 +133,9 @@ int main(int argc, char** argv) {
 	// allocation du tableau de pointeurs de triplets
 	TRIPLET **st = calloc(n, sizeof(TRIPLET*));
 	
-	// allocation du tableau proba
-	double *p = malloc(n*sizeof(double));	
+	// allocation des tableaux
+	double *p = malloc(n*sizeof(double)); // probabilités
+	int *f0 = malloc(n*sizeof(int)); // stocke si ligne vecteur nul	
 	
 	// page courante, degré sortant, page suivante
 	int pageC, degreS, pageS;
@@ -144,6 +145,8 @@ int main(int argc, char** argv) {
 	{	
 		fscanf(web, "%d", &pageC);
 		fscanf(web, "%d", &degreS);
+		
+		f0[pageC-1] = (degreS == 0) ? 1 : 0;
 		
 		for (j = 0; j < degreS; j++)
 		{
@@ -161,7 +164,7 @@ int main(int argc, char** argv) {
 	
 	//~ afficher_triplets(st, n);
 	
-	power_method(p, st, n);
+	power_method(p, st, f0, n);
 	printf("Done!\n");
 	
 	// ecriture du tableau de probas après power method
