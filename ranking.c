@@ -60,11 +60,12 @@ double valeur_absolue(double x) {
 double difference_norme(double* p, double* old_p, int n) {
 	double norme_p = somme(p, n);
 	double norme_old_p = somme(old_p, n);
+	/// printf("Norme p et old_p : %lf %lf\n", norme_p, norme_old_p);
 	return valeur_absolue(norme_p - norme_old_p);
 }
 
 void power_method(double* p, TRIPLET** H, int* f0,  int n) {
-	int i, j;
+	int i, j, k;
 	TRIPLET *l;
 	double sum, beta, *old_p;
 	
@@ -75,9 +76,11 @@ void power_method(double* p, TRIPLET** H, int* f0,  int n) {
 		p[i] = 1.0/n;		
 	}
 
+	k = 0;
 	// power method
 	while (difference_norme(p, old_p, n) > 10E-12) 
 	{
+		k++;
 		memcpy(old_p, p, n*sizeof(double));
 		beta = 0;
 		for (i = 0; i < n; i++) // p(i) = somme p(j) H(j, i)
@@ -95,13 +98,16 @@ void power_method(double* p, TRIPLET** H, int* f0,  int n) {
 			}
 			
 			p[i] = sum; // p = p*H
-		}		
+		}
+				
 		for (i = 0; i < n; i++) // calcul de p = p*G = f(p*H) 
 		{ 
 			p[i] = alpha * p[i] + (1 - alpha) / n + (alpha * beta) / n; 
 		}
 	}	
 	free(old_p);
+	
+	printf("%d itérations\n", k);
 }
 
 void afficher_triplets(TRIPLET** st, int n) {
@@ -116,6 +122,10 @@ void afficher_triplets(TRIPLET** st, int n) {
 			l = l->next;
 		}
 	}	
+}
+
+int succes_fscanf(int fsc1, int fsc2) {
+	return (fsc1 == 1 && fsc2 == 1);
 }
 
 int main(int argc, char** argv) {
@@ -139,16 +149,19 @@ int main(int argc, char** argv) {
 	
 	// page courante, degré sortant, page suivante
 	int pageC, degreS, pageS;
+	int fsc1, fsc2;
 	double proba;
 	
-	for (k = 0; k < m;) 
+	for (k = 0, fsc1 = 1, fsc2 = 1; succes_fscanf(fsc1, fsc2);)
 	{	
-		fscanf(web, "%d", &pageC);
-		fscanf(web, "%d", &degreS);
+		fsc1 = fscanf(web, "%d", &pageC);
+		fsc2 = fscanf(web, "%d", &degreS);
+		
+		if (!succes_fscanf(fsc1, fsc2)) continue;
 		
 		f0[pageC-1] = (degreS == 0) ? 1 : 0;
 		
-		for (j = 0; j < degreS; j++)
+		for (j = 0; j < degreS && k < m; j++)
 		{
 			fscanf(web, "%d", &pageS);
 			fscanf(web, "%lf", &proba);
@@ -162,6 +175,14 @@ int main(int argc, char** argv) {
 	}
 	fclose(web);
 	
+	if (fsc1 != EOF) {
+		fprintf(stderr, "Erreur: Format fichier\n");
+		detruire_tableau_listes(st, n);
+		free(p);
+		free(f0);
+		exit(EXIT_FAILURE);			
+	}
+	
 	//~ afficher_triplets(st, n);
 	
 	power_method(p, st, f0, n);
@@ -174,8 +195,9 @@ int main(int argc, char** argv) {
 		fprintf(out, "Page %d %lf %le\n", i+1 , p[i], p[i]);		
 	}	
 	fprintf(out, "Somme probas : %lf\n", somme(p, n));	
+	fclose(out);
 	
 	detruire_tableau_listes(st, n);
 	free(p);	
-	
+	free(f0);
 }
