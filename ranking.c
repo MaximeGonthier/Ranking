@@ -135,7 +135,7 @@ int main(int argc, char** argv) {
 	int n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("graphe0.txt","r");
+    FILE *web = fopen("web1.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);
@@ -156,10 +156,10 @@ int main(int argc, char** argv) {
 	
 	// page courante, degré sortant, page suivante
 	int pageC, degreS, pageS;
-	int fsc1, fsc2;
+	int fsc1, fsc2, fsc3, lines;
 	double proba;
 	
-	for (k = 0, fsc1 = 1, fsc2 = 1; succes_fscanf(fsc1, fsc2);)
+	for (k = 0, lines = 0, fsc1 = 1, fsc2 = 1, fsc3 = 1; succes_fscanf(fsc1, fsc2);)
 	{	
 		fsc1 = fscanf(web, "%d", &pageC);
 		fsc2 = fscanf(web, "%d", &degreS);
@@ -178,12 +178,13 @@ int main(int argc, char** argv) {
 			k++;
 		}
 		
-		fscanf(web, "\n");
+		fsc3 = fscanf(web, "\n");
+		lines++;
 	}
 	fclose(web);
 	printf("File read!\n");
 	
-	if (fsc1 != EOF) {
+	if (fsc1 != EOF || lines != n) {
 		fprintf(stderr, "Erreur: Format fichier\n");
 		detruire_tableau_listes(st, n);
 		free(p);
