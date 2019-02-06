@@ -105,9 +105,8 @@ void power_method(double* p, TRIPLET** H, int* f0,  int n) {
 			p[i] = alpha * p[i] + (1 - alpha) / n + (alpha * beta) / n; 
 		}
 	}	
-	free(old_p);
-	
 	printf("%d itérations\n", k);
+	free(old_p);
 }
 
 void afficher_triplets(TRIPLET** st, int n) {
@@ -133,7 +132,7 @@ int main(int argc, char** argv) {
 	int n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("graphe0.txt","r");
+    FILE *web = fopen("/media/user/MATLAB/graph/graph/wb-cs-stanford/wb-cs-stanford.txt","r");
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
    
@@ -189,12 +188,12 @@ int main(int argc, char** argv) {
 	printf("Done!\n");
 	
 	// ecriture du tableau de probas après power method
-	FILE *out = stdout; //fopen("output.txt","w");
+	FILE *out = fopen("output.txt","w");
 	for (i = 0; i < n; i++)
 	{
-		fprintf(out, "Page %d %lf %le\n", i+1 , p[i], p[i]);		
+		fprintf(out, "Page %d %lg\n", i+1 , p[i]);		
 	}	
-	fprintf(out, "Somme probas : %lf\n", somme(p, n));	
+	fprintf(out, "Somme probas : %lg\n", somme(p, n));	
 	fclose(out);
 	
 	detruire_tableau_listes(st, n);
