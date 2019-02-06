@@ -1,0 +1,6 @@
+*.o
+*.gch
+a.out
+pagerank
+ranking
+output*
