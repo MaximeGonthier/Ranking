@@ -54,14 +54,21 @@ double somme(double* t, int n) {
 }
 
 double valeur_absolue(double x) {
-	return x < 0 ? -x : x; 
+	return (x < 0) ? -x : x; 
+}
+
+double somme_difference(double* t1, double* t2, int n) {
+	int i;
+	double sum = 0;
+	for (i = 0; i < n; i++)
+	{
+		sum += valeur_absolue(t1[i] - t2[i]);
+	}
+	return sum;
 }
 
 double difference_norme(double* p, double* old_p, int n) {
-	double norme_p = somme(p, n);
-	double norme_old_p = somme(old_p, n);
-	/// printf("Norme p et old_p : %lf %lf\n", norme_p, norme_old_p);
-	return valeur_absolue(norme_p - norme_old_p);
+	return somme_difference(p, old_p, n);
 }
 
 void power_method(double* p, TRIPLET** H, int* f0,  int n) {
@@ -132,7 +139,12 @@ int main(int argc, char** argv) {
 	int n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("/media/user/MATLAB/graph/graph/wb-cs-stanford/wb-cs-stanford.txt","r");
+    FILE *web = fopen("web1.txt","r");
+    
+    if (web == NULL) {
+		exit(EXIT_FAILURE);
+	}
+    
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
    
@@ -188,7 +200,7 @@ int main(int argc, char** argv) {
 	printf("Done!\n");
 	
 	// ecriture du tableau de probas après power method
-	FILE *out = fopen("output.txt","w");
+	FILE *out = stdout; //fopen("output.txt","w");
 	for (i = 0; i < n; i++)
 	{
 		fprintf(out, "Page %d %lg\n", i+1 , p[i]);		
