@@ -57,7 +57,7 @@ double valeur_absolue(double x) {
 	return (x < 0) ? -x : x; 
 }
 
-double somme_difference(double* t1, double* t2, int n) {
+double difference_norme(double* t1, double* t2, int n) {
 	int i;
 	double sum = 0;
 	for (i = 0; i < n; i++)
@@ -65,10 +65,6 @@ double somme_difference(double* t1, double* t2, int n) {
 		sum += valeur_absolue(t1[i] - t2[i]);
 	}
 	return sum;
-}
-
-double difference_norme(double* p, double* old_p, int n) {
-	return somme_difference(p, old_p, n);
 }
 
 void power_method(double* p, TRIPLET** H, int* f0,  int n) {
@@ -83,8 +79,8 @@ void power_method(double* p, TRIPLET** H, int* f0,  int n) {
 		p[i] = 1.0/n;		
 	}
 
-	k = 0;
 	// power method
+	k = 0;
 	while (difference_norme(p, old_p, n) > 10E-12) 
 	{
 		k++;
@@ -139,7 +135,7 @@ int main(int argc, char** argv) {
 	int n, m;
 	
     // lecture du ficher
-    FILE *web = fopen("web1.txt","r");
+    FILE *web = fopen("graphe0.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);
@@ -185,6 +181,7 @@ int main(int argc, char** argv) {
 		fscanf(web, "\n");
 	}
 	fclose(web);
+	printf("File read!\n");
 	
 	if (fsc1 != EOF) {
 		fprintf(stderr, "Erreur: Format fichier\n");
@@ -200,7 +197,7 @@ int main(int argc, char** argv) {
 	printf("Done!\n");
 	
 	// ecriture du tableau de probas après power method
-	FILE *out = stdout; //fopen("output.txt","w");
+	FILE *out = fopen("output.txt","w");
 	for (i = 0; i < n; i++)
 	{
 		fprintf(out, "Page %d %lg\n", i+1 , p[i]);		
@@ -208,6 +205,7 @@ int main(int argc, char** argv) {
 	fprintf(out, "Somme probas : %lg\n", somme(p, n));	
 	fclose(out);
 	
+	// memoire
 	detruire_tableau_listes(st, n);
 	free(p);	
 	free(f0);
