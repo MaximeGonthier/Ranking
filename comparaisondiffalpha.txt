@@ -1,8 +1,8 @@
-alpha = 0.85	Stanford = it
-alpha
+alpha = 0.85	Stanford = 146 it et 1min20
+alpha = 0.9		223 it et 2min30
 alpha
 alpha
 alpha
 alpha
 
-ici epsilon vaut 10pui-12 (1E -12 ligne 84)
+ici epsilon vaut 10 pui - 12 (1E -12 ligne 84)

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define alpha 0.85
 
@@ -134,8 +135,12 @@ int main(int argc, char** argv) {
 	int i, j, k; 
 	int n, m;
 	
+	float temps;
+	clock_t t1,t2;
+	t1 = clock();
+	
     // lecture du ficher
-    FILE *web = fopen("graphe0.txt","r");
+    FILE *web = fopen("web1.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);
@@ -209,4 +214,7 @@ int main(int argc, char** argv) {
 	detruire_tableau_listes(st, n);
 	free(p);	
 	free(f0);
+	t2 = clock();
+	temps = (float)(t2-t1)/CLOCKS_PER_SEC;
+	printf("Le temps d'executin est de : %f secondes \n", temps);
 }
