@@ -1,0 +1,8 @@
+alpha = 0.85	Stanford = it
+alpha
+alpha
+alpha
+alpha
+alpha
+
+ici epsilon vaut 10pui-12 (1E -12 ligne 84)
