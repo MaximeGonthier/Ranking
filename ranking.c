@@ -140,7 +140,7 @@ int main(int argc, char** argv) {
 	t1 = clock();
 	
     // lecture du ficher
-    FILE *web = fopen("web1.txt","r");
+    FILE *web = fopen("web1complet.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);

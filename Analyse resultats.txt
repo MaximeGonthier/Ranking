@@ -1,0 +1,9 @@
+web1.txt sans modification : 
+outputweb1.txt 101 it 0.000407 sec
+
+web1.txt avec un graphe complet entre les sommets 8,9,10 et 11 :
+outputweb1complet.txt 76 it  0.000913 sec
+3 sommets ajoutés : 9,10 et 11.
+La pertinence de 8 (le sommet reliées au nouveau graphe complet) est passé de :
+0.0760121 à 0.173778. Tous les autres sommets ont perdu de la pertinence
+Ici le graphe complet compose 4/11 ème du graphe.
