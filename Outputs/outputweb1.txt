@@ -1,0 +1,9 @@
+Page 1 0.161522
+Page 2 0.0873966
+Page 3 0.126937
+Page 4 0.183909
+Page 5 0.0930371
+Page 6 0.136452
+Page 7 0.134734
+Page 8 0.0760121
+Somme probas : 1
