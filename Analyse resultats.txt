@@ -26,3 +26,23 @@ outputweb1sommetseul2.txt
 1 sommet ajoutés : 9 cela correspond a 1/9 ème du graphe
 La pertinence de 1 passe de 0.161522 à 0.160254
 La pertinence de 2 passe de 0.0873966 à 0.0878264
+
+Stanford.txt sans modification :
+281903 pages
+2312497 liens
+132 itérations
+
+La pertinence du sommet cible (2) est : 1.25325e-05
+Le temps d'executin est de : 28.861139 secondes
+
+La pertinence du sommet cible (3) est : 6.67721e-07
+Le temps d'execution est de : 27.926895 secondes  
+
+La pertinence du sommet cible (4) est : 7.60175e-07
+Le temps d'execution est de : 29.750113 secondes 
+
+La pertinence du sommet cible (5) est : 3.39046e-06
+Le temps d'execution est de : 27.918652 secondes 
+
+La pertinence du sommet cible (6) est : 4.38068e-06
+Le temps d'execution est de : 28.944006 secondes 

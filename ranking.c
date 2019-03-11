@@ -135,16 +135,20 @@ int main(int argc, char** argv) {
 	int i, j, k; 
 	int n, m;
 	
+	int cible;
+	
 	float temps;
 	clock_t t1,t2;
 	t1 = clock();
 	
     // lecture du ficher
-    FILE *web = fopen("web1sommetseul2.txt","r");
+    FILE *web = fopen("Stanford/Stanford.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);
 	}
+	printf("Entrez le numéro du sommet cible : \n");
+	scanf("%d", &cible);
     
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
@@ -160,7 +164,8 @@ int main(int argc, char** argv) {
 	int *f0 = malloc(n*sizeof(int)); // stocke si ligne vecteur nul	
 	
 	// page courante, degré sortant, page suivante
-	int pageC, degreS, pageS;
+	int pageC, pageS, degreS;
+	
 	int fsc1, fsc2;
 	double proba;
 	
@@ -205,6 +210,7 @@ int main(int argc, char** argv) {
 	FILE *out = fopen("output.txt","w");
 	for (i = 0; i < n; i++)
 	{
+		if (i == cible) { printf("La pertinence du sommet cible est : %lg\n",p[cible-1]);}
 		fprintf(out, "Page %d %lg\n", i+1 , p[i]);		
 	}	
 	fprintf(out, "Somme probas : %lg\n", somme(p, n));	
@@ -216,5 +222,5 @@ int main(int argc, char** argv) {
 	free(f0);
 	t2 = clock();
 	temps = (float)(t2-t1)/CLOCKS_PER_SEC;
-	printf("Le temps d'executin est de : %f secondes \n", temps);
+	printf("Le temps d'execution est de : %f secondes \n", temps);
 }
