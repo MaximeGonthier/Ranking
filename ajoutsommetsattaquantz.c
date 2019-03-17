@@ -14,6 +14,7 @@ void ajoutsommetseul (int nbajout, char* nom, int nbpages, int nbliens, int pert
 	int degre = 1;
 	int i;
 	int cible = 0;
+	//ca on changera si on choisis des cibles alea plus tard
 	if (perticible == 1) { cible = 280545; }
 	if (perticible == 2) { cible = 281466; }
 	if (perticible == 3) { cible = 281574; }
@@ -50,37 +51,89 @@ void ajoutanneau (int nbajout, char* nom, int nbpages, int nbliens, int perticib
 
 void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int perticible) {
 
-	int degre = nbajout;
+	int degre = nbajout - 1;
 	int i;
 	int j;
-	float x = 1/(nbajout - 1);
+	float y = nbajout;
+	float x = 1/(y - 1);
 	int cible = 0;
 	if (perticible == 1) { cible = 280545; }
 	if (perticible == 2) { cible = 281466; }
 	if (perticible == 3) { cible = 281574; }
 	FILE *g = fopen(nom,"a");
+	//ici on ecris d'abord le degré et le n° de la page puis le while va ecrire les liens vers les autres pages. 
 	for (i = 1; i < nbajout; i++) {
 		j = 1;
 		fprintf(g, "%d %d", nbpages+i, degre);
-		while (nbpages+j != nbajout+nbpages+1) {
-			fprintf(g, " %d %f", nbpages+i+j, x);
+		
+		while (j != nbajout + 1){
+			//ce if il sert a savoir si on est pas sur la page que l'on ecrit. Fin pour pas faire un lien d'une page sur elle meme
+			if (nbpages+j == nbpages+i) {}
+			else {
+				fprintf(g, " %d %f", nbpages+j, x);
+			}
 			j++;
 		}
-		j = 1;
-		while (nbpages+i-j != nbpages) {
-			fprintf(g, " %d %f", nbpages+i-j, x);
-			j++;
-		}
+		fprintf(g, "\n");
 	}
+	//la on ecris la derniere page, celle qui pointe sur la cible
+    x = 1/y;
+	fprintf(g, "%d %d", nbpages+i, degre + 1);
+	j = 1;
+	while (j != nbajout + 1){
+			if (nbpages+j == nbpages+i) {}
+			else {
+				fprintf(g, " %d %f", nbpages+j, x);
+			}
+			j++;
+		}
+	fprintf(g, " %d %f\n",cible,x);
 	fclose(g);
 	
 	FILE *h = fopen(nom,"r+");
-	fprintf(h, "%d %d", nbpages+nbajout, nbliens+((nbajout * (nbajout-1))/2) +1);
+	fprintf(h, "%d %d", nbpages+nbajout, nbliens+(nbajout * (nbajout-1)) +1);
+	fclose(h);
+}
+
+void ajoutarbre(int nbajout, char* nom, int nbpages, int nbliens, int perticible) {
+//L'arbre va etre construit ainsi : 1 pointe vers la cible, 2 et 3 pointe vers 1, 4 et 5 vers 2, 6 et 7 vers 3 etc ...
+
+
+	int degre = 1;
+	int i;
+	//Compteur donne la distance par rapport a la racine
+	int compteur = 0;
+	int cible = 0;
+	int racine = nbpages+1;
+	if (perticible == 1) { cible = 280545; }
+	if (perticible == 2) { cible = 281466; }
+	if (perticible == 3) { cible = 281574; }
+	FILE *g = fopen(nom,"a");
+	
+	//init du sommet racine
+	fprintf(g, "%d %d %d 1.000000\n", racine, degre, cible);
+	//on fais 2 par 2 les sommets (arbre binaire) et on pointe vers le sommet père lui meme calculé par sa distance a la racine	
+	for (i = 1; i < nbajout - 1; i+=2) {
+		fprintf(g, "%d %d %d 1.000000\n", racine+i, degre, racine + compteur);	
+		fprintf(g, "%d %d %d 1.000000\n", racine+i+1, degre, racine + compteur);	
+		compteur++;
+	}
+	//le dernier sommet dans le cas d'un nombre PAIR de sommets a entré. (pair car le sommet racine est deja entré hors de la boucle)
+	if (nbajout%2 == 0) { fprintf(g, "%d %d %d 1.000000\n", racine+i, degre, racine + compteur); }
+
+	
+	
+	fclose(g);
+	
+	//modif du nb de liens et de pages dans Stanford
+	FILE *h = fopen(nom,"r+");
+	fprintf(h, "%d %d", nbpages+nbajout, nbliens+nbajout);
 	fclose(h);
 }
 
 int main(int argc, char** argv) {
 
+	//cible c'est le n° de page de la cible
 	int structure, nbajout, nbpages, nbliens, cible;
 	char c;
 	int i = 0;
@@ -114,6 +167,8 @@ int main(int argc, char** argv) {
 	if (structure == 2) { ajoutanneau(nbajout,argv[1], nbpages, nbliens, cible); }
 	else
 	if (structure == 3) { ajoutcomplet(nbajout,argv[1], nbpages, nbliens, cible); }
+	else
+	if (structure == 4) { ajoutarbre(nbajout,argv[1], nbpages, nbliens, cible); }
 	
 
 	return 0;

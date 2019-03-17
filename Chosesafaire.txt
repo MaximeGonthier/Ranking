@@ -4,6 +4,7 @@ Quel force mettre entre chaque sommet de la structure ? 1/n
 1 sommet seul ca peut plusieurs sommets indépendant relié a la cible ? Oui
 coder pour ajouter des sommets
 on fais le meme test 5 fois
+gagner de la pertincence grace a d'autres liens
 
 Pour chaque test :
 
@@ -15,3 +16,6 @@ Degré avant et apres du sommet cible, pourcentage du degré modifié
 regarer la force avec laquelle on pointe sur le sommet cible (demander a maxime comment ca s'appelle exactement)
 
 ET R
+
+on fais en random : le nb de sommet
+					la cible ( dans un intervallle)
