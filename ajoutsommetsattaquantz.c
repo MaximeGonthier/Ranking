@@ -3,14 +3,19 @@
 #include <string.h>
 //./a.out nomfichier.txt 
 //changer nb pages et de liens
-//pertinence : forte : Page 280545 9.96199e-05
-
+//pertinence : 
+//forte : Page 280545 9.96199e-05
+//moyenne : Page 281466 7.53954e-06
+//faible : Page 281574 6.05222e-07
+			
 void ajoutsommetseul (int nbajout, char* nom, int nbpages, int nbliens, int perticible) {
 
 	int degre = 1;
 	int i;
 	int cible = 0;
 	if (perticible == 1) { cible = 280545; }
+	if (perticible == 2) { cible = 281466; }
+	if (perticible == 3) { cible = 281574; }
 	FILE *g = fopen(nom,"a");
 	for (i = 1; i < nbajout + 1; i++) {
 		fprintf(g, "%d %d %d 1.000000\n", nbpages+i, degre, cible);
@@ -40,12 +45,6 @@ int main(int argc, char** argv) {
 	printf("pages : %d\n", nbpages);
 	printf("lien : %d\n", nbliens);
 	fclose(f);
-	
-	
-	//~ FILE *g = fopen(argv[1],"a");
-	//~ fprintf(g, "%d", nbpages+1);
-	//~ fclose(g);
-	
 
 	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n");
 	scanf("%d", &structure);	
