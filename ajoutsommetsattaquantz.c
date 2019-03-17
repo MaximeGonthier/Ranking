@@ -48,6 +48,37 @@ void ajoutanneau (int nbajout, char* nom, int nbpages, int nbliens, int perticib
 	fclose(h);
 }
 
+void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int perticible) {
+
+	int degre = nbajout;
+	int i;
+	int j;
+	float x = 1/(nbajout - 1);
+	int cible = 0;
+	if (perticible == 1) { cible = 280545; }
+	if (perticible == 2) { cible = 281466; }
+	if (perticible == 3) { cible = 281574; }
+	FILE *g = fopen(nom,"a");
+	for (i = 1; i < nbajout; i++) {
+		j = 1;
+		fprintf(g, "%d %d", nbpages+i, degre);
+		while (nbpages+j != nbajout+nbpages+1) {
+			fprintf(g, " %d %f", nbpages+i+j, x);
+			j++;
+		}
+		j = 1;
+		while (nbpages+i-j != nbpages) {
+			fprintf(g, " %d %f", nbpages+i-j, x);
+			j++;
+		}
+	}
+	fclose(g);
+	
+	FILE *h = fopen(nom,"r+");
+	fprintf(h, "%d %d", nbpages+nbajout, nbliens+((nbajout * (nbajout-1))/2) +1);
+	fclose(h);
+}
+
 int main(int argc, char** argv) {
 
 	int structure, nbajout, nbpages, nbliens, cible;
@@ -81,6 +112,8 @@ int main(int argc, char** argv) {
 	if (structure == 1) { ajoutsommetseul(nbajout,argv[1], nbpages, nbliens, cible); }
 	else
 	if (structure == 2) { ajoutanneau(nbajout,argv[1], nbpages, nbliens, cible); }
+	else
+	if (structure == 3) { ajoutcomplet(nbajout,argv[1], nbpages, nbliens, cible); }
 	
 
 	return 0;
