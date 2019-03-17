@@ -1,11 +1,9 @@
 
-R et mesure aléatoire ? Stanford ?
-Quel force mettre entre chaque sommet de la structure ? Quel force vers le sommet cible ?
-1 sommet seul ca peut plusieurs sommets indépendant relié a la cible ?
+R et mesure aléatoire ? Oui struture du graphe et force arrete qui change
+Quel force mettre entre chaque sommet de la structure ? 1/n
+1 sommet seul ca peut plusieurs sommets indépendant relié a la cible ? Oui
 coder pour ajouter des sommets
 on fais le meme test 5 fois
-coder un truc qui trouve la pertinece max/min
-coder un truc qui trouve les degrées entrants
 
 Pour chaque test :
 
@@ -15,3 +13,5 @@ Structure ajouté / nb sommets ajouté / leurs pertincence / le % par rapport au
 La pertincence de la cible avant(faible moyen ou fort) et apres (a analyser)
 Degré avant et apres du sommet cible, pourcentage du degré modifié
 regarer la force avec laquelle on pointe sur le sommet cible (demander a maxime comment ca s'appelle exactement)
+
+ET R
