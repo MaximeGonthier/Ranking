@@ -72,15 +72,14 @@ void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int pertici
 	for (i = 1; i < nbajout; i++) {
 		/////// j = 1;
 		fprintf(g, "%d %d", nbpages+i, degre);
-		for(j = 1; j < nbajout + 1; j++)
+		for(j = 1; j < nbajout + 1; j++){
 		///////  while (j != nbajout + 1){
 			// Cette condition permet de savoir si on est pas sur 
 			// la page que l'on ecrit. Pour ne pas faire un lien d'une 
 			// page sur elle même.
 			if (nbpages+j == nbpages+i) {} // if vide !
 			else {
-				fprintf(g, " %d %f", nbpages+j, x);
-			}
+				fprintf(g, " %d %f", nbpages+j, x);}
 			/////// j++;
 		}
 		fprintf(g, "\n");
@@ -142,13 +141,14 @@ void ajoutarbre(int nbajout, char* nom, int nbpages, int nbliens, int perticible
 	fclose(h);
 }
 
-void ajoutstructure(int structure, int, nbstructure, int nbajout, char* nom, int nbpages, int nbliens, int cible){
+void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int nbpages, int nbliens, int cible)
+{
 	int i;
 	for(i = 0; i < nbstructure; i++){
-		if (structure == 1) { ajoutsommetseul(nbajout,argv[1], nbpages, nbliens, cible); }
-		else if (structure == 2) { ajoutanneau(nbajout,argv[1], nbpages, nbliens, cible); }
-		else if (structure == 3) { ajoutcomplet(nbajout,argv[1], nbpages, nbliens, cible); }
-		else if (structure == 4) { ajoutarbre(nbajout,argv[1], nbpages, nbliens, cible); }
+		if (structure == 1) { ajoutsommetseul(nbajout, nom, nbpages, nbliens, cible); }
+		else if (structure == 2) { ajoutanneau(nbajout, nom, nbpages, nbliens, cible); }
+		else if (structure == 3) { ajoutcomplet(nbajout, nom, nbpages, nbliens, cible); }
+		else if (structure == 4) { ajoutarbre(nbajout, nom, nbpages, nbliens, cible); }
 	}
 }
 
@@ -181,7 +181,7 @@ int main(int argc, char** argv) {
 	printf("Entrez la pertinence de la cible : \n 1 pour une pertinence forte \n 2 pour une pertinence moyenne \n 3 pour une pertinence faible \n");
 	scanf("%d", &cible);
 
-	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible){	
+	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible);	
 
 	return 0;
 }
