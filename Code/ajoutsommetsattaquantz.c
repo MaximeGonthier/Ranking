@@ -134,30 +134,34 @@ void ajoutarbre(int nbajout, char* nom, int nbpages, int nbliens, int perticible
 	if (nbajout%2 == 0){ 
 		fprintf(g, "%d %d %d 1.000000\n", racine+i, degre, racine + compteur);
 	}
-
-	
-	
 	fclose(g);
 	
-	//modif du nb de liens et de pages dans Stanford
+	// Ecriture du nouveau nombre de pages et nombre de liens.
 	FILE *h = fopen(nom,"r+");
 	fprintf(h, "%d %d", nbpages+nbajout, nbliens+nbajout);
 	fclose(h);
 }
 
-int main(int argc, char** argv) {
+void ajoutstructure(int structure, int, nbstructure, int nbajout, char* nom, int nbpages, int nbliens, int cible){
+	int i;
+	for(i = 0; i < nbstructure; i++){
+		if (structure == 1) { ajoutsommetseul(nbajout,argv[1], nbpages, nbliens, cible); }
+		else if (structure == 2) { ajoutanneau(nbajout,argv[1], nbpages, nbliens, cible); }
+		else if (structure == 3) { ajoutcomplet(nbajout,argv[1], nbpages, nbliens, cible); }
+		else if (structure == 4) { ajoutarbre(nbajout,argv[1], nbpages, nbliens, cible); }
+	}
+}
 
-	//cible c'est le n° de page de la cible
-	int structure, nbajout, nbpages, nbliens, cible;
+
+int main(int argc, char** argv) {
+	// cible c'est le n° de page de la cible
+	int structure, nbstructure, nbajout, nbpages, nbliens, cible;
 	char c;
 	int i = 0;
 	
-
-	 FILE *f = fopen(argv[1],"r");
-
-	 if (f == NULL) {
-		exit(EXIT_FAILURE);
-	}
+	FILE *f = fopen(argv[1],"r");
+	if (f == NULL) {
+		exit(EXIT_FAILURE); }
 	
 	fscanf(f, "%d", &nbpages);
 	fscanf(f, "%d", &nbliens);
@@ -166,7 +170,10 @@ int main(int argc, char** argv) {
 	fclose(f);
 
 	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n");
-	scanf("%d", &structure);	
+	scanf("%d", &structure);
+
+	printf("Entrer le nombre de structure que vous voulez : \n");
+	scanf("%d", &nbstructure);
 
 	printf("Entrez le nombre de sommets a ajouter : \n");
 	scanf("%d", &nbajout);	
@@ -174,16 +181,7 @@ int main(int argc, char** argv) {
 	printf("Entrez la pertinence de la cible : \n 1 pour une pertinence forte \n 2 pour une pertinence moyenne \n 3 pour une pertinence faible \n");
 	scanf("%d", &cible);
 
-	
-
-	if (structure == 1) { ajoutsommetseul(nbajout,argv[1], nbpages, nbliens, cible); }
-	else
-	if (structure == 2) { ajoutanneau(nbajout,argv[1], nbpages, nbliens, cible); }
-	else
-	if (structure == 3) { ajoutcomplet(nbajout,argv[1], nbpages, nbliens, cible); }
-	else
-	if (structure == 4) { ajoutarbre(nbajout,argv[1], nbpages, nbliens, cible); }
-	
+	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible){	
 
 	return 0;
 }
