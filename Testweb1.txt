@@ -1,0 +1,29 @@
+
+web1.txt sans modification : 
+outputweb1.txt 
+101 itérations
+0.000407 secondes
+
+web1.txt avec un graphe complet entre les sommets 8,9,10 et 11 :
+outputweb1complet.txt
+76 itérations
+0.000913 secondes
+3 sommets ajoutés : 9,10 et 11 cela correspond a 3/11 ème du graphe
+La pertinence de 8 (le sommet reliées au nouveau graphe complet) est passé de 0.0760121 à 0.173778
+Tous les autres sommets ont perdu de la pertinence
+Le graphe complet compose 4/11 ème du graphe
+
+web1.txt avec un sommet seul ajouté relié au sommet 1 avec un poids 1.0 :
+outputweb1sommetseul1.txt
+106 itérations
+0.000504 secondes
+1 sommet ajoutés : 9 cela correspond a 1/9 ème du graphe
+La pertinence de 1 passe de 0.161522 à 0.167435
+
+web1.txt avec un sommet seul ajouté relié aux sommets 1 et 2 avec un poids 0.5 :
+outputweb1sommetseul2.txt
+101 itérations
+0.000487 secondes
+1 sommet ajoutés : 9 cela correspond a 1/9 ème du graphe
+La pertinence de 1 passe de 0.161522 à 0.160254
+La pertinence de 2 passe de 0.0873966 à 0.0878264

@@ -1,48 +1,57 @@
-web1.txt sans modification : 
-outputweb1.txt 
-101 itérations
-0.000407 secondes
-
-web1.txt avec un graphe complet entre les sommets 8,9,10 et 11 :
-outputweb1complet.txt
-76 itérations
-0.000913 secondes
-3 sommets ajoutés : 9,10 et 11 cela correspond a 3/11 ème du graphe
-La pertinence de 8 (le sommet reliées au nouveau graphe complet) est passé de 0.0760121 à 0.173778
-Tous les autres sommets ont perdu de la pertinence
-Le graphe complet compose 4/11 ème du graphe
-
-web1.txt avec un sommet seul ajouté relié au sommet 1 avec un poids 1.0 :
-outputweb1sommetseul1.txt
-106 itérations
-0.000504 secondes
-1 sommet ajoutés : 9 cela correspond a 1/9 ème du graphe
-La pertinence de 1 passe de 0.161522 à 0.167435
-
-web1.txt avec un sommet seul ajouté relié aux sommets 1 et 2 avec un poids 0.5 :
-outputweb1sommetseul2.txt
-101 itérations
-0.000487 secondes
-1 sommet ajoutés : 9 cela correspond a 1/9 ème du graphe
-La pertinence de 1 passe de 0.161522 à 0.160254
-La pertinence de 2 passe de 0.0873966 à 0.0878264
+1	TEST INITIAUX ET HYPOTHESES
 
 Stanford.txt sans modification :
+
 281903 pages
 2312497 liens
 132 itérations
+27.627466 secondes 
 
-La pertinence du sommet cible (2) est : 1.25325e-05
-Le temps d'executin est de : 28.861139 secondes
+Pertinences :
+forte : Page 280545 9.96199e-05
+moyenne : Page 281466 7.53954e-06
+faible : Page 281574 6.05222e-07
 
-La pertinence du sommet cible (3) est : 6.67721e-07
-Le temps d'execution est de : 27.926895 secondes  
+Stanford.txt avec 10 sommets seul :
 
-La pertinence du sommet cible (4) est : 7.60175e-07
-Le temps d'execution est de : 29.750113 secondes 
+281913 pages
+2312507 liens
+132 itérations
+27.075775 secondes / 27.082188 secondes / 28.454464 secondes 
 
-La pertinence du sommet cible (5) est : 3.39046e-06
-Le temps d'execution est de : 27.918652 secondes 
+Cible à pertinence forte : 1.07873e-04
+Cible à pertinence moyenne : 1.26718e-05
+Cible à pertinence faible : 5.73756e-06
 
-La pertinence du sommet cible (6) est : 4.38068e-06
-Le temps d'execution est de : 28.944006 secondes 
+Stanford.txt avec un anneau a 10 sommets :
+
+281913 pages
+2312508 liens
+132 itérations
+29.058716 secondes / 27.939356 secondes / 30.209354 secondes
+
+Cible à pertinence forte : 1.02068e-04
+Cible à pertinence moyenne : 9.06326e-06
+Cible à pertinence faible : 2.12916e-06
+
+Stanford.txt avec un graphe complet a 10 sommets :
+
+281913 pages
+2312588 liens
+132 itérations
+32.530811 secondes / 30.358072 secondes / 28.396551 secondes
+
+Cible à pertinence forte : 1.00141e-04
+Cible à pertinence moyenne : 7.86544e-06
+Cible à pertinence faible : 9.31393e-07
+
+Stanford.txt avec un arbre binaire a 10 sommets :
+
+281913 pages
+2312507 liens
+132 itérations
+30.578079 secondes / 31.169865 secondes / 28.670444 secondes
+
+Cible à pertinence forte : 1.05753e-04
+Cible à pertinence moyenne : 1.13539e-05
+Cible à pertinence faible : 4.41974e-06
