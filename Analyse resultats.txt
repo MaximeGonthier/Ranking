@@ -19,7 +19,7 @@ Stanford.txt avec 10 sommets seul :
 132 itérations
 27.075775 secondes / 27.082188 secondes / 28.454464 secondes 
 
-Cible à pertinence forte : 1.07873e-04
+Cible à pertinence forte : 1.07873e-04 
 Cible à pertinence moyenne : 1.26718e-05
 Cible à pertinence faible : 5.73756e-06
 
@@ -61,7 +61,7 @@ Analyses et hypothèses :
 Ici 10 sommets correspondent à 0,0035% du graphe.
 
 10 SOMMETS SEUL :
-Attaque sur cible a pertinence forte : 8.2531e-06
-Attaque sur cible a pertinence moyenne : 8.2531e-06
-Attaque sur cible a pertinence faible : 8.2531e-06
+Attaque sur cible a pertinence forte : 8.2531e-06  : £???%
+Attaque sur cible a pertinence moyenne : 5.13266e-06
+Attaque sur cible a pertinence faible :  3.1466e-07
 
