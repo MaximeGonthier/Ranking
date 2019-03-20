@@ -55,3 +55,13 @@ Stanford.txt avec un arbre binaire a 10 sommets :
 Cible à pertinence forte : 1.05753e-04
 Cible à pertinence moyenne : 1.13539e-05
 Cible à pertinence faible : 4.41974e-06
+
+Analyses et hypothèses :
+
+Ici 10 sommets correspondent à 0,0035% du graphe.
+
+10 SOMMETS SEUL :
+Attaque sur cible a pertinence forte : 8.2531e-06
+Attaque sur cible a pertinence moyenne : 8.2531e-06
+Attaque sur cible a pertinence faible : 8.2531e-06
+
