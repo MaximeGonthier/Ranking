@@ -118,6 +118,8 @@ void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int pertici
 	fclose(h);
 }
 
+
+
 void ajoutarbre(int nbajout, char* nom, int nbpages, int nbliens, int perticible, int nbstructure) {
 // L'arbre va être construit dans cet ordre : 1 pointe vers la cible, 2 et 3 pointe 
 // vers 1, 4 et 5 vers 2, 6 et 7 vers 3 etc ...
