@@ -199,7 +199,7 @@ void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int
 		if (nbsommetrestant <=0) {return;}
 		
 		printf("%d \n", nbajout);
-		sommetsuivant += y*nbajout;
+		
 		for (i = 1; i < nbajout; i++) {
 			fprintf(g, "%d %d %d 1.000000\n", nbpages+i+sommetsuivant, degre, nbpages+i+1+sommetsuivant);
 			nouveauliens++;
@@ -208,6 +208,7 @@ void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int
 		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", nbpages+i+sommetsuivant, 2, nbpages+1+sommetsuivant, cible);
 		nouveausommets++;
 		nouveauliens+=2;
+		sommetsuivant += nbajout;
 	}
 	fclose(g);
 
