@@ -6,3 +6,5 @@
 \contentsline {subsection}{\numberline {1.4}Pagerank sur Stanford.txt (ajout d'un graphe complet \IeC {\`a} 10 sommets) :}{}
 \contentsline {subsection}{\numberline {1.5}Pagerank sur Stanford.txt (ajout d'un arbre binaire \IeC {\`a} 10 sommets) :}{}
 \contentsline {section}{\numberline {2}ANALYSES}{}
+\contentsline {subsection}{\numberline {2.1}Analyse des modifications de pertinences par l'ajout de 10 sommets seuls :}{}
+\contentsline {subsection}{\numberline {2.2}Analyse des modifications de pertinences par l'ajout d'un anneau \IeC {\`a} 10 sommets seuls :}{}

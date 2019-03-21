@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  21 MAR 2019 15:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  22 MAR 2019 00:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -493,37 +493,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 52--61
  []
 
 [3]
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.63 		2
-        81913 pages\\
-? 
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--72
+Underfull \hbox (badness 10000) in paragraph at lines 62--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--72
+Underfull \hbox (badness 10000) in paragraph at lines 62--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--72
+Underfull \hbox (badness 10000) in paragraph at lines 62--71
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
 
-[4] (./analyses.aux) ) 
+[4]
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 93--93
+[]\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
+un
+ []
+
+[5] (./analyses.aux) ) 
 Here is how much of TeX's memory you used:
  1963 strings out of 494829
  24034 string characters out of 6178001
@@ -539,10 +534,10 @@ pen/ec/ecbx1095.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecbx1440.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecrm1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecrm1728.600pk>
-Output written on analyses.pdf (4 pages, 60347 bytes).
+Output written on analyses.pdf (5 pages, 63428 bytes).
 PDF statistics:
- 226 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 236 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
