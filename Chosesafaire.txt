@@ -26,3 +26,22 @@ Chercher des choses sur de vrai google bombing pour le rapport
 EMPIRIQUE = PAR EXPERIENCE
 
 Faut il que le sommet final du graphe complet pointe sur les autres sommets ou uniquement sur la cible ?
+
+le esxcel de maxime
+
+En gros la gen aleatoire c'est la structure choisie quoi
+Je pense un bon algo de gen aleatoire ça peut etre partir du graphe complet et enlever des arcs aléatoirement
+
+Y a ptet un inconvéniant aux sommets seul alors
+Oui je pense que c'est parce que c'est vite cramé par Google
+
+Bah ouais c'est carrément normal
+Fais les calculs tu verras
+T'as déjà des trucs de quoi mettre dans ton rapport c'est cool 🙂
+T'es d'accord que pour chaque sommet i
+Les sommets j ont une proba de 1/n
+Ou n est le degre sortant de i
+Donc si tu rajoutes 5 graphes complets de 5 sommets, tu ajoute a chaque fois des probas de 1/4  vers ta cible
+Alors que si tu fais 1 graphe complet de 25 sommets tu ajoute des probas de 1/24 vers la cible
+Donc si tu fais un mégagraphe au lieu de petits graphes complets
+Ça "dilue" le fait qu'ils pointent vers la cible et c'est moins pris en compte
