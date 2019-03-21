@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 //./a.out nomfichier.txt 
 //changer nb pages et de liens
 //pertinence : 
@@ -165,6 +166,57 @@ void ajoutarbre(int nbajout, char* nom, int nbpages, int nbliens, int perticible
 	fclose(h);
 }
 
+void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int perticible, int nbstructure) {
+	//initialisation
+	int degre = 1;
+	int i;
+	int cible = 0;
+	int nouveauliens = 0;
+	int nouveausommets = 0;
+	int sommetsuivant = 0;
+	int nbsommetrestant = 50;
+	int nbstructurerestant = nbstructure;
+	
+	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
+	if (perticible == 1) { cible = 280545; }
+	if (perticible == 2) { cible = 281466; }
+	if (perticible == 3) { cible = 281574; }
+
+	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
+	// sommet au premier de l'anneau et à la cible.
+	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
+	FILE *g = fopen(nom,"a");
+
+	for (int y = 0; y < nbstructure; y++) {
+		nbstructurerestant --;
+		nbajout = rand()%(nbsommetrestant-nbstructurerestant*2);
+		while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
+		
+		if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
+		if (nbajout == 1) { nbajout = 2; }
+		
+		nbsommetrestant -= nbajout;
+		if (nbsommetrestant <=0) {return;}
+		
+		printf("%d \n", nbajout);
+		sommetsuivant += y*nbajout;
+		for (i = 1; i < nbajout; i++) {
+			fprintf(g, "%d %d %d 1.000000\n", nbpages+i+sommetsuivant, degre, nbpages+i+1+sommetsuivant);
+			nouveauliens++;
+			nouveausommets++;
+		}
+		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", nbpages+i+sommetsuivant, 2, nbpages+1+sommetsuivant, cible);
+		nouveausommets++;
+		nouveauliens+=2;
+	}
+	fclose(g);
+
+	// Ecriture du nouveau nombre de pages et nombre de liens.
+	FILE *h = fopen(nom,"r+");
+	fprintf(h, "%d %d", nbpages+nouveausommets, nbliens+nouveauliens);
+	fclose(h);
+}
+
 void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int nbpages, int nbliens, int cible)
 {
 	int i;
@@ -180,6 +232,7 @@ int main(int argc, char** argv) {
 	int structure, nbstructure, nbajout, nbpages, nbliens, cible;
 	char c;
 	int i = 0;
+	 srand(time(0));
 	
 	FILE *f = fopen(argv[1],"r");
 	if (f == NULL) {
@@ -190,9 +243,13 @@ int main(int argc, char** argv) {
 	printf("pages : %d\n", nbpages);
 	printf("lien : %d\n", nbliens);
 	fclose(f);
+	
 
-	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n");
+	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n 5 pour un anneau aléatoire \n");
 	scanf("%d", &structure);
+	
+	if (structure == 5) { ajoutanneaualeatoire(50, argv[1], nbpages, nbliens, 2, rand()%16); }
+	else {
 
 	printf("Entrer le nombre de structure que vous voulez ajouter : \n");
 	scanf("%d", &nbstructure);
@@ -204,6 +261,7 @@ int main(int argc, char** argv) {
 	scanf("%d", &cible);
 
 	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible);	
-
+	
+	}
 	return 0;
 }
