@@ -1,0 +1,27 @@
+Ici on cherche a trouver le nombre de structure optimal pour chacune des 3 structures (sommet seul exclus)
+en se limitant a 50 sommets par structure
+
+////////////////////////////////////////////////////////////////////////
+Stanford.txt sans modification :
+
+281903 pages
+2312497 liens
+132 itérations
+27.627466 secondes 
+
+Pertinences :
+forte : Page 280545 9.96199e-05
+moyenne : Page 281466 7.53954e-06
+faible : Page 281574 6.05222e-07
+////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////
+Stanford.txt avec 10 anneaux de 5 sommets
+
+281953 pages
+2312547 liens
+132 itérations
+27.898031 secondes 
+
+Nouvelle pertinence de la cible à pertincence moyenne : 3.31997e-05
+////////////////////////////////////////////////////////////////////////

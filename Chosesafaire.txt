@@ -19,3 +19,10 @@ ET R
 
 on fais en random : le nb de sommet
 					la cible ( dans un intervallle)
+
+
+Chercher des choses sur de vrai google bombing pour le rapport
+
+EMPIRIQUE = PAR EXPERIENCE
+
+Faut il que le sommet final du graphe complet pointe sur les autres sommets ou uniquement sur la cible ?
