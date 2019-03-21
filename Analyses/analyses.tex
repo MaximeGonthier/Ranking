@@ -1,0 +1,92 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+
+
+\title{PROJET\\ UE Méthodes de ranking et recommandations\\ 
+		Sujet 5 : Simulation d'un Google Bombing}
+\author{Maxime Gonthier - Laureline Martin}
+\begin{document}
+
+\pagenumbering{gobble}\clearpage
+	\maketitle
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{TESTS INITIAUX (ET HYPOTHESES?)}
+	\subsection{Pagerank sur Stanford.txt (sans modification) :}
+		281903 pages\\
+		2312497 liens\\
+		132 itérations\\
+		27.627466 secondes\\
+		\\
+		Pertinences :\\
+		forte : Page 280545 9.96199e-05\\
+		moyenne : Page 281466 7.53954e-06\\
+		faible : Page 281574 6.05222e-07\\
+		\\
+	\subsection{Pagerank sur Stanford.txt (ajout de 10 sommets seuls) :}
+		281913 pages\\
+		2312507 liens\\
+		132 itérations\\
+		27.075775 secondes / 27.082188 secondes / 28.454464 secondes\\
+		\\
+		Cible à pertinence forte : 1.07873e-04\\
+		Cible à pertinence moyenne : 1.26718e-05\\
+		Cible à pertinence faible : 5.73756e-06\\
+		\\
+	\subsection{Pagerank sur Stanford.txt (ajout d'un anneau à 10 sommets) :}
+		281913 pages\\
+		2312508 liens\\
+		132 itérations\\
+		29.058716 secondes / 27.939356 secondes / 30.209354 secondes\\
+		\\
+		Cible à pertinence forte : 1.02068e-04\\
+		Cible à pertinence moyenne : 9.06326e-06\\
+		Cible à pertinence faible : 2.12916e-06\\
+		\\
+	\subsection{Pagerank sur Stanford.txt (ajout d'un graphe complet à 10 sommets) :}
+		281913 pages\\
+		2312588 liens\\
+		132 itérations\\
+		32.530811 secondes / 30.358072 secondes / 28.396551 secondes\\
+		\\
+		Cible à pertinence forte : 1.00141e-04\\	
+		Cible à pertinence moyenne : 7.86544e-06\\
+		Cible à pertinence faible : 9.31393e-07\\
+		\\
+	\subsection{Pagerank sur Stanford.txt (ajout d'un arbre binaire à 10 sommets) :}
+		\\
+		281913 pages\\
+		2312507 liens\\
+		132 itérations\\
+		30.578079 secondes / 31.169865 secondes / 28.670444 secondes\\
+		\\
+		Cible à pertinence forte : 1.05753e-04\\
+		Cible à pertinence moyenne : 1.13539e-05\\
+		Cible à pertinence faible : 4.41974e-06\\
+		\\
+\section{ANALYSES}
+	10 sommets corresponde à une augmentation du graphe de 0,0035\%.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
