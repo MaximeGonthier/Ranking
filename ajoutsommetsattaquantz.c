@@ -17,8 +17,9 @@ void ajoutsommetseul (int nbajout, char* nom, int nbpages, int nbliens, int pert
 	int cible = 0;
 	//ca on changera si on choisis des cibles alea plus tard
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 	
 	// Ecriture du nouveau sommet seul à la fin du fichier web
 	FILE *g = fopen(nom,"a");
@@ -41,8 +42,9 @@ void ajoutanneau (int nbajout, char* nom, int nbpages, int nbliens, int perticib
 	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 
 	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
 	// sommet au premier de l'anneau et à la cible.
@@ -74,8 +76,9 @@ void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int pertici
 	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 	
 	// Ecriture du graphe complet à la fin du fichier web.
 	FILE *g = fopen(nom,"a");
@@ -133,8 +136,9 @@ void ajoutarbre(int nbajout, char* nom, int nbpages, int nbliens, int perticible
 	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 
 	// Ecriture de l'arbre à la fin du fichier web.
 	FILE *g = fopen(nom,"a");
@@ -180,8 +184,9 @@ void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int
 	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 
 	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
 	// sommet au premier de l'anneau et à la cible.
@@ -239,8 +244,9 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 
 	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
 	// sommet au premier de l'anneau et à la cible.
@@ -321,10 +327,13 @@ void ajoutarbrealeatoire (int nbajout, char* nom, int nbpages, int nbliens, int 
 	int compteur = 0; // Distance par rapport à la racine
 	int racine = 0;
 	
+
+	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
-	if (perticible == 2) { cible = 281466; }
-	if (perticible == 3) { cible = 281574; }
+	else if (perticible == 2) { cible = 281466; }
+	else if (perticible == 3) { cible = 281574; }
+	else { cible = perticible; }
 
 	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
 	// sommet au premier de l'anneau et à la cible.
@@ -396,6 +405,7 @@ int main(int argc, char** argv) {
 	int i = 0;
 	//srand(time(0));
 	srandom(time(NULL));
+	printf("Random cible si besoin : %d\n\n",rand()%281904);
 	
 	FILE *f = fopen(argv[1],"r");
 	if (f == NULL) {
@@ -414,14 +424,18 @@ int main(int argc, char** argv) {
 	if ((structure == 5) || (structure == 6) || (structure == 7)) { }
 	else { 
 
+	if (structure != 1) {
 	printf("Entrer le nombre de structure que vous voulez ajouter : \n");
 	scanf("%d", &nbstructure);
-
+	}
+	
 	printf("Entrez le nombre de sommets par structure a ajouter : \n");
 	scanf("%d", &nbajout);	
 	
-	printf("Entrez la pertinence de la cible : \n 1 pour une pertinence forte \n 2 pour une pertinence moyenne \n 3 pour une pertinence faible \n");
+	
+	printf("Entrez la pertinence de la cible : \n 1 pour une pertinence forte \n 2 pour une pertinence moyenne \n 3 pour une pertinence faible \n 4 Pour entrer manuellement le sommet cible\n");
 	scanf("%d", &cible);
+	if (cible == 4) { printf("Entrez le sommet cible : "); scanf ("%d", &cible);}
 	}
 
 	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible);	
