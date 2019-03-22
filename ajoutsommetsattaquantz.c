@@ -188,17 +188,17 @@ void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int
 	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
 	FILE *g = fopen(nom,"a");
 
-	while(nbsommetrestant >= 0) {
+	while(nbsommetrestant > 0) {
 		//nbstructurerestant --;
 		nbajout = rand()%(50-nouveausommets);
 		//while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
 		if (nbajout <= 3) { nbajout = 3; }
 		
-		if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
-		if (nbajout == 1) { nbajout = 2; }
+		//if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
+		//if (nbajout == 1) { nbajout = 2; }
 		
 		nbsommetrestant -= nbajout;
-		if (nbsommetrestant <=0) {return;}
+		//if (nbsommetrestant <=0) {return;}
 		
 		printf("%d \n", nbajout);
 		
@@ -247,7 +247,7 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
 	FILE *g = fopen(nom,"a");
 
-	while(nbsommetrestant >= 0) {
+	while(nbsommetrestant > 0) {
 		//nbstructurerestant --;
 		nbajout = rand()%(50-nouveausommets);
 		//while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
@@ -256,11 +256,11 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 		x = 1/(z - 1);
 		degre = nbajout-1;
 		
-		if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
-		if (nbajout == 1) { nbajout = 2; }
+		//if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
+		//if (nbajout == 1) { nbajout = 2; }
 		
 		nbsommetrestant -= nbajout;
-		if (nbsommetrestant <=0) {return;}
+		//if (nbsommetrestant >= 0) {}
 		
 		printf("%d \n", nbajout);
 		
@@ -303,6 +303,75 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 
 	// Ecriture du nouveau nombre de pages et nombre de liens.
 	FILE *h = fopen(nom,"r+");
+	//printf("new sommet : %d \n new liens : %d",nouveausommets,nouveauliens);
+	fprintf(h, "%d %d", nbpages+nouveausommets, nbliens+nouveauliens);
+	fclose(h);
+}
+
+void ajoutarbrealeatoire (int nbajout, char* nom, int nbpages, int nbliens, int perticible) {
+	//initialisation
+	int degre = 1;
+	int i;
+	int y = 0;
+	int cible = 0;
+	int nouveauliens = 0;
+	int nouveausommets = 0;
+	int sommetsuivant = 0;
+	int nbsommetrestant = 50;
+	int compteur = 0; // Distance par rapport à la racine
+	int racine = 0;
+	
+	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
+	if (perticible == 1) { cible = 280545; }
+	if (perticible == 2) { cible = 281466; }
+	if (perticible == 3) { cible = 281574; }
+
+	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
+	// sommet au premier de l'anneau et à la cible.
+	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
+	FILE *g = fopen(nom,"a");
+
+	while(nbsommetrestant > 0) {
+		//nbstructurerestant --;
+		nbajout = rand()%(50-nouveausommets);
+		//while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
+		if (nbajout <= 3) { nbajout = 3; }
+		
+		//if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
+		//if (nbajout == 1) { nbajout = 2; }
+		
+		nbsommetrestant -= nbajout;
+		//if (nbsommetrestant <=0) {return;}
+		printf("%d \n", nbajout);
+		
+		racine = nbpages + 1+(y*nbajout);
+		fprintf(g, "%d %d %d 1.000000\n", racine, degre, cible);
+		nouveausommets++;
+		nouveauliens++;
+		// Sommets 2 à 2 (arbre binaire) et on pointe vers le sommet père 
+		// lui meme calculé par sa distance à la racine	
+		for (i = 1; i < nbajout - 1; i+=2) {
+			fprintf(g, "%d %d %d 1.000000\n", racine+i, degre, racine + compteur);	
+			fprintf(g, "%d %d %d 1.000000\n", racine+i+1, degre, racine + compteur);
+			nouveausommets+=2;
+			nouveauliens+=2;	
+			compteur++;
+		}
+		// Le dernier sommet dans le cas d'un nombre PAIR de sommets 
+		// a entrer (pair car le sommet racine est deja entré hors de la boucle)
+		if (nbajout%2 == 0){ 
+			fprintf(g, "%d %d %d 1.000000\n", racine+i, degre, racine + compteur);
+			nouveausommets++;
+			nouveauliens++;
+		}
+		//on réinitialise le compteur car on va commencer un nouvel arbre
+		compteur = 0;
+	y++;
+	}
+	fclose(g);
+
+	// Ecriture du nouveau nombre de pages et nombre de liens.
+	FILE *h = fopen(nom,"r+");
 	fprintf(h, "%d %d", nbpages+nouveausommets, nbliens+nouveauliens);
 	fclose(h);
 }
@@ -336,11 +405,12 @@ int main(int argc, char** argv) {
 	fclose(f);
 	
 
-	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n 5 pour un anneau aléatoire \n 6 pour un graphe complet aléatoire \n");
+	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n 5 pour un anneau aléatoire \n 6 pour un graphe complet aléatoire \n 7 pour un arbre aléatoire\n");
 	scanf("%d", &structure);
 	
 	if (structure == 5) { ajoutanneaualeatoire(50, argv[1], nbpages, nbliens, 2); }
 	else if (structure == 6) { ajoutcompletaleatoire(50, argv[1], nbpages, nbliens, 2); }
+	else if (structure == 7) { ajoutarbrealeatoire(50, argv[1], nbpages, nbliens, 2); }
 	else {
 
 	printf("Entrer le nombre de structure que vous voulez ajouter : \n");

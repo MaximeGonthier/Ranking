@@ -45,3 +45,6 @@ Donc si tu rajoutes 5 graphes complets de 5 sommets, tu ajoute a chaque fois des
 Alors que si tu fais 1 graphe complet de 25 sommets tu ajoute des probas de 1/24 vers la cible
 Donc si tu fais un mégagraphe au lieu de petits graphes complets
 Ça "dilue" le fait qu'ils pointent vers la cible et c'est moins pris en compte
+
+
+En random = graphe de taille minimum 3!
