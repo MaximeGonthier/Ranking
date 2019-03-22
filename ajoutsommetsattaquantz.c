@@ -15,7 +15,7 @@ void ajoutsommetseul (int nbajout, char* nom, int nbpages, int nbliens, int pert
 	int degre = 1;
 	int i;
 	int cible = 0;
-	//ca on changera si on choisis des cibles alea plus tard
+	//affectation de la cible
 	if (perticible == 1) { cible = 280545; }
 	else if (perticible == 2) { cible = 281466; }
 	else if (perticible == 3) { cible = 281574; }
@@ -174,37 +174,37 @@ void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int
 	//initialisation
 	int degre = 1;
 	int i;
-	int y = 0;
 	int cible = 0;
 	int nouveauliens = 0;
 	int nouveausommets = 0;
 	int sommetsuivant = 0;
 	int nbsommetrestant = 50;
-	//int nbstructurerestant = nbstructure;
 	
-	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
+	//Choix de la cible en fonction de ce qu'a entré l'utilisateur (cible pré choisis ou choix manuel)
 	if (perticible == 1) { cible = 280545; }
 	else if (perticible == 2) { cible = 281466; }
 	else if (perticible == 3) { cible = 281574; }
 	else { cible = perticible; }
 
-	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
-	// sommet au premier de l'anneau et à la cible.
-	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
 	FILE *g = fopen(nom,"a");
 
+	//On boucle tant qu'il reste des sommets a ajouter (on ajoute entre 49 et 51 sommets)
 	while(nbsommetrestant > 0) {
-		//nbstructurerestant --;
+		//nbajout correspond a la taille en nombre de sommets de la structure que l'on va insérer
+		//il est limité au nombre de sommet restants a ajouter
+		//ainsi on se retrouvera au final avec par exemple un anneau de
+		//10 sommets puis un anneau de 29 puis un de 5 puis un de 3 et un de 2 ...
 		nbajout = rand()%(50-nouveausommets);
-		//while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
+		
+		//si la taille du graphe choisis est inférieure a 3 on le met a 3. Ajouter 
+		//des graphes de taille 1 ou 2 correspondrait en effet a ajouter 
+		//des sommets seuls
 		if (nbajout <= 3) { nbajout = 3; }
 		
-		//if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
-		//if (nbajout == 1) { nbajout = 2; }
-		
+		//on décrémente le nombre de sommet restant
 		nbsommetrestant -= nbajout;
-		//if (nbsommetrestant <=0) {return;}
 		
+		//printf de test
 		printf("%d \n", nbajout);
 		
 		for (i = 1; i < nbajout; i++) {
@@ -216,7 +216,6 @@ void ajoutanneaualeatoire (int nbajout, char* nom, int nbpages, int nbliens, int
 		nouveausommets++;
 		nouveauliens+=2;
 		sommetsuivant += nbajout;
-	y++;
 	}
 	fclose(g);
 
@@ -236,37 +235,24 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 	int nouveausommets = 0;
 	int sommetsuivant = 0;
 	int nbsommetrestant = 50;
-	//int nbstructurerestant = nbstructure;
 	int y = 0;
 	
-	//printf("nb struct a  creer : %d \n", nbstructure);
-	
-	
-	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
 	else if (perticible == 2) { cible = 281466; }
 	else if (perticible == 3) { cible = 281574; }
 	else { cible = perticible; }
 
-	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
-	// sommet au premier de l'anneau et à la cible.
-	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
 	FILE *g = fopen(nom,"a");
 
 	while(nbsommetrestant > 0) {
-		//nbstructurerestant --;
 		nbajout = rand()%(50-nouveausommets);
-		//while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
 		if (nbajout <= 3) { nbajout = 3; }
+		
 		z = nbajout;
 		x = 1/(z - 1);
 		degre = nbajout-1;
-		
-		//if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
-		//if (nbajout == 1) { nbajout = 2; }
-		
+
 		nbsommetrestant -= nbajout;
-		//if (nbsommetrestant >= 0) {}
 		
 		printf("%d \n", nbajout);
 		
@@ -290,14 +276,11 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 		x = 1/z;
 		fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre + 1);
 		for(j = 1; j < nbajout + 1; j++){
-		/////// j = 1;
-		/////// while (j != nbajout + 1){
-			if (nbpages+j == nbpages+i) {} // if vide !
+			if (nbpages+j == nbpages+i) {}
 			else {
 				fprintf(g, " %d %f", nbpages+j+(y*nbajout), x);
 				nouveauliens++;
 			}
-			/////// j++;
 		}
 		fprintf(g, " %d %f\n", cible, x);
 		nouveauliens++;
@@ -327,30 +310,18 @@ void ajoutarbrealeatoire (int nbajout, char* nom, int nbpages, int nbliens, int 
 	int compteur = 0; // Distance par rapport à la racine
 	int racine = 0;
 	
-
-	
-	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
 	if (perticible == 1) { cible = 280545; }
 	else if (perticible == 2) { cible = 281466; }
 	else if (perticible == 3) { cible = 281574; }
 	else { cible = perticible; }
 
-	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
-	// sommet au premier de l'anneau et à la cible.
-	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
 	FILE *g = fopen(nom,"a");
 
 	while(nbsommetrestant > 0) {
-		//nbstructurerestant --;
 		nbajout = rand()%(50-nouveausommets);
-		//while (nbajout <= 0) { nbajout = rand()%(nbsommetrestant-nbstructurerestant); }
 		if (nbajout <= 3) { nbajout = 3; }
 		
-		//if (nbajout > nbsommetrestant) { nbajout = nbsommetrestant; }
-		//if (nbajout == 1) { nbajout = 2; }
-		
 		nbsommetrestant -= nbajout;
-		//if (nbsommetrestant <=0) {return;}
 		printf("%d \n", nbajout);
 		
 		racine = nbpages + 1+(y*nbajout);
@@ -401,9 +372,6 @@ void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int 
 int main(int argc, char** argv) {
 	// cible c'est le n° de page de la cible
 	int structure, nbstructure, nbajout, nbpages, nbliens, cible;
-	char c;
-	int i = 0;
-	//srand(time(0));
 	srandom(time(NULL));
 	printf("Random cible si besoin : %d\n\n",rand()%281904);
 	
@@ -439,7 +407,6 @@ int main(int argc, char** argv) {
 	}
 
 	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible);	
-	
 	
 	return 0;
 }
