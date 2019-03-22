@@ -383,6 +383,9 @@ void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int 
 		else if (structure == 2) { ajoutanneau(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
 		else if (structure == 3) { ajoutcomplet(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
 		else if (structure == 4) { ajoutarbre(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
+		else if (structure == 5) { ajoutanneaualeatoire(50, nom, nbpages, nbliens, 2); }
+		else if (structure == 6) { ajoutcompletaleatoire(50, nom, nbpages, nbliens, 2); }
+		else if (structure == 7) { ajoutarbrealeatoire(50, nom, nbpages, nbliens, 2); }
 }
 
 
@@ -408,10 +411,8 @@ int main(int argc, char** argv) {
 	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n 5 pour un anneau aléatoire \n 6 pour un graphe complet aléatoire \n 7 pour un arbre aléatoire\n");
 	scanf("%d", &structure);
 	
-	if (structure == 5) { ajoutanneaualeatoire(50, argv[1], nbpages, nbliens, 2); }
-	else if (structure == 6) { ajoutcompletaleatoire(50, argv[1], nbpages, nbliens, 2); }
-	else if (structure == 7) { ajoutarbrealeatoire(50, argv[1], nbpages, nbliens, 2); }
-	else {
+	if ((structure == 5) || (structure == 6) || (structure == 7)) { }
+	else { 
 
 	printf("Entrer le nombre de structure que vous voulez ajouter : \n");
 	scanf("%d", &nbstructure);
@@ -421,9 +422,10 @@ int main(int argc, char** argv) {
 	
 	printf("Entrez la pertinence de la cible : \n 1 pour une pertinence forte \n 2 pour une pertinence moyenne \n 3 pour une pertinence faible \n");
 	scanf("%d", &cible);
+	}
 
 	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible);	
 	
-	}
+	
 	return 0;
 }
