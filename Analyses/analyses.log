@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  22 MAR 2019 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  24 MAR 2019 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -427,12 +427,23 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./analyses.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 3.
+
+Overfull \hbox (9.1295pt too wide) in paragraph at lines 11--11
+ [][] []\T1/cmr/m/n/10.95 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'
+ajout d'un graphe 
+ []
+
+
+Overfull \hbox (1.8722pt too wide) in paragraph at lines 12--12
+ [][] []\T1/cmr/m/n/10.95 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'
+ajout d'un arbre 
+ []
+
 )
 \tf@toc=\write3
 \openout3 = `analyses.toc'.
 
-
-[2]
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 21--31
 
  []
@@ -513,7 +524,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--73
  []
 
 [4]
-Overfull \hbox (0.64236pt too wide) in paragraph at lines 93--93
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 90--90
+[]\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
+un
+ []
+
+
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 107--107
+[]\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
+un
+ []
+
+
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 124--124
 []\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
 un
  []
@@ -522,7 +545,7 @@ un
 Here is how much of TeX's memory you used:
  1963 strings out of 494829
  24034 string characters out of 6178001
- 87223 words of memory out of 5000000
+ 88223 words of memory out of 5000000
  5306 multiletter control sequences out of 15000+600000
  12695 words of font info for 33 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -534,9 +557,9 @@ pen/ec/ecbx1095.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecbx1440.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecrm1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
 pen/ec/ecrm1728.600pk>
-Output written on analyses.pdf (5 pages, 63428 bytes).
+Output written on analyses.pdf (5 pages, 64073 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
+ 237 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
