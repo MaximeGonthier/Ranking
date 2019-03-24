@@ -45,3 +45,38 @@ Donc si tu rajoutes 5 graphes complets de 5 sommets, tu ajoute a chaque fois des
 Alors que si tu fais 1 graphe complet de 25 sommets tu ajoute des probas de 1/24 vers la cible
 Donc si tu fais un mégagraphe au lieu de petits graphes complets
 Ça "dilue" le fait qu'ils pointent vers la cible et c'est moins pris en compte
+
+Bonsoir
+
+Ok pour les deux premiers points.
+
+Pour le troisième, prenez de façon déterministe 3 ou 4 points avec des pertinentes très différentes.
+
+ 
+
+Jmf
+
+ 
+Le 22.03.2019 02:09, Maxime Gonthier a écrit :
+
+Bonjour Monsieur,
+
+ 
+
+Avec Laureline Martin nous travaillons sur le sujet 5 (Google bombing) en méthodes de ranking et nous avons des questions a propos de ce projet.
+
+C'est surtout pour eviter faire fausse route.
+
+ 
+
+Notre idée pour le moment est d'étudier l'impact sur la pertinence en trois temps :
+
+1. a partir de valeurs fixe : On fixe le nombre de sommet, la taille et le nombre de structure ajouté et on regarde l'impact sur la pertinence d'un sommet cible.
+
+ 
+
+2. a l'aide d'une création aléatoire e structures : Pour chaque structure on va générer aléatoirement sa taille et le nombre de structures a ajouter (tout en gardant un nombre de sommet ajouté fixe) et on regarde l'impact sur la pertinence d'un sommet cible. + loi normale etc...
+
+ 
+
+3. a l'aide d'une cible aléatoire : on fixe les structure mais le sommet cible est choisis aléatoirement et on regarde quelle structure est globalement la plus efficace. + loi normale etc...
