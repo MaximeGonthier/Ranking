@@ -46,6 +46,7 @@ Alors que si tu fais 1 graphe complet de 25 sommets tu ajoute des probas de 1/24
 Donc si tu fais un mégagraphe au lieu de petits graphes complets
 Ça "dilue" le fait qu'ils pointent vers la cible et c'est moins pris en compte
 
+
 Bonsoir
 
 Ok pour les deux premiers points.
@@ -80,3 +81,7 @@ Notre idée pour le moment est d'étudier l'impact sur la pertinence en trois te
  
 
 3. a l'aide d'une cible aléatoire : on fixe les structure mais le sommet cible est choisis aléatoirement et on regarde quelle structure est globalement la plus efficace. + loi normale etc...
+
+
+En random = graphe de taille minimum 3!
+
