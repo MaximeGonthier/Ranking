@@ -147,8 +147,9 @@ int main(int argc, char** argv) {
     if (web == NULL) {
 		exit(EXIT_FAILURE);
 	}
-	printf("Entrez le numéro du sommet cible : \n");
-	scanf("%d", &cible);
+	//printf("Entrez le numéro du sommet cible : \n");
+	//scanf("%d", &cible);
+	cible = 281466;
     
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
