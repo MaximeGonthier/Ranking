@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
+\usepackage{textcomp}
 
 
 \title{PROJET\\ UE Méthodes de ranking et recommandations\\ 
@@ -10,12 +11,23 @@
 \begin{document}
 
 \pagenumbering{gobble}\clearpage
+	\pagenumbering{gobble}\clearpage
 	\maketitle
+	\newpage\clearpage\pagenumbering{arabic}
 
 \newpage
 \tableofcontents
 
 \newpage
+On considère ici le graphe du web Stanford.txt. Ce graphe est modifié par l'ajout de sommets et d'arcs afin d'augmenter la valeur d'un sommet ciblé.\\
+On considère que :\\
+\begin{itemize}
+	\item Les sommets représentent les pages du web.
+	\item Les arcs représentent les liens dirigeant vers d'autres pages.
+	\item Les valeurs des sommets représentent les pertinences calculés par l'algorithme pagerank.
+	\item Le sommet cible représente la page dont on souhaite augmenter la pertinence.
+\end{itemize}
+
 \section{TESTS INITIAUX (ET HYPOTHESES?)}
 	\subsection{Pagerank sur Stanford.txt (sans modification) :}
 		281903 pages\\
@@ -24,9 +36,9 @@
 		27.627466 secondes\\
 		\\
 		On choisi d'attaquer ces différentes pages à pertinences différentes :\\
-		Pertinence forte : Page 280545 9.96199e-05\\
-		Pertinence moyenne : Page 281466 7.53954e-06\\
-		Pertinence faible : Page 281574 6.05222e-07\\
+		Pertinence forte : Page 280545 - 9.96199e-05\\
+		Pertinence moyenne : Page 281466 - 7.53954e-06\\
+		Pertinence faible : Page 281574 - 6.05222e-07\\
 		\\
 	\subsection{Pagerank sur Stanford.txt (ajout de 10 sommets seuls) :}
 		281913 pages\\
@@ -138,7 +150,11 @@
 			\item Augmentation de la pertinence de 630268 e-12 \%.
 		\end{itemize}
 
-\section{}
+	\section{OBSERVATIONS DES TESTS INITIAUX}
+		On observe que la structure à 10 sommets seuls augmente le plus la pertinance des pages cibles.\\
+		On remarque également que pour chaque structure, l'augmentation de la pertinence pour les pages cibles de pertinence moyenne et faible sont extrêmement proche (différence à 10\^-9).\\
+
+
 
 
 
