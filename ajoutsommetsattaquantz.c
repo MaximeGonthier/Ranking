@@ -235,7 +235,6 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 	int nouveausommets = 0;
 	int sommetsuivant = 0;
 	int nbsommetrestant = 50;
-	int y = 0;
 	
 	if (perticible == 1) { cible = 280545; }
 	else if (perticible == 2) { cible = 281466; }
@@ -258,7 +257,7 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 		
 		for (i = 1; i < nbajout; i++) {
 			/////// j = 1;
-			fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre);
+			fprintf(g, "%d %d", nbpages+i+sommetsuivant, degre);
 			for(j = 1; j < nbajout + 1; j++){
 			///////  while (j != nbajout + 1){
 				// Cette condition permet de savoir si on est pas sur 
@@ -266,7 +265,7 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 				// page sur elle même.
 				if (nbpages+j == nbpages+i) {} // if vide !
 				else {
-					fprintf(g, " %d %f", nbpages+j+(y*nbajout), x);
+					fprintf(g, " %d %f", nbpages+j+1+sommetsuivant, x);
 					nouveauliens++;}
 				/////// j++;
 			}
@@ -274,11 +273,11 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 			nouveausommets++;
 		}
 		x = 1/z;
-		fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre + 1);
+		fprintf(g, "%d %d", nbpages+i+sommetsuivant, degre + 1);
 		for(j = 1; j < nbajout + 1; j++){
 			if (nbpages+j == nbpages+i) {}
 			else {
-				fprintf(g, " %d %f", nbpages+j+(y*nbajout), x);
+				fprintf(g, " %d %f", nbpages+j+1+sommetsuivant, x);
 				nouveauliens++;
 			}
 		}
@@ -286,7 +285,6 @@ void ajoutcompletaleatoire (int nbajout, char* nom, int nbpages, int nbliens, in
 		nouveauliens++;
 		nouveausommets++;
 		sommetsuivant += nbajout;
-		y++;
 	}
 	fclose(g);
 
@@ -301,7 +299,6 @@ void ajoutarbrealeatoire (int nbajout, char* nom, int nbpages, int nbliens, int 
 	//initialisation
 	int degre = 1;
 	int i;
-	int y = 0;
 	int cible = 0;
 	int nouveauliens = 0;
 	int nouveausommets = 0;
@@ -324,7 +321,7 @@ void ajoutarbrealeatoire (int nbajout, char* nom, int nbpages, int nbliens, int 
 		nbsommetrestant -= nbajout;
 		printf("%d \n", nbajout);
 		
-		racine = nbpages + 1+(y*nbajout);
+		racine = nbpages+1+sommetsuivant;
 		fprintf(g, "%d %d %d 1.000000\n", racine, degre, cible);
 		nouveausommets++;
 		nouveauliens++;
@@ -346,7 +343,7 @@ void ajoutarbrealeatoire (int nbajout, char* nom, int nbpages, int nbliens, int 
 		}
 		//on réinitialise le compteur car on va commencer un nouvel arbre
 		compteur = 0;
-	y++;
+		sommetsuivant += nbajout;
 	}
 	fclose(g);
 
