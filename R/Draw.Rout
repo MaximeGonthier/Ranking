@@ -1,0 +1,39 @@
+
+R version 3.3.3 (2017-03-06) -- "Another Canoe"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R est un logiciel libre livré sans AUCUNE GARANTIE.
+Vous pouvez le redistribuer sous certaines conditions.
+Tapez 'license()' ou 'licence()' pour plus de détails.
+
+R est un projet collaboratif avec de nombreux contributeurs.
+Tapez 'contributors()' pour plus d'information et
+'citation()' pour la façon de le citer dans les publications.
+
+Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
+en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
+Tapez 'q()' pour quitter R.
+
+[Sauvegarde de la session précédente restaurée]
+
+> # pour executer le code : R CMD BATCH "Draw.R"
+> 
+> modelname = read.table("Arbre_alea.data")
+> hist(modelname[,1])
+> 
+> 
+> #~ x <- rnorm(30,7.5395e-06,4.3076e-21)
+> #~ y <- rnorm(1000,3,1)
+> #~ z <- c(x,y)
+> #~ r <- c(5.0e-22,9.0e-06)
+> #~ hist(z,freq=FALSE,col=0,ylim=c(0,0.5),20)
+> #~ plot(function(x) 0.5*dnorm(x,0,0.5),xlim=r,col=2,add=TRUE)
+> #~ plot(function(x) 0.5*dnorm(x,3,1),xlim=r,col=3,add=TRUE)
+> 
+> #~ smp <- read.csv2("Graphe_alea.csv")
+> #~ hist(smp)
+> 
+> proc.time()
+utilisateur     système      écoulé 
+      0.237       0.017       0.256 
