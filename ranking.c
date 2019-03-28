@@ -149,7 +149,7 @@ int main(int argc, char** argv) {
 	}
 	//printf("Entrez le numéro du sommet cible : \n");
 	//scanf("%d", &cible);
-	cible = 281466;
+	cible = 280545;
     
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);

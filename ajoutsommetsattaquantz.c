@@ -360,9 +360,9 @@ void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int 
 		else if (structure == 2) { ajoutanneau(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
 		else if (structure == 3) { ajoutcomplet(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
 		else if (structure == 4) { ajoutarbre(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
-		else if (structure == 5) { ajoutanneaualeatoire(50, nom, nbpages, nbliens, 2); }
-		else if (structure == 6) { ajoutcompletaleatoire(50, nom, nbpages, nbliens, 2); }
-		else if (structure == 7) { ajoutarbrealeatoire(50, nom, nbpages, nbliens, 2); }
+		else if (structure == 5) { ajoutanneaualeatoire(50, nom, nbpages, nbliens, 1); }
+		else if (structure == 6) { ajoutcompletaleatoire(50, nom, nbpages, nbliens, 1); }
+		else if (structure == 7) { ajoutarbrealeatoire(50, nom, nbpages, nbliens, 1); }
 }
 
 
