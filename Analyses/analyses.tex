@@ -3,6 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{textcomp}
+\usepackage{listings}
 
 
 \title{PROJET\\ UE Méthodes de ranking et recommandations\\ 
@@ -150,9 +151,30 @@ On considère que :\\
 			\item Augmentation de la pertinence de 630268 e-12 \%.
 		\end{itemize}
 
-	\section{OBSERVATIONS DES TESTS INITIAUX}
-		On observe que la structure à 10 sommets seuls augmente le plus la pertinance des pages cibles.\\
-		On remarque également que pour chaque structure, l'augmentation de la pertinence pour les pages cibles de pertinence moyenne et faible sont extrêmement proche (différence à 10\^-9).\\
+\section{OBSERVATIONS DES TESTS INITIAUX}
+	On observe que la structure à 10 sommets seuls augmente le plus la pertinance des pages cibles.\\
+	On remarque également que pour chaque structure, l'augmentation de la pertinence pour les pages cibles de pertinence moyenne et faible sont extrêmement proche (différence à 10\^-9).\\
+
+\section{TESTS AVEC DES GRAPHES GENERES ALEATOIREMENT}
+	Nous allons désormais insérer des graphes générés aléatoirement.
+	L'objectif de cette démarche est de déterminer quel structure est la plus efficace globalement.
+	C'est a dire quelle structure influe le plus sur la pertinence quelle que soit la situation.
+	De plus les resultats nous aiderons aussi a determiner l'impact qu'a une certaine structure sur la cible de manière plus générale 
+	que dans les cas prédéfinis de la partie précedente.
+	Le nombre de sommet des graphes ajoutées est fixé a 50.
+	La cible est également fixé ainsi que la structure des graphes ajoutées.
+	On va par exemple insérez 5 graphes complet de nombre de sommet respectivement : 25, 10, 5, 6 et 4. Tous reliées au sommet cible.
+	Dans un premier temps nous allons expliquer le code derrière cette démarche puis nous analyserons les résultats.
+	\subsection{Explication du code}
+		Tous est dans le fichier $$ajoutsommetsattanquants.c$$.
+		\begin{lstlisting}
+			Put your code here.
+		\end{lstlisting}
+	\subsection{Analyse sur une cible à pertinence faible}
+	\subsection{Analyse sur une cible à pertinence moyenne}
+	\subsection{Analyse sur une cible à pertinence forte}
+	\subsection{Conclusion sur l'impact de chaque structure}
+	\subsection{Conclusion sur l'impact en fonction de la pertinence de la cible}
 
 
 
