@@ -1,7 +1,7 @@
 # pour executer le code : R CMD BATCH "Draw.R"
 
 Complet_aleatoire = read.table("Complet_alea.data")
-hist(Complet_aleatoire[,1])
+#~ hist(Complet_aleatoire[,1])
 
 plot(density(Complet_aleatoire[,1]))
 # courbe a partir de v
