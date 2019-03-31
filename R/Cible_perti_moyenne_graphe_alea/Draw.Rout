@@ -19,21 +19,21 @@ Tapez 'q()' pour quitter R.
 
 > # pour executer le code : R CMD BATCH "Draw.R"
 > 
-> Arbre_aleatoire = read.table("Arbre_alea.data")
-> #~ hist(Arbre_aleatoire[,1])
+> Complet_aleatoire = read.table("Complet_alea.data")
+> #~ hist(Complet_aleatoire[,1])
 > 
-> plot(density(Arbre_aleatoire[,1]))
+> plot(density(Complet_aleatoire[,1]))
 > # courbe a partir de v
->  curve(dnorm(x,2.5412e-05,1.3384e-06),add=T,col="red")
+>  curve(dnorm(x,9.6176e-06,8.2171e-07),add=T,col="red")
 > 
 > # la fonction de répartition
-> curve(pnorm(x,2.5412e-05,1.3384e-06),from=2.0e-05,to=3.0e-5,col="red")
+> curve(pnorm(x,9.6176e-06,8.2171e-07),from=8e-6,to=1.2e-5,col="red")
 > 
 > 
-> #~ hist(Arbre_aleatoire[,1], col = "lightblue")
-> qqnorm(Arbre_aleatoire[,1], col="blue")
-> hist(Arbre_aleatoire[,1], col = "lightblue", prob=T)
-> den <- density(Arbre_aleatoire[,1])
+> #~ hist(Complet_aleatoire[,1], col = "lightblue")
+> qqnorm(Complet_aleatoire[,1], col="blue")
+> hist(Complet_aleatoire[,1], col = "lightblue", prob=T)
+> den <- density(Complet_aleatoire[,1])
 > lines(den, col = "red")
 > abline(v = moy, col = "black", lty ="dotted")
 Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
