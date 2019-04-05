@@ -15,6 +15,8 @@ Tapez 'demo()' pour des démonstrations, 'help()' pour l'aide
 en ligne ou 'help.start()' pour obtenir l'aide au format HTML.
 Tapez 'q()' pour quitter R.
 
+[Sauvegarde de la session précédente restaurée]
+
 > # pour executer le code : R CMD BATCH "Draw.R"
 > 
 > Anneau_aleatoire = read.table("Anneau_alea.data")
@@ -33,8 +35,11 @@ Tapez 'q()' pour quitter R.
 > hist(Anneau_aleatoire[,1], col = "lightblue", prob=T)
 > den <- density(Anneau_aleatoire[,1])
 > lines(den, col = "red")
-> abline(v = moy, col = "black", lty ="dotted")
-Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
-  objet 'moy' introuvable
-Calls: abline -> int_abline
+> #~ abline(v = moy, col = "black", lty ="dotted")
+> #~ curve(dnorm(x, moy, ecart), add=T, col="blue")
+> 
+> #~ pourcentage de valeur en 8 et 6
+> pnorm(lower.tail = 6e-06, upper.tail = 8e-06)
+Error in pnorm(lower.tail = 6e-06, upper.tail = 8e-06) : 
+  argument inutilisé (upper.tail = 8e-06)
 Exécution arrêtée

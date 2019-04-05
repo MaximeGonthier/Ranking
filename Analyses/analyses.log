@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  24 MAR 2019 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  5 APR 2019 15:23
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **analyses.tex
 (./analyses.tex
@@ -552,38 +553,65 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-) (./analyses.aux)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count95
+\lst@gtempboxa=\box26
+\lst@token=\toks21
+\lst@length=\count96
+\lst@currlwidth=\dimen106
+\lst@column=\count97
+\lst@pos=\count98
+\lst@lostspace=\dimen107
+\lst@width=\dimen108
+\lst@newlines=\count99
+\lst@lineno=\count100
+\lst@maxwidth=\dimen109
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count101
+\lst@skipnumbers=\count102
+\lst@framebox=\box27
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(./analyses.aux)
 \openout1 = `analyses.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 11.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 12.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Info: Redefining \degres on input line 11.
-LaTeX Info: Redefining \dots on input line 11.
-LaTeX Info: Redefining \up on input line 11.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Info: Redefining \degres on input line 12.
+LaTeX Info: Redefining \dots on input line 12.
+LaTeX Info: Redefining \up on input line 12.
+\c@lstlisting=\count103
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 15.
+(Font)              <12> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 15.
+(Font)              <8> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 15.
- [1
+(Font)              <6> on input line 16.
+
+[1
 
 
 
@@ -609,32 +637,22 @@ ajout d'un arbre
  [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 24--34
+Underfull \hbox (badness 10000) in paragraph at lines 23--25
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--34
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 24--34
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--44
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 35--44
+Underfull \hbox (badness 10000) in paragraph at lines 34--44
 
  []
 
@@ -684,48 +702,75 @@ Underfull \hbox (badness 10000) in paragraph at lines 65--74
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--76
+Underfull \hbox (badness 10000) in paragraph at lines 75--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 [3]
-Overfull \hbox (0.64236pt too wide) in paragraph at lines 93--93
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 103--103
 []\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
 un
  []
 
 
-Overfull \hbox (0.64236pt too wide) in paragraph at lines 110--110
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 120--120
 []\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
 un
  []
 
 
-Overfull \hbox (0.64236pt too wide) in paragraph at lines 127--127
+Overfull \hbox (0.64236pt too wide) in paragraph at lines 137--137
 []\T1/cmr/bx/n/12 Analyse des mo-di-fi-ca-tions de per-ti-nences par l'ajout d'
 un
  []
 
-[4] (./analyses.aux) ) 
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
+
+ []
+
+
+Overfull \hbox (10.86758pt too wide) in paragraph at lines 158--158
+[]\T1/cmr/bx/n/14.4 TESTS AVEC DES GRAPHES GE-NERES ALEA-
+ []
+
+[5] [6] (./analyses.aux) ) 
 Here is how much of TeX's memory you used:
- 2479 strings out of 494829
- 31493 string characters out of 6178001
- 89223 words of memory out of 5000000
- 5811 multiletter control sequences out of 15000+600000
+ 4079 strings out of 494829
+ 52415 string characters out of 6178001
+ 105571 words of memory out of 5000000
+ 7399 multiletter control sequences out of 15000+600000
  12695 words of font info for 33 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 30i,6n,30p,223b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecrm1095.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1095.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecbx1440.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecrm1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknap
-pen/ec/ecrm1728.600pk>
-Output written on analyses.pdf (5 pages, 68158 bytes).
+ 30i,6n,32p,223b,968s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm1095.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1095.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecbx1440.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
+knappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb>
+Output written on analyses.pdf (7 pages, 98142 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 293 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

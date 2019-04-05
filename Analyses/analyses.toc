@@ -2,12 +2,19 @@
 \contentsline {section}{\numberline {1}TESTS INITIAUX (ET HYPOTHESES?)}{2}
 \contentsline {subsection}{\numberline {1.1}Pagerank sur Stanford.txt (sans modification) :}{2}
 \contentsline {subsection}{\numberline {1.2}Pagerank sur Stanford.txt (ajout de 10 sommets seuls) :}{2}
-\contentsline {subsection}{\numberline {1.3}Pagerank sur Stanford.txt (ajout d'un anneau \IeC {\`a} 10 sommets) :}{2}
+\contentsline {subsection}{\numberline {1.3}Pagerank sur Stanford.txt (ajout d'un anneau \IeC {\`a} 10 sommets) :}{3}
 \contentsline {subsection}{\numberline {1.4}Pagerank sur Stanford.txt (ajout d'un graphe complet \IeC {\`a} 10 sommets) :}{3}
 \contentsline {subsection}{\numberline {1.5}Pagerank sur Stanford.txt (ajout d'un arbre binaire \IeC {\`a} 10 sommets) :}{3}
-\contentsline {section}{\numberline {2}ANALYSES}{3}
-\contentsline {subsection}{\numberline {2.1}Analyse des modifications de pertinences par l'ajout de 10 sommets seuls :}{3}
+\contentsline {section}{\numberline {2}ANALYSES}{4}
+\contentsline {subsection}{\numberline {2.1}Analyse des modifications de pertinences par l'ajout de 10 sommets seuls :}{4}
 \contentsline {subsection}{\numberline {2.2}Analyse des modifications de pertinences par l'ajout d'un anneau \IeC {\`a} 10 sommets :}{4}
 \contentsline {subsection}{\numberline {2.3}Analyse des modifications de pertinences par l'ajout d'un graphe complet \IeC {\`a} 10 sommets :}{4}
-\contentsline {subsection}{\numberline {2.4}Analyse des modifications de pertinences par l'ajout d'un arbre binaire \IeC {\`a} 10 sommets :}{4}
-\contentsline {section}{\numberline {3}OBSERVATIONS DES TESTS INITIAUX}{4}
+\contentsline {subsection}{\numberline {2.4}Analyse des modifications de pertinences par l'ajout d'un arbre binaire \IeC {\`a} 10 sommets :}{5}
+\contentsline {section}{\numberline {3}OBSERVATIONS DES TESTS INITIAUX}{5}
+\contentsline {section}{\numberline {4}TESTS AVEC DES GRAPHES GENERES ALEATOIREMENT}{5}
+\contentsline {subsection}{\numberline {4.1}Explication du code}{5}
+\contentsline {subsection}{\numberline {4.2}Analyse sur une cible \IeC {\`a} pertinence faible}{6}
+\contentsline {subsection}{\numberline {4.3}Analyse sur une cible \IeC {\`a} pertinence moyenne}{6}
+\contentsline {subsection}{\numberline {4.4}Analyse sur une cible \IeC {\`a} pertinence forte}{6}
+\contentsline {subsection}{\numberline {4.5}Conclusion sur l'impact de chaque structure}{6}
+\contentsline {subsection}{\numberline {4.6}Conclusion sur l'impact en fonction de la pertinence de la cible}{6}
