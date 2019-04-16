@@ -36,7 +36,7 @@ void ajoutsommetseul (int nbajout, char* nom, int nbpages, int nbliens, int pert
 
 void ajoutanneau (int nbajout, char* nom, int nbpages, int nbliens, int perticible, int nbstructure) {
 	//initialisation
-	int degre = 1;
+	int degre = 2;
 	int i;
 	int cible = 0;
 	
@@ -46,13 +46,13 @@ void ajoutanneau (int nbajout, char* nom, int nbpages, int nbliens, int perticib
 	else if (perticible == 3) { cible = 281574; }
 	else { cible = perticible; }
 
-	// Ecriture d'un anneau à la fin du fichier web, on relis le dernier 
-	// sommet au premier de l'anneau et à la cible.
+	// Ecriture d'un anneau à la fin du fichier web,
+	//Le dernier sommet est ecris en dehors de la boucle car le for commence a i = 1
 	//Le (y*nbajout) est la pour incrémenter le num de page a chaque itération du nb de structure a ajouter
 	FILE *g = fopen(nom,"a");
 	for (int y = 0; y < nbstructure; y++) {
 		for (i = 1; i < nbajout; i++) {
-			fprintf(g, "%d %d %d 1.000000\n", nbpages+i+(y*nbajout), degre, nbpages+i+1+(y*nbajout));
+			fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", nbpages+i+(y*nbajout), degre, nbpages+i+1+(y*nbajout), cible);
 		}
 		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", nbpages+i+(y*nbajout), 2, nbpages+1+(y*nbajout), cible);
 	}
@@ -60,18 +60,18 @@ void ajoutanneau (int nbajout, char* nom, int nbpages, int nbliens, int perticib
 
 	// Ecriture du nouveau nombre de pages et nombre de liens.
 	FILE *h = fopen(nom,"r+");
-	fprintf(h, "%d %d", nbpages+(nbajout*nbstructure), nbliens+(nbajout+1)*nbstructure);
+	fprintf(h, "%d %d", nbpages+(nbajout*nbstructure), nbliens+(nbajout*nbstructure)*2);
 	fclose(h);
 }
 
 void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int perticible, int nbstructure) {
 	//initialisation
-	int degre = nbajout - 1;
+	int degre = nbajout;
 	int i;
 	int j;
 	//Ici on utilise des float pour la valeur avec laquelle on pointe sur les autres sommets
 	float z = nbajout;
-	float x = 1/(z - 1);
+	float x = 1/z;
 	int cible = 0;
 	
 	//Choix de la cible aléatoirement ou non et en fonction de ce qu'a entré l'utilisateur
@@ -85,7 +85,7 @@ void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int pertici
 	// Ici on ecrit d'abord le degré et le while (2nd for) va ecrire les liens 
 	// vers les autres pages. 
 	for (int y = 0; y < nbstructure; y++) {
-		for (i = 1; i < nbajout; i++) {
+		for (i = 1; i < nbajout + 1; i++) {
 			/////// j = 1;
 			fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre);
 			for(j = 1; j < nbajout + 1; j++){
@@ -98,27 +98,28 @@ void ajoutcomplet (int nbajout, char* nom, int nbpages, int nbliens, int pertici
 					fprintf(g, " %d %f", nbpages+j+(y*nbajout), x);}
 				/////// j++;
 			}
-			fprintf(g, "\n");
+			fprintf(g, " %d %f\n", cible, x);
+			//~ fprintf(g, "\n");
 		}
-		// Ecriture de la dernière page, celle qui pointe sur la cible
-		x = 1/z;
-		fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre + 1);
-		for(j = 1; j < nbajout + 1; j++){
-		/////// j = 1;
-		/////// while (j != nbajout + 1){
-			if (nbpages+j == nbpages+i) {} // if vide !
-			else {
-				fprintf(g, " %d %f", nbpages+j+(y*nbajout), x);
-			}
-			/////// j++;
-		}
-		fprintf(g, " %d %f\n", cible, x);
+		// Ecriture de la derniere page
+		//~ x = 1/z;
+		//~ fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre + 1);
+		//~ for(j = 1; j < nbajout + 1; j++){
+		//~ /////// j = 1;
+		//~ /////// while (j != nbajout + 1){
+			//~ if (nbpages+j == nbpages+i) {} // if vide !
+			//~ else {
+				//~ fprintf(g, " %d %f", nbpages+j+(y*nbajout), x);
+			//~ }
+			//~ /////// j++;
+		//~ }
+		//~ fprintf(g, " %d %f\n", cible, x);
 	}
 	fclose(g);
 	
 	// Ecriture du nouveau nombre de pages et nombre de liens.
 	FILE *h = fopen(nom,"r+");
-	fprintf(h, "%d %d", nbpages+(nbajout*nbstructure), nbliens+((nbajout * (nbajout-1)) +1)*nbstructure);
+	fprintf(h, "%d %d", nbpages+(nbajout*nbstructure), nbliens+(nbajout*nbstructure)*nbajout);
 	fclose(h);
 }
 
