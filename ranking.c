@@ -142,14 +142,15 @@ int main(int argc, char** argv) {
 	t1 = clock();
 	
     // lecture du ficher
-    FILE *web = fopen("Stanford/Stanford.txt","r");
+    //~ FILE *web = fopen("Stanford/Stanford.txt","r");
+    FILE *web = fopen("web1complet.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);
 	}
 	//printf("Entrez le numéro du sommet cible : \n");
 	//scanf("%d", &cible);
-	cible = 280545;
+	cible = 5;
     
     fscanf(web, "%d\n", &n);
     fscanf(web, "%d\n", &m);
