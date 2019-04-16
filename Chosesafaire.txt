@@ -1,40 +1,26 @@
+BITE
 
-R et mesure aléatoire ? Oui struture du graphe et force arrete qui change
-Quel force mettre entre chaque sommet de la structure ? 1/n
-1 sommet seul ca peut plusieurs sommets indépendant relié a la cible ? Oui
-coder pour ajouter des sommets
-on fais le meme test 5 fois
-gagner de la pertincence grace a d'autres liens
+0	Manuel utilisateur avec des screens
+I	Test de base a 100 sommets et hypothèses sur les structures et la pertinence de la cible
+	1	Intro sur de vrai google bombing et des hypotheses extrerieures
+	2	Test
+	3	Hypothèses
+II	Test avec le nombre de graphe généré aléatoirement
+	1	Mettre la fonction de densité et les excel
+	2	Conclure sur la meilleure structure globalement
+III	Test avec un graphe généré aléatoirement de 100 sommets	
+	1	Recenser les degré et en faire un graphe avec esperence etc...
+	2	Conclure sur le degré
+IV	Test en faisant varier le nombre de sommets
+	1	Conclure sur l'efficacité de chaque structure
+	2	Conculre sur la pertincence de la cible
+V	Conclusion
+	1	La meileur structure
+	2	Le nb de sommets
+	3	La cible
+	4	Conclusion
 
-Pour chaque test :
-
-Nb itérations
-Temps
-Structure ajouté / nb sommets ajouté / leurs pertincence / le % par rapport au nb total de sommets
-La pertincence de la cible avant(faible moyen ou fort) et apres (a analyser)
-Degré avant et apres du sommet cible, pourcentage du degré modifié
-regarer la force avec laquelle on pointe sur le sommet cible (demander a maxime comment ca s'appelle exactement)
-
-ET R
-
-
-on fais en random : le nb de sommet
-					la cible ( dans un intervallle)
-
-Chercher des choses sur de vrai google bombing pour le rapport
-
-EMPIRIQUE = PAR EXPERIENCE
-
-Faut il que le sommet final du graphe complet pointe sur les autres sommets ou uniquement sur la cible ?
-
-le esxcel de maxime
-
-En gros la gen aleatoire c'est la structure choisie quoi
-Je pense un bon algo de gen aleatoire ça peut etre partir du graphe complet et enlever des arcs aléatoirement
-
-Y a ptet un inconvéniant aux sommets seul alors
-Oui je pense que c'est parce que c'est vite cramé par Google
-
+Sur pourquoi les sommets seuls sont efficaces : {
 Bah ouais c'est carrément normal
 Fais les calculs tu verras
 T'as déjà des trucs de quoi mettre dans ton rapport c'est cool 🙂
@@ -45,35 +31,4 @@ Donc si tu rajoutes 5 graphes complets de 5 sommets, tu ajoute a chaque fois des
 Alors que si tu fais 1 graphe complet de 25 sommets tu ajoute des probas de 1/24 vers la cible
 Donc si tu fais un mégagraphe au lieu de petits graphes complets
 Ça "dilue" le fait qu'ils pointent vers la cible et c'est moins pris en compte
-
-
-Bonsoir
-
-Ok pour les deux premiers points.
-
-Pour le troisième, prenez de façon déterministe 3 ou 4 points avec des pertinentes très différentes.
-
- 
-
-Jmf
-
- 
-Le 22.03.2019 02:09, Maxime Gonthier a écrit :
-
-Bonjour Monsieur,
-
- 
-
-Avec Laureline Martin nous travaillons sur le sujet 5 (Google bombing) en méthodes de ranking et nous avons des questions a propos de ce projet.
-
-C'est surtout pour eviter faire fausse route.
-
-2. a l'aide d'une création aléatoire e structures : Pour chaque structure on va générer aléatoirement sa taille et le nombre de structures a ajouter (tout en gardant un nombre de sommet ajouté fixe) et on regarde l'impact sur la pertinence d'un sommet cible. + loi normale etc...
-
- 
-
-3. a l'aide d'une cible aléatoire : on fixe les structure mais le sommet cible est choisis aléatoirement et on regarde quelle structure est globalement la plus efficace. + loi normale etc...
-
-
-En random = graphe de taille minimum 3!
-
+}
