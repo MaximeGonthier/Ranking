@@ -1,4 +1,5 @@
 BITE
+ATTENTION MAINTENANT Y A ARBRE ATTAQUANT SEUL EN PLUS POUR LES TESTS INITIAUX
 
 0	Manuel utilisateur avec des screens
 I	Test de base a 100 sommets et hypothèses sur les structures et la pertinence de la cible
