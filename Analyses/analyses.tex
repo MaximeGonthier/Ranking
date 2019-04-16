@@ -4,6 +4,7 @@
 \usepackage[french]{babel}
 \usepackage{textcomp}
 \usepackage{listings}
+\usepackage{pdfpages}
 \usepackage{array}
 
 \title{PROJET\\ UE Méthodes de ranking et recommandations\\ 
@@ -185,14 +186,15 @@ On considère que :\\
 		avec $nbajout$ représentant le nombre de sommets. A la fin de cette itération $nbajout$ reprends un nombre aléatoire qui cette fois
 		prend une valeur entre 0 et 50 moins le nombre de sommets ajouté precedement représenté par $nouveausommets$.
 	\subsection{Résultats des tests}
-		\subsubsection{Cible à pertincence faible}
-		\subsubsection{Cible à pertincence moyenne}
-		\subsubsection{Cible à pertincence forte}
+		\subsubsection{Graphes en anneau}
+		\subsubsection{Graphes complet}
+		\subsubsection{Arbres}
 
 
-	\subsection{Analyse sur une cible à pertinence faible}
-	\subsection{Analyse sur une cible à pertinence moyenne}
-	\subsection{Analyse sur une cible à pertinence forte}
+	\subsection{Analyse Graphes en anneau}
+		\includepdf[pages = {1-4}]{../R/Cible_perti_faible_graphe_alea/hist_alea_anneau.pdf}
+	\subsection{Analyses Graphes complet}
+	\subsection{Analyses Arbres}
 	\subsection{Conclusion sur l'impact de chaque structure}
 	\subsection{Conclusion sur l'impact en fonction de la pertinence de la cible}
 

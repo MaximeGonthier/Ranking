@@ -15,11 +15,13 @@
 \contentsline {subsection}{\numberline {1.4}Conclusion des tests initiaux et hypoth\IeC {\`e}ses}{5}
 \contentsline {section}{\numberline {2}Tests avec des graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{5}
 \contentsline {subsection}{\numberline {2.1}Explication du code}{5}
-\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultats des tests}{7}
-\contentsline {subsubsection}{\numberline {2.2.1}Cible \IeC {\`a} pertincence faible}{7}
-\contentsline {subsection}{\numberline {2.3}Analyse sur une cible \IeC {\`a} pertinence faible}{8}
-\contentsline {subsection}{\numberline {2.4}Analyse sur une cible \IeC {\`a} pertinence moyenne}{8}
-\contentsline {subsection}{\numberline {2.5}Analyse sur une cible \IeC {\`a} pertinence forte}{8}
-\contentsline {subsection}{\numberline {2.6}Conclusion sur l'impact de chaque structure}{8}
-\contentsline {subsection}{\numberline {2.7}Conclusion sur l'impact en fonction de la pertinence de la cible}{8}
-\contentsline {section}{\numberline {3}Conclusion}{8}
+\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultats des tests}{6}
+\contentsline {subsubsection}{\numberline {2.2.1}Graphes en anneau}{6}
+\contentsline {subsubsection}{\numberline {2.2.2}Graphes complet}{6}
+\contentsline {subsubsection}{\numberline {2.2.3}Arbres}{6}
+\contentsline {subsection}{\numberline {2.3}Analyse Graphes en anneau}{6}
+\contentsline {subsection}{\numberline {2.4}Analyses Graphes complet}{11}
+\contentsline {subsection}{\numberline {2.5}Analyses Arbres}{11}
+\contentsline {subsection}{\numberline {2.6}Conclusion sur l'impact de chaque structure}{11}
+\contentsline {subsection}{\numberline {2.7}Conclusion sur l'impact en fonction de la pertinence de la cible}{11}
+\contentsline {section}{\numberline {3}Conclusion}{11}
