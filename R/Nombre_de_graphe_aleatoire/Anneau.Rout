@@ -19,24 +19,15 @@ Tapez 'q()' pour quitter R.
 
 > # pour executer le code : R CMD BATCH "Draw.R"
 > 
-> Complet_aleatoire = read.table("Complet_alea.data")
-> #~ hist(Complet_aleatoire[,1])
+> Anneau_aleatoire = read.table("Anneau.data")
 > 
-> plot(density(Complet_aleatoire[,1]))
+> #~ hist(Anneau_aleatoire[,1])
+> 
+> plot(density(Anneau_aleatoire[,1]))
 > # courbe a partir de v
->  curve(dnorm(x,9.6176e-06,8.2171e-07),add=T,col="red")
-> 
-> # la fonction de répartition
-> curve(pnorm(x,9.6176e-06,8.2171e-07),from=8e-6,to=1.2e-5,col="red")
+>  curve(dnorm(x,1.72e-04,5.75759e-07),add=T,col="red")
 > 
 > 
-> #~ hist(Complet_aleatoire[,1], col = "lightblue")
-> qqnorm(Complet_aleatoire[,1], col="blue")
-> hist(Complet_aleatoire[,1], col = "lightblue", prob=T)
-> den <- density(Complet_aleatoire[,1])
-> lines(den, col = "red")
-> abline(v = moy, col = "black", lty ="dotted")
-Error in int_abline(a = a, b = b, h = h, v = v, untf = untf, ...) : 
-  objet 'moy' introuvable
-Calls: abline -> int_abline
-Exécution arrêtée
+> proc.time()
+utilisateur     système      écoulé 
+      0.249       0.022       0.531 

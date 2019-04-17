@@ -2,9 +2,10 @@ BITE
 ATTENTION MAINTENANT Y A ARBRE ATTAQUANT SEUL EN PLUS POUR LES TESTS INITIAUX
 
 0	Manuel utilisateur avec des screens
+1	Intro sur de vrai google bombing et des hypotheses extrerieures
 I	Test de base a 100 sommets et hypothèses sur les structures et la pertinence de la cible
-	1	Intro sur de vrai google bombing et des hypotheses extrerieures
-	2	Test
+	1	Intro
+	2	Test et excel
 	3	Hypothèses
 II	Test avec le nombre de graphe généré aléatoirement
 	1	Mettre la fonction de densité et les excel
@@ -12,9 +13,11 @@ II	Test avec le nombre de graphe généré aléatoirement
 III	Test avec un graphe généré aléatoirement de 100 sommets	
 	1	Recenser les degré et en faire un graphe avec esperence etc...
 	2	Conclure sur le degré
+	3 Graphe avec les probas
 IV	Test en faisant varier le nombre de sommets
 	1	Conclure sur l'efficacité de chaque structure
 	2	Conculre sur la pertincence de la cible
+(Si on a letemps partie ou une cible pertinencete pointe vers nous avant
 V	Conclusion
 	1	La meileur structure
 	2	Le nb de sommets
