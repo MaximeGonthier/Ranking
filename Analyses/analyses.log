@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  15 APR 2019 13:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  15 APR 2019 19:19
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **analyses.tex
 (./analyses.tex
@@ -728,20 +727,11 @@ Overfull \hbox (15.06093pt too wide) in paragraph at lines 172--175
 ML/cmm/m/it/10.95 ajoutarbrealeatoire$\T1/cmr/m/n/10.95 .
  []
 
-[5]
-Overfull \hbox (392.7741pt too wide) in paragraph at lines 189--261
-[][] 
- []
-
-[6]
-Overfull \vbox (406.96754pt too high) has occurred while \output is active []
-
-
-[7] [8] (./analyses.aux) ) 
+[5] [6] (./analyses.aux) ) 
 Here is how much of TeX's memory you used:
  4121 strings out of 494829
  52935 string characters out of 6178001
- 122227 words of memory out of 5000000
+ 107227 words of memory out of 5000000
  7438 multiletter control sequences out of 15000+600000
  12695 words of font info for 33 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -755,10 +745,10 @@ knappen/ec/ecrm1200.600pk> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/j
 knappen/ec/ecrm1728.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb>
-Output written on analyses.pdf (9 pages, 104867 bytes).
+Output written on analyses.pdf (7 pages, 98315 bytes).
 PDF statistics:
- 306 PDF objects out of 1000 (max. 8388607)
- 52 compressed objects within 1 object stream
+ 296 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
