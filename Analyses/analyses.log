@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  17 APR 2019 19:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2017.9.4)  17 APR 2019 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -670,31 +670,34 @@ Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \NC@list=\toks24
 \extratabsurround=\skip51
 \backup@length=\skip52
+)
+(/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip53
 ) (./analyses.aux)
 \openout1 = `analyses.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 14.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Info: Redefining \degres on input line 14.
-LaTeX Info: Redefining \dots on input line 14.
-LaTeX Info: Redefining \up on input line 14.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Info: Redefining \degres on input line 15.
+LaTeX Info: Redefining \dots on input line 15.
+LaTeX Info: Redefining \up on input line 15.
 \c@lstlisting=\count107
 \AtBeginShipoutBox=\box30
 
@@ -769,11 +772,11 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 18.
+(Font)              <12> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 18.
+(Font)              <8> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 18.
+(Font)              <6> on input line 19.
  [1
 
 
@@ -788,231 +791,254 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  [1
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 39--42
+Underfull \hbox (badness 10000) in paragraph at lines 40--43
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--62
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--62
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--62
+Underfull \hbox (badness 10000) in paragraph at lines 53--63
 
  []
 
-[2]
-<Captures/ranking1.PNG, id=19, 775.39688pt x 315.42844pt>
+<Captures/ranking1.PNG, id=14, 775.39688pt x 315.42844pt>
 File: Captures/ranking1.PNG Graphic file (type png)
 <use Captures/ranking1.PNG>
-Package pdftex.def Info: Captures/ranking1.PNG  used on input line 63. on input
- line 63.
+Package pdftex.def Info: Captures/ranking1.PNG  used on input line 64. on input
+ line 64.
 Package pdftex.def Info: Requested size: 387.6975pt x 157.71382pt on input line
- 63.
-
-Overfull \hbox (44.6975pt too wide) in paragraph at lines 63--64
-[][] 
- []
-
-
-Overfull \hbox (15.06093pt too wide) in paragraph at lines 82--85
-\T1/cmr/m/n/10.95 sées sont $\OML/cmm/m/it/10.95 ajoutanneaualeatoire$\T1/cmr/m
-/n/10.95 , $\OML/cmm/m/it/10.95 ajoutcompletaleatoire$ \T1/cmr/m/n/10.95 et $\O
-ML/cmm/m/it/10.95 ajoutarbrealeatoire$\T1/cmr/m/n/10.95 .
+ 64.
+[2]
+Overfull \hbox (48.07283pt too wide) in paragraph at lines 83--86
+[]\T1/cmr/m/n/10.95 Tous est dans le fi-chier $\OML/cmm/m/it/10.95 ajoutsommets
+attanquants:c$\T1/cmr/m/n/10.95 . Les fonc-tions uti-li-sées sont $\OML/cmm/m/i
+t/10.95 ajoutanneaualeatoire$\T1/cmr/m/n/10.95 ,
  []
 
 [3 <./Captures/ranking1.PNG>]
-<Captures/ranking2.PNG, id=25, 504.38437pt x 607.51968pt>
+<Captures/ranking2.PNG, id=26, 387.69844pt x 467.49657pt>
 File: Captures/ranking2.PNG Graphic file (type png)
 <use Captures/ranking2.PNG>
-Package pdftex.def Info: Captures/ranking2.PNG  used on input line 98. on input
- line 98.
-Package pdftex.def Info: Requested size: 252.19156pt x 303.7591pt on input line
- 98.
-<Captures/ranking3.PNG, id=26, 618.05907pt x 145.29282pt>
+Package pdftex.def Info: Captures/ranking2.PNG  used on input line 99. on input
+ line 99.
+Package pdftex.def Info: Requested size: 193.84874pt x 233.74771pt on input lin
+e 99.
+<Captures/ranking3.PNG, id=27, 618.05907pt x 145.29282pt>
 File: Captures/ranking3.PNG Graphic file (type png)
 <use Captures/ranking3.PNG>
-Package pdftex.def Info: Captures/ranking3.PNG  used on input line 100. on inpu
-t line 100.
+Package pdftex.def Info: Captures/ranking3.PNG  used on input line 101. on inpu
+t line 101.
 Package pdftex.def Info: Requested size: 309.02878pt x 72.64622pt on input line
- 100.
+ 101.
 
-Underfull \hbox (badness 10000) in paragraph at lines 98--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--103
 
  []
 
-[4]
-<../R/Nombre_de_graphe_aleatoire/Anneau.pdf, id=31, pagebox=cropbox, 505.89pt x
+<../R/Nombre_de_graphe_aleatoire/Anneau.pdf, id=28, pagebox=cropbox, 505.89pt x
  505.89pt>
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf  used on in
-put line 104. on input line 104.
+put line 105. on input line 105.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 104.
+e 105.
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf  used on in
-put line 104. on input line 104.
+put line 105. on input line 105.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 104.
-<../R/Nombre_de_graphe_aleatoire/Anneau.pdf, id=34, page=1, pagebox=cropbox, 50
+e 105.
+<../R/Nombre_de_graphe_aleatoire/Anneau.pdf, id=31, page=1, pagebox=cropbox, 50
 5.89pt x 505.89pt>
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf , page1 use
-d on input line 104. on input line 104.
+d on input line 105. on input line 105.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 104.
+e 105.
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf , page1 use
-d on input line 104. on input line 104.
+d on input line 105. on input line 105.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 104.
- [5 <./Captures/ranking2.PNG> <./Captures/ranking3.PNG>]
+e 105.
+[4 <./Captures/ranking2.PNG> <./Captures/ranking3.PNG>]
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf , page1 use
-d on input line 104. on input line 104.
+d on input line 105. on input line 105.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 104.
+e 105.
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf , page1 use
-d on input line 104. on input line 104.
+d on input line 105. on input line 105.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 104.
+e 105.
 File: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Anneau.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Anneau.pdf , page1 use
-d on input line 104. on input line 104.
+d on input line 105. on input line 105.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 104.
- [6 <../R/Nombre_de_graphe_aleatoire/Anneau.pdf>]
-<../R/Nombre_de_graphe_aleatoire/Complet.pdf, id=50, pagebox=cropbox, 505.89pt 
+e 105.
+ [5 <../R/Nombre_de_graphe_aleatoire/Anneau.pdf>]
+<../R/Nombre_de_graphe_aleatoire/Complet.pdf, id=46, pagebox=cropbox, 505.89pt 
 x 505.89pt>
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf  used on i
-nput line 106. on input line 106.
+nput line 107. on input line 107.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 106.
+e 107.
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf  used on i
-nput line 106. on input line 106.
+nput line 107. on input line 107.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 106.
-<../R/Nombre_de_graphe_aleatoire/Complet.pdf, id=53, page=1, pagebox=cropbox, 5
+e 107.
+<../R/Nombre_de_graphe_aleatoire/Complet.pdf, id=49, page=1, pagebox=cropbox, 5
 05.89pt x 505.89pt>
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf , page1 us
-ed on input line 106. on input line 106.
+ed on input line 107. on input line 107.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 106.
+e 107.
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf , page1 us
-ed on input line 106. on input line 106.
+ed on input line 107. on input line 107.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 106.
- [7]
+e 107.
+ [6]
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf , page1 us
-ed on input line 106. on input line 106.
+ed on input line 107. on input line 107.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 106.
+e 107.
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf , page1 us
-ed on input line 106. on input line 106.
+ed on input line 107. on input line 107.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 106.
+e 107.
 File: ../R/Nombre_de_graphe_aleatoire/Complet.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Complet.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Complet.pdf , page1 us
-ed on input line 106. on input line 106.
+ed on input line 107. on input line 107.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 106.
- [8 <../R/Nombre_de_graphe_aleatoire/Complet.pdf>]
-<../R/Nombre_de_graphe_aleatoire/Arbre.pdf, id=66, pagebox=cropbox, 505.89pt x 
+e 107.
+ [7 <../R/Nombre_de_graphe_aleatoire/Complet.pdf>]
+<../R/Nombre_de_graphe_aleatoire/Arbre.pdf, id=63, pagebox=cropbox, 505.89pt x 
 505.89pt>
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf  used on inp
-ut line 108. on input line 108.
+ut line 109. on input line 109.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 108.
+e 109.
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf  used on inp
-ut line 108. on input line 108.
+ut line 109. on input line 109.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 108.
-<../R/Nombre_de_graphe_aleatoire/Arbre.pdf, id=69, page=1, pagebox=cropbox, 505
+e 109.
+<../R/Nombre_de_graphe_aleatoire/Arbre.pdf, id=66, page=1, pagebox=cropbox, 505
 .89pt x 505.89pt>
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf , page1 used
- on input line 108. on input line 108.
+ on input line 109. on input line 109.
 Package pdftex.def Info: Requested size: 505.88875pt x 505.88875pt on input lin
-e 108.
+e 109.
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf , page1 used
- on input line 108. on input line 108.
+ on input line 109. on input line 109.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 108.
- [9]
+e 109.
+[8]
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf , page1 used
- on input line 108. on input line 108.
+ on input line 109. on input line 109.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 108.
+e 109.
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf , page1 used
- on input line 108. on input line 108.
+ on input line 109. on input line 109.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 108.
+e 109.
 File: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf Graphic file (type pdf)
 <use ../R/Nombre_de_graphe_aleatoire/Arbre.pdf, page 1>
 Package pdftex.def Info: ../R/Nombre_de_graphe_aleatoire/Arbre.pdf , page1 used
- on input line 108. on input line 108.
+ on input line 109. on input line 109.
 Package pdftex.def Info: Requested size: 598.55833pt x 598.55833pt on input lin
-e 108.
- [10 <../R/Nombre_de_graphe_aleatoire/Arbre.pdf>] [11] (./analyses.aux) ) 
+e 109.
+ [9 <../R/Nombre_de_graphe_aleatoire/Arbre.pdf>]
+<Captures/ranking4.PNG, id=79, 672.26157pt x 557.83406pt>
+File: Captures/ranking4.PNG Graphic file (type png)
+<use Captures/ranking4.PNG>
+Package pdftex.def Info: Captures/ranking4.PNG  used on input line 114. on inpu
+t line 114.
+Package pdftex.def Info: Requested size: 336.12996pt x 278.91634pt on input lin
+e 114.
+
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+<Captures/ranking5.PNG, id=80, 836.3747pt x 738.50906pt>
+File: Captures/ranking5.PNG Graphic file (type png)
+<use Captures/ranking5.PNG>
+Package pdftex.def Info: Captures/ranking5.PNG  used on input line 119. on inpu
+t line 119.
+Package pdftex.def Info: Requested size: 501.82869pt x 443.10886pt on input lin
+e 119.
+
+Overfull \hbox (65.8608pt too wide) in paragraph at lines 119--120
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[10 <./Captures/ranking4.PNG>] [11 <./Captures/ranking5.PNG>] (./analyses.aux) 
+) 
 Here is how much of TeX's memory you used:
- 6644 strings out of 494829
- 90995 string characters out of 6178001
- 153230 words of memory out of 5000000
- 9852 multiletter control sequences out of 15000+600000
+ 6674 strings out of 494829
+ 91582 string characters out of 6178001
+ 154287 words of memory out of 5000000
+ 9876 multiletter control sequences out of 15000+600000
  12695 words of font info for 33 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  41i,18n,43p,275b,968s stack positions out of 5000i,500n,10000p,200000b,80000s
- </hom
-e/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </hom
-e/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk> </hom
-e/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk> </hom
-e/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </hom
-e/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </hom
-e/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on analyses.pdf (12 pages, 197141 bytes).
+ </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk
+> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1095.600pk
+> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1095.600pk
+> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk
+> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk
+> </home/user/.texlive2017/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on analyses.pdf (12 pages, 263574 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
+ 368 PDF objects out of 1000 (max. 8388607)
  74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 76 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 
