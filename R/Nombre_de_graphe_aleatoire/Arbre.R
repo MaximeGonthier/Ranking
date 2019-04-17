@@ -6,5 +6,5 @@ Anneau_aleatoire = read.table("Arbre.data")
 
 plot(density(Anneau_aleatoire[,1]))
 # courbe a partir de v
- curve(dnorm(x,1.15e-04,4.06743e-06),add=T,col="red")
+ curve(dnorm(x,1.74e-04,7.34697e-07),add=T,col="red")
 
