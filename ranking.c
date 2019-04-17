@@ -143,12 +143,16 @@ int main(int argc, char** argv) {
 	
     // lecture du ficher
     FILE *web = fopen("Stanford/Stanford.txt","r");
+    //~ FILE *web = fopen("web1complet.txt","r");
     
     if (web == NULL) {
 		exit(EXIT_FAILURE);
 	}
-	//printf("Entrez le numéro du sommet cible : \n");
-	//scanf("%d", &cible);
+	//~ printf("Entrez le numéro du sommet cible : \n");
+	//~ scanf("%d", &cible);
+	//~ if (cible == 1) { cible = 280545; }
+	//~ else if (cible == 2) { cible = 281466;}
+	//~ else if (cible == 3) { cible = 281574; }
 	cible = 280545;
     
     fscanf(web, "%d\n", &n);
