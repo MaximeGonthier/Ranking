@@ -1,16 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+#include "ranking.h"
 
 #define alpha 0.85
-
-typedef struct triplet {
-	int i;
-	int j; 
-	double proba;
-	struct triplet *next; 
-} TRIPLET;
 
 TRIPLET* inserer_triplet(int pageC, int pageS, double proba, TRIPLET* next) {
 	TRIPLET *t = malloc(sizeof(TRIPLET));
@@ -131,7 +121,7 @@ int succes_fscanf(int fsc1, int fsc2) {
 	return (fsc1 == 1 && fsc2 == 1);
 }
 
-int main(int argc, char** argv) {
+void pagerank(int argc, char** argv) {
 	int i, j, k; 
 	int n, m;
 	

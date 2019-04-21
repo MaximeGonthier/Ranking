@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <time.h>
+#include "ajoutsommetsattaquants.h"
 //./a.out nomfichier.txt 
 //changer nb pages et de liens
 //pertinence : 
@@ -515,7 +511,7 @@ void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int 
 }
 
 
-int main(int argc, char** argv) {
+void sommetsattaquants(int argc, char** argv) {
 	// cible c'est le n° de page de la cible
 	int structure, nbstructure, nbajout, nbpages, nbliens, cible;
 	srandom(time(NULL));
@@ -554,6 +550,4 @@ int main(int argc, char** argv) {
 	}
 
 	ajoutstructure(structure, nbstructure, nbajout, argv[1], nbpages, nbliens, cible);	
-	
-	return 0;
 }
