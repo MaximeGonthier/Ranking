@@ -6,6 +6,7 @@
 \usepackage{listings}
 \usepackage{pdfpages}
 \usepackage{array}
+\usepackage{fullpage}
 
 \title{PROJET\\ UE Méthodes de ranking et recommandations\\ 
 		Sujet 5 : Simulation d'un Google Bombing}
@@ -34,7 +35,7 @@
 	Puis nous testerons la meme choses avec cette fois ci un graphe dont les arcs le reliant a lui meme sont générées aléatoirement.
 	Enfin nous ferons varier le nombre de sommets du graphe ataquant pour en déduire son efficacité et nous conclurons.
 	
-\section{I.	Tests initiaux et hypothèses}
+\section{I.		Expériences initiales et hypothèses}
 	
 	L'algorithme power calculant les pertinences est contenu dans le fichier $ranking.c$. Il n'est pas détaillé dans ce rapport mais le fichier est commenté.
 	On considère ici le graphe du web Stanford.txt. Ce graphe est modifié par l'ajout de sommets et d'arcs afin d'augmenter la valeur d'un sommet ciblé.\\
@@ -68,7 +69,7 @@
 	\subsection{Conclusion des tests initiaux et hypothèses}
 		
 
-\section{II.	Tests avec un nombre de graphes générés aléatoirement}
+\section{II.	Expériences avec un nombre de graphes générés aléatoirement}
 	Nous allons désormais insérer des graphes générés aléatoirement. Ce qui est aléatoire n'est pas la structure des graphes mais le nombre de garphes générés.
 	L'objectif de cette démarche est de déterminer quel structure est la plus efficace globalement.
 	C'est a dire quelle structure influe le plus sur la pertinence quelle que soit la situation.
@@ -108,8 +109,16 @@
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
 	\subsection{Conclusion sur l'impact de chaque structure}
 
-\section{III.	Expériences avec un graphe aléatoire}
+\section{III.	Expériences avec un graphe de degré aléatoire}
+	\subsection{Résultats des tests}
+		\includegraphics[scale = 0.5]{Captures/ranking4.PNG}\\
+	\subsection{Analyses}
 	
-\section{Conclusion}
+\section{IV.	Expériences sur l'efficacité}
+	\subsection{Résultats des tests}
+		\includegraphics[scale = 0.6]{Captures/ranking5.PNG}\\
+	\subsection{Analyses}
+	
+\section{V.		Conclusion}
 
 \end{document}

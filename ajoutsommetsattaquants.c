@@ -429,7 +429,6 @@ void ajout_graphe_aleatoire(int nbajout, char* nom,int nbpages,int nbliens,int p
 				while (sommet_aleatoire == nbpages+i){
 					sommet_aleatoire = rand()%(nbpages+100 - nbpages) + nbpages;
 				}
-				printf("\n Le sommet choisis est : %d \n",sommet_aleatoire);
 			k = 1;
 			for(j = 0; j < degre - 1; j++){
 				if (sommet_aleatoire + j > nbpages+100) {
@@ -479,7 +478,6 @@ void ajout_graphe_aleatoire_avec_proba(int nbajout, char* nom,int nbpages,int nb
 				while (sommet_aleatoire == nbpages+i){
 					sommet_aleatoire = rand()%(nbpages+100 - nbpages) + nbpages;
 				}
-				printf("\n Le sommet choisis est : %d \n",sommet_aleatoire);
 			k = 1;
 			for(j = 0; j < degre - 1; j++){
 				if (sommet_aleatoire + j > nbpages+100) {
@@ -512,7 +510,7 @@ void ajoutstructure(int structure, int nbstructure, int nbajout, char* nom, int 
 		else if (structure == 6) { ajoutcompletaleatoire(100, nom, nbpages, nbliens, 1); }
 		else if (structure == 7) { ajoutarbrealeatoire(100, nom, nbpages, nbliens, 1); }
 		else if (structure == 8) { ajoutarbre_attaquantunique(nbajout, nom, nbpages, nbliens, cible, nbstructure); }
-		else if (structure == 9) { ajout_graphe_aleatoire(100, nom, nbpages, nbliens, cible, nbstructure); }
+		else if (structure == 9) { ajout_graphe_aleatoire(100, nom, nbpages, nbliens, 1, 1); }
 		else if (structure == 10) { ajout_graphe_aleatoire_avec_proba(100, nom, nbpages, nbliens, cible, 0.1); }
 }
 
@@ -537,7 +535,7 @@ int main(int argc, char** argv) {
 	printf("Entrez la structure que vous voulez insérer : \n 1 pour un sommet seul \n 2 pour un anneau \n 3 pour un graphe complet \n 4 pour un arbre \n 5 pour un nombre d'anneaux aléatoire \n 6 pour un nombre de graphes complet aléatoire \n 7 pour un nombre d'arbres aléatoire\n 8 pour un arbre a attaquant unique\n 9 pour un graphe de 100 sommets avec un degré aléatoire\n 10 pour un graphe avec une certaine probabilité de connecter les sommets entre eux\n");
 	scanf("%d", &structure);
 	
-	if ((structure == 5) || (structure == 6) || (structure == 7)) { }
+	if ((structure == 5) || (structure == 6) || (structure == 7) || (structure == 9)) { }
 	else { 
 
 	if (structure != 1) {
