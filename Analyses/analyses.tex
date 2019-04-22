@@ -6,7 +6,6 @@
 \usepackage{listings}
 \usepackage{pdfpages}
 \usepackage{array}
-\usepackage{fullpage}
 
 \title{PROJET\\ UE Méthodes de ranking et recommandations\\ 
 		Sujet 5 : Simulation d'un Google Bombing}
@@ -21,12 +20,21 @@
 
 \newpage
 \tableofcontents
-\newpage
 
+\newpage
 \section{Introduction}
-	
-	
+	Le but de ce projet est de simuler, d'évaluer et de proposer la méthode la plus efficae pour un Google Bombing. Il s'agit d'une technique d'attaque sur le graphe du web afin d'augmenter la pertinence d'une page cible. Pour cela, plusieurs attaquants créent des pages et y insèrent des liens vers une page cible à attaquer. Plusieurs structures de pages attaquantes sont possibles :
+	\begin{itemize}
+		\item seul
+		\item complet
+		\item anneau
+		\item arbre
+	\end{itemize}
+	Nous allons tester ces différentes structures sur des pages de pertinences différentes et déterminer quelle est la structures la plus avantageuse pour obtenir la pertinence la plus forte possible.
+
 \section{Manuel utilisateur}
+	Notre application se lance grâce à la commande \texttt{make} suivie de fichier ".txt" à modifier.
+	
 
 \section{Plan}
 	Dans un premier temps nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
@@ -35,8 +43,7 @@
 	Puis nous testerons la meme choses avec cette fois ci un graphe dont les arcs le reliant a lui meme sont générées aléatoirement.
 	Enfin nous ferons varier le nombre de sommets du graphe ataquant pour en déduire son efficacité et nous conclurons.
 	
-\section{I.		Expériences initiales et hypothèses}
-	
+\section{I.	Tests initiaux et hypothèses}
 	L'algorithme power calculant les pertinences est contenu dans le fichier $ranking.c$. Il n'est pas détaillé dans ce rapport mais le fichier est commenté.
 	On considère ici le graphe du web Stanford.txt. Ce graphe est modifié par l'ajout de sommets et d'arcs afin d'augmenter la valeur d'un sommet ciblé.\\
 	On considère que :\\
@@ -47,7 +54,9 @@
 		\item Le sommet cible représente la page dont on souhaite augmenter la pertinence.
 		\item 100 sommets sont ajoutés pour chaque test.
 	\end{itemize}
-	\subsection{Explication du code}
+	\subsection{Explications du code}
+	A faire.
+
 	\subsection{Résultats des tests initiaux}
 		\subsubsection{Stanford.txt sans modification}
 			281903 pages\\
@@ -62,14 +71,18 @@
 			\\
 		\subsubsection{Résultats}
 			\includegraphics[scale = 0.5]{Captures/ranking1.PNG}
+
 		\subsubsection{Analyses}
+		A faire.
 			
 		\subsubsection{Hypothèses}
+		A faire.
 			
 	\subsection{Conclusion des tests initiaux et hypothèses}
+	A faire.
 		
 
-\section{II.	Expériences avec un nombre de graphes générés aléatoirement}
+\section{II.	Tests avec un nombre de graphes générés aléatoirement}
 	Nous allons désormais insérer des graphes générés aléatoirement. Ce qui est aléatoire n'est pas la structure des graphes mais le nombre de garphes générés.
 	L'objectif de cette démarche est de déterminer quel structure est la plus efficace globalement.
 	C'est a dire quelle structure influe le plus sur la pertinence quelle que soit la situation.
@@ -109,16 +122,8 @@
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
 	\subsection{Conclusion sur l'impact de chaque structure}
 
-\section{III.	Expériences avec un graphe de degré aléatoire}
-	\subsection{Résultats des tests}
-		\includegraphics[scale = 0.5]{Captures/ranking4.PNG}\\
-	\subsection{Analyses}
+\section{III.	Expériences avec un graphe aléatoire}
 	
-\section{IV.	Expériences sur l'efficacité}
-	\subsection{Résultats des tests}
-		\includegraphics[scale = 0.6]{Captures/ranking5.PNG}\\
-	\subsection{Analyses}
-	
-\section{V.		Conclusion}
+\section{Conclusion}
 
 \end{document}
