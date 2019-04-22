@@ -16,7 +16,7 @@
 \pagenumbering{gobble}\clearpage
 	\pagenumbering{gobble}\clearpage
 	\maketitle
-	\newpage\clearpage\pagenumberi ng{arabic}
+	\newpage\clearpage\pagenumbering{arabic}
 
 \newpage
 \tableofcontents
@@ -33,7 +33,18 @@
 	Nous allons tester ces différentes structures sur des pages de pertinences différentes et déterminer quelle est la structures la plus avantageuse pour obtenir la pertinence la plus forte possible.
 
 \section{Manuel utilisateur}
-	Notre application se lance grâce à la commande \texttt{make} suivie de fichier ".txt" à modifier.
+	Notre application se lance grâce à la commande \texttt{make all} suivie de fichier ".txt" à modifier.
+	\texttt{make clean} pour nettoyer et \texttt{make compil} pour simplement compiler.\\
+	Apres le make all voila ce qui s'affiche : \\
+	\includegraphics[scale = 0.5]{Captures/manuel.png}\\
+	Dans un premier temps l'utilisateur choisis la structure qu'il veut ajouter au graphe du web.
+	Il y a des structures simples (arbre, anneau, graphe complet sommet seuls), des structures moins conventionelles (arbre a attaquant unique, un arbre ou seul le sommet racine pointe vers la cible).
+	On peut aussi ajouter un nombre de structures aléatoires (avec une limitation de 100 sommets). On peut également insérer un graphe de degré aléatoire ou un graphe dont le degré est une probabilité.
+	Ensuite l'utilisateur va entrer le nombre de structures qu'il veut, cela ne s'applique pas pour les structures numéro 5,6 et 7. 
+	Ensuite on entre le nombre de sommets de la ou les structures à ajouter. 
+	Puis on entre le sommet cible. Le numéro du sommet cible est demandé une seconde fois pour savoir quel sommet sera donné en résultats.
+	Enfin le programme affiche le nombre de pages/liens, le temps d'éxecution et la pertinence du sommet cible.\\
+	
 
 \section{Plan}
 	Dans un premier temps nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
@@ -71,13 +82,7 @@
 		\subsubsection{Résultats}
 			\includegraphics[scale = 0.5]{Captures/ranking1.PNG}
 
-		\subsubsection{Analyses}
-		A faire.
-			
-		\subsubsection{Hypothèses}
-		A faire.
-			
-	\subsection{Conclusion des tests initiaux et hypothèses}
+	\subsection{Conclusion des tests initiaux}
 		Cinq structures différentes sont ajoutées : des sommets seuls, un graphe complet, un anneau, un arbre et un arbre a attaquant unique. L'arbre a attaquant unique est un arbre dont seul le sommet racin est relié 
 		à la cible. L'objectif de cette structure est de minimiser le nombre de sommets reliées a la cible pour ainsi minimiser les chances de se faire repérer lors de l'attaque.\\
 		On observe pour chaque cible que la structure la plus efficace est le sommet seul, suivis de l'arbe, de l'anneau, de l'arbre a attaquant unique et enfin du graphe complet.\\
@@ -157,10 +162,19 @@
 \section{IV.	Expériences sur l'efficacité}
 	
 	\subsection{Résultats des tests}
-		\includegraphics[scale = 0.6]{Captures/ranking5.PNG}\\
-	
+		\includegraphics[scale = 0.5]{Captures/ranking5.PNG}\\
+		Ici nous avons testé chaque structure sur trois cibles différentes, tout en faisant varier le nombre de sommets par structure. 
+		Le pourcentage de modification est calculé ainsi que l'efficacité calculé en divisant la différence par rapport a la pertinence initiale par le nombre de sommets ajoutés.\\
 	\subsection{Analyses}
-		Ici nous av
+		On observe que, toute pertinences confondus, la structure qui modifie le plus la cible est l'arbre, suivis de l'anneau, de l'arbre à attaquant unique et enfin du graphe complet.
+		Cela confirme nos hypothèses des tests initiaux. La raison de cet efficacité est que la pertinence ne se disperse que tres peu dans ces structures, ce qui permet d'attaquer 
+		la cible efficacement. Par exemple dans un anneau chaque sommet recoit la pertinence d'un de ses voisins puis pointe sur la cible. Ainsi la pertinence est équitablement répartie et peut dispersé au sein de la structure.
+		Pour l'arbre on observe un phénomène similaire car chaque sommet est relié à son sommet père et à la cible. On peut expliquer la légère différence entre arbre et anneau par le fait 
+		que plus on monte dans l'arbre, plus la pertinence est forte. Ainsi les attaques des sommets les plus haut dans l'arbre sont plus efficaces sur la cible.\\
+		
+		On observe que, pour toute structures confondus, la différence avec la pertinence initiale est quasiment identique entre une cible moyenne (7.54e-06) et faible (6.05e-07).
+		C'est à dire que on modifie autant la cible qu'elle soit de pertinence moyenne ou faible. Ainsi on peut en conclure 
+		
 	
 \section{Conclusions}
 

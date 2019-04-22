@@ -1,84 +1,25 @@
 \select@language {french}
-<<<<<<< HEAD
-\contentsline {section}{\numberline {1}Tests initiaux et hypoth\IeC {\`e}ses}{2}
-\contentsline {subsection}{\numberline {1.1}Explication du code}{2}
-\contentsline {subsection}{\numberline {1.2}R\IeC {\'e}sultats des tests initiaux}{2}
-\contentsline {subsubsection}{\numberline {1.2.1}Pagerank sur Stanford.txt (sans modification) :}{2}
-\contentsline {subsubsection}{\numberline {1.2.2}Pagerank sur Stanford.txt (ajout de 10 sommets seuls) :}{2}
-\contentsline {subsubsection}{\numberline {1.2.3}Pagerank sur Stanford.txt (ajout d'un anneau \IeC {\`a} 10 sommets) :}{3}
-\contentsline {subsubsection}{\numberline {1.2.4}Pagerank sur Stanford.txt (ajout d'un graphe complet \IeC {\`a} 10 sommets) :}{3}
-\contentsline {subsubsection}{\numberline {1.2.5}Pagerank sur Stanford.txt (ajout d'un arbre binaire \IeC {\`a} 10 sommets) :}{3}
-\contentsline {subsection}{\numberline {1.3}Analyses des tests initiaux}{4}
-\contentsline {subsubsection}{\numberline {1.3.1}Analyse des modifications de pertinences par l'ajout de 10 sommets seuls :}{4}
-\contentsline {subsubsection}{\numberline {1.3.2}Analyse des modifications de pertinences par l'ajout d'un anneau \IeC {\`a} 10 sommets :}{4}
-\contentsline {subsubsection}{\numberline {1.3.3}Analyse des modifications de pertinences par l'ajout d'un graphe complet \IeC {\`a} 10 sommets :}{4}
-\contentsline {subsubsection}{\numberline {1.3.4}Analyse des modifications de pertinences par l'ajout d'un arbre binaire \IeC {\`a} 10 sommets :}{5}
-\contentsline {subsection}{\numberline {1.4}Conclusion des tests initiaux et hypoth\IeC {\`e}ses}{5}
-\contentsline {section}{\numberline {2}Tests avec des graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{5}
-\contentsline {subsection}{\numberline {2.1}Explication du code}{5}
-\contentsline {subsection}{\numberline {2.2}R\IeC {\'e}sultats des tests}{6}
-\contentsline {subsubsection}{\numberline {2.2.1}Cible \IeC {\`a} pertincence faible}{6}
-\contentsline {subsubsection}{\numberline {2.2.2}Cible \IeC {\`a} pertincence moyenne}{6}
-\contentsline {subsubsection}{\numberline {2.2.3}Cible \IeC {\`a} pertincence forte}{6}
-\contentsline {subsection}{\numberline {2.3}Analyse sur une cible \IeC {\`a} pertinence faible}{6}
-\contentsline {subsection}{\numberline {2.4}Analyse sur une cible \IeC {\`a} pertinence moyenne}{6}
-\contentsline {subsection}{\numberline {2.5}Analyse sur une cible \IeC {\`a} pertinence forte}{6}
-\contentsline {subsection}{\numberline {2.6}Conclusion sur l'impact de chaque structure}{6}
-\contentsline {subsection}{\numberline {2.7}Conclusion sur l'impact en fonction de la pertinence de la cible}{6}
-\contentsline {section}{\numberline {3}Conclusion}{6}
-=======
 \contentsline {section}{\numberline {1}Introduction}{2}
 \contentsline {section}{\numberline {2}Manuel utilisateur}{2}
-\contentsline {section}{\numberline {3}Plan}{2}
-\contentsline {section}{\numberline {4}I. Exp\IeC {\'e}riences initiales et hypoth\IeC {\`e}ses}{2}
-\contentsline {subsection}{\numberline {4.1}Explication du code}{2}
-\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultats des tests initiaux}{2}
-\contentsline {subsubsection}{\numberline {4.2.1}Stanford.txt sans modification}{2}
-\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}sultats}{3}
-\contentsline {subsubsection}{\numberline {4.2.3}Analyses}{3}
-\contentsline {subsubsection}{\numberline {4.2.4}Hypoth\IeC {\`e}ses}{3}
-<<<<<<< HEAD
-=======
-\contentsline {subsection}{\numberline {4.3}Conclusion des tests initiaux et hypoth\IeC {\`e}ses}{3}
-<<<<<<< HEAD
-\contentsline {section}{\numberline {5}II. Tests avec un nombre de graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{3}
-\contentsline {subsection}{\numberline {5.1}Explication du code}{4}
-\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultats des tests}{5}
-\contentsline {subsection}{\numberline {5.3}Analyse graphes en anneau}{5}
-\contentsline {subsection}{\numberline {5.4}Analyses Graphes complet}{7}
-\contentsline {subsection}{\numberline {5.5}Analyses Arbres}{9}
-\contentsline {subsection}{\numberline {5.6}Conclusion sur l'impact de chaque structure}{11}
-\contentsline {section}{\numberline {6}III. Exp\IeC {\'e}riences avec un graphe al\IeC {\'e}atoire}{11}
-\contentsline {section}{\numberline {7}Conclusion}{11}
->>>>>>> fd49597bebf6b9a7e2b213946650d9e2ce06b493
-=======
->>>>>>> 87d4843d319dd6d5b54c2aef3558c65eaea5b3df
-\contentsline {section}{\numberline {5}II. Exp\IeC {\'e}riences avec un nombre de graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{3}
-\contentsline {subsection}{\numberline {5.1}Explication du code}{4}
-\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultats des tests}{4}
-<<<<<<< HEAD
-\contentsline {subsection}{\numberline {5.3}Analyse graphes en anneau}{5}
-\contentsline {subsection}{\numberline {5.4}Analyses Graphes complet}{7}
-\contentsline {subsection}{\numberline {5.5}Analyses Arbres}{9}
-\contentsline {subsection}{\numberline {5.6}Conclusion sur l'impact de chaque structure}{11}
-\contentsline {section}{\numberline {6}III. Exp\IeC {\'e}riences avec un graphe de degr\IeC {\'e} al\IeC {\'e}atoire}{11}
-\contentsline {subsection}{\numberline {6.1}R\IeC {\'e}sultats des tests}{11}
-\contentsline {subsection}{\numberline {6.2}Analyses}{13}
-\contentsline {section}{\numberline {7}IV. Exp\IeC {\'e}riences sur l'efficacit\IeC {\'e}}{13}
-\contentsline {subsection}{\numberline {7.1}R\IeC {\'e}sultats des tests}{13}
-\contentsline {subsection}{\numberline {7.2}Analyses}{13}
-\contentsline {section}{\numberline {8}V. Conclusion}{13}
-=======
-\contentsline {subsection}{\numberline {5.3}Analyse graphes en anneau}{4}
-\contentsline {subsection}{\numberline {5.4}Analyses Graphes complet}{6}
-\contentsline {subsection}{\numberline {5.5}Analyses Arbres}{8}
-\contentsline {subsection}{\numberline {5.6}Conclusion sur l'impact de chaque structure}{10}
-\contentsline {section}{\numberline {6}III. Exp\IeC {\'e}riences avec un graphe de degr\IeC {\'e} al\IeC {\'e}atoire}{10}
-\contentsline {subsection}{\numberline {6.1}R\IeC {\'e}sultats des tests}{10}
-\contentsline {subsection}{\numberline {6.2}Analyses}{11}
-\contentsline {section}{\numberline {7}IV. Exp\IeC {\'e}riences sur l'efficacit\IeC {\'e}}{11}
-\contentsline {subsection}{\numberline {7.1}R\IeC {\'e}sultats des tests}{11}
-\contentsline {subsection}{\numberline {7.2}Analyses}{11}
-\contentsline {section}{\numberline {8}V. Conclusion}{11}
->>>>>>> 9e1c780909609637fc417d5a24622099f8a2584c
->>>>>>> 87d4843d319dd6d5b54c2aef3558c65eaea5b3df
+\contentsline {section}{\numberline {3}Plan}{4}
+\contentsline {section}{\numberline {4}I. Tests initiaux et hypoth\IeC {\`e}ses}{4}
+\contentsline {subsection}{\numberline {4.1}Explications du code}{4}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultats des tests initiaux}{4}
+\contentsline {subsubsection}{\numberline {4.2.1}Stanford.txt sans modification}{4}
+\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}sultats}{5}
+\contentsline {subsection}{\numberline {4.3}Conclusion des tests initiaux}{5}
+\contentsline {subsubsection}{\numberline {4.3.1}Hypoth\IeC {\`e}ses}{6}
+\contentsline {section}{\numberline {5}II. Tests avec un nombre de graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{6}
+\contentsline {subsection}{\numberline {5.1}Explication du code}{6}
+\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultats des tests}{7}
+\contentsline {subsection}{\numberline {5.3}Analyse graphes en anneau}{7}
+\contentsline {subsection}{\numberline {5.4}Analyses Graphes complet}{9}
+\contentsline {subsection}{\numberline {5.5}Analyses Arbres}{11}
+\contentsline {subsection}{\numberline {5.6}Conclusion sur l'impact de chaque structure}{13}
+\contentsline {section}{\numberline {6}III. Exp\IeC {\'e}riences avec un graphe de degr\IeC {\'e} al\IeC {\'e}atoire}{13}
+\contentsline {subsection}{\numberline {6.1}R\IeC {\'e}sultats des tests}{13}
+\contentsline {subsection}{\numberline {6.2}Analyses}{15}
+\contentsline {section}{\numberline {7}IV. Exp\IeC {\'e}riences sur l'efficacit\IeC {\'e}}{15}
+\contentsline {subsection}{\numberline {7.1}R\IeC {\'e}sultats des tests}{15}
+\contentsline {subsection}{\numberline {7.2}Analyses}{16}
+\contentsline {section}{\numberline {8}Conclusions}{16}
