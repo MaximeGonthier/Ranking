@@ -33,7 +33,10 @@
 	Nous allons tester ces différentes structures sur des pages de pertinences différentes et déterminer quelle est la structures la plus avantageuse pour obtenir la pertinence la plus forte possible.
 
 \section{Manuel utilisateur}
+<<<<<<< HEAD
 	Notre application se lance grâce à la commande \texttt{make} suivie de fichier ".txt" à modifier.
+=======
+>>>>>>> a241b28c8d4461a4899d5dceea833af2cadc658e
 	
 
 \section{Plan}
@@ -73,6 +76,7 @@
 			\includegraphics[scale = 0.5]{Captures/ranking1.PNG}
 
 		\subsubsection{Analyses}
+<<<<<<< HEAD
 		A faire.
 			
 		\subsubsection{Hypothèses}
@@ -81,6 +85,21 @@
 	\subsection{Conclusion des tests initiaux et hypothèses}
 	A faire.
 		
+=======
+			Cinq structures différentes sont ajoutées : des sommets seuls, un graphe complet, un anneau, un arbre et un arbre a attaquant unique. L'arbre a attaquant unique est un arbre dont seul le sommet racin est relié 
+			à la cible. L'objectif de cette structure est de minimiser le nombre de sommets reliées a la cible pour ainsi minimiser les chances de se faire repérer lors de l'attaque.
+			On observe pour chaque cible que la structure la plus efficace est le sommet seul, suivis de l'arbe, de l'anneau, de l'arbre a attaquant unique et enfin du graphe complet.
+			La raison de cette ordre serait que pour des sommets seuls, la probabilité de pointer sur la cible est de 1/1 alors qu'elle est de 1/n pour un graphe complet
+			avec n le nombre de sommets. Ainsi la probabilité est dilué et donc la cible en sera moins modifié.\\
+			On observe que pour chaque structure la différence de modification de la pertinence est presque identique entre les cibles faibles et moyennes.
+			Ainsi on peut en déduire que modifier la pertinence d'une cible à e-06 ou e-07 est de même difficulté.\\		
+			Pour le sommet sommet seul on observe que la modification de pertinence (la différence) pour une cible forte, moyenne ou faible sont respectivements
+			8.25e-05, 5.13e-05 et 5.13e-05. Ainsi on peut en déduire que modifier la pertinence est plus significatif quand la cible est déjà forte.
+			
+		\subsubsection{Hypothèses}
+			On suppose que les structures les plus efficaces sont les sommets seuls et les arbres. On suppose que changer la pertinence d'une cible devient 
+			plus difficile à partir d'une cible de pertinence Xe-05 et que c'est assez identique pour les cibles de pertinences Xe-06 et Xe-07.
+>>>>>>> a241b28c8d4461a4899d5dceea833af2cadc658e
 
 \section{II.	Tests avec un nombre de graphes générés aléatoirement}
 	Nous allons désormais insérer des graphes générés aléatoirement. Ce qui est aléatoire n'est pas la structure des graphes mais le nombre de garphes générés.
@@ -110,19 +129,38 @@
 		prend une valeur entre 0 et 100 moins le nombre de sommets ajouté precedement représenté par $nouveausommets$.
 	\subsection{Résultats des tests}
 		\includegraphics[scale = 0.5]{Captures/ranking2.PNG}\\
-		ANALYSE\\
+		La cible est de pertinence forte. \\
 		\includegraphics[scale = 0.5]{Captures/ranking3.PNG}\\
-		ANALYSE\\
+		En regardant les espérances on observe que c'est l'anneau est l'abre qui impactent le plus la pertinence de la cible.
+		On observe aussi que les erreurs sont inférerieurs à 0,000015 on peut donc faire confiance aux résultats.\\
 
 	\subsection{Analyse graphes en anneau}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
+		La courbe rouge représente la loi normale, la noire est la fonction de densité. 
 	\subsection{Analyses Graphes complet}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
 	\subsection{Analyses Arbres}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
 	\subsection{Conclusion sur l'impact de chaque structure}
 
+<<<<<<< HEAD
 \section{III.	Expériences avec un graphe aléatoire}
+=======
+\section{III.	Expériences avec un graphe de degré aléatoire}
+	Ici nous allons créer un graphe de 100 sommets de degré aléatoire. C'est à dire que chaque sommet sera relié au même nombre de sommets au sein du graphe.
+	\subsection{Résultats des tests}
+		\includegraphics[scale = 0.5]{Captures/ranking4.PNG}\\
+		\includepdf{../R/Degre_aleatoire/degre.pdf}
+	\subsection{Analyses}
+		On observe que plus le degré est fort, moins la pertinence de la cible est modifié. Ici l'espérance de la pertinence de la cible apres attaque est de 1.13e-04, ce qui est 
+		meilleur que la pertience de la cible lors des tests initiaux avec un graphe complet a 100 sommets (1.05e-04). Ainsi cette structure est plus eficace que le graphe complet.
+		De plus cette structure a l'avantage d'etre moins detectable que l'anneau ou le graphe complet car 
+	
+\section{IV.	Expériences sur l'efficacité}
+	\subsection{Résultats des tests}
+		\includegraphics[scale = 0.6]{Captures/ranking5.PNG}\\
+	\subsection{Analyses}
+>>>>>>> a241b28c8d4461a4899d5dceea833af2cadc658e
 	
 \section{Conclusion}
 
