@@ -22,4 +22,4 @@
 \contentsline {section}{\numberline {7}IV. Exp\IeC {\'e}riences sur l'efficacit\IeC {\'e}}{15}
 \contentsline {subsection}{\numberline {7.1}R\IeC {\'e}sultats des tests}{15}
 \contentsline {subsection}{\numberline {7.2}Analyses}{16}
-\contentsline {section}{\numberline {8}Conclusions}{16}
+\contentsline {section}{\numberline {8}Conclusions}{17}

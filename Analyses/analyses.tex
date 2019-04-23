@@ -136,7 +136,7 @@
 	\subsection{Analyse graphes en anneau}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
 		La courbe rouge représente la loi normale, la noire est la fonction de densité. 
-		CALCULE L EFFICACITE
+		
 
 	\subsection{Analyses Graphes complet}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
@@ -182,6 +182,16 @@
 		Cependant plus il y a de sommets, plus il est facile pour la cible de reconnaitre une attaque. Une stratégie raisonable serait d'utiliser un arbre de 500 sommets, 
 		ce qui modifie la pertinence de la cible de 360\%, tout en ne représentant que 0.18\% du graphe du web. De plus une structure en arbre peut être difficile à reconnaitre si l'attaquant décide 
 		de modifier légèrement sa structure. Par exemple enlever certains liens pointant vers la cible peuvent donner cela : 
+		\includegraphics[scale = 0.5]{Captures/diagramme1.png}\\
+		\includegraphics[scale = 0.5]{Captures/diagramme2.png}\\
+		La cible ne peut voir que les pages qui pointe directement sur elle, c'est à dire les sommets en rouge.
+		La seconde structure est légèrement moins efficace mais elle rend plus difficile la detection de l'arbre par la cible. En effet les sommets ne sont plus reliées ensemble en forme d'arbre du point de vu la cible.
+		C'est donc une stratégie possible.\\
+		
+		On observe que les valeurs d'efficacité les plus grandes sont pour l'arbre a attaquant unique. Cela s'explique par le fait que un seul sommet est relié a la cible dans cette structure.
+		Cependant les pourcentages de modifications sont bien plus faible que pour l'arbre ( 38\% contre 72\% pour une cible forte à 100 sommets attaquants).
+		Mais cette structure reste très utile pour des cibles moyennes ou faible. Ainsi une startégie interessante pour les cibles faibles serait d'utiliser un arbre a attaquant unique.
+		Son avanatge majeur est qu'il est tres difficile a détecter car un seul sommet est directement relié a la cible.\\
 	
 \section{Conclusions}
 
