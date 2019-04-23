@@ -136,6 +136,7 @@
 	\subsection{Analyse graphes en anneau}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
 		La courbe rouge représente la loi normale, la noire est la fonction de densité. 
+		CALCULE L EFFICACITE
 
 	\subsection{Analyses Graphes complet}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
@@ -173,8 +174,14 @@
 		que plus on monte dans l'arbre, plus la pertinence est forte. Ainsi les attaques des sommets les plus haut dans l'arbre sont plus efficaces sur la cible.\\
 		
 		On observe que, pour toute structures confondus, la différence avec la pertinence initiale est quasiment identique entre une cible moyenne (7.54e-06) et faible (6.05e-07).
-		C'est à dire que on modifie autant la cible qu'elle soit de pertinence moyenne ou faible. Ainsi on peut en conclure 
+		C'est à dire que on modifie autant la cible qu'elle soit de pertinence moyenne ou faible. Ainsi on peut en conclure que les cibles en dessous de Xe-06 sont toutes trés similaires à attaquer.\\
 		
+		Pour l'anneau, le graphe complet et l'arbre on observe que la différence avec la pertinence initiale augmente de manière linéaire avec l'augmentation du nombre de sommets.
+		par exemple pour l'arbre avec une cible forte on passe de 7.22e-5, 1.80e-4, 3.59e-4, 7.15e-4 pour 100, 250, 500 et 1000 sommets. Ce qui est presque parfaitement linéaire.
+		Ce phénomène arrive quelquesoit la pertinence de la cible. Ainsi on peut en conclure que pour une attaque la plus efficace possible il faut augmenter le nombre de sommets au maximum.
+		Cependant plus il y a de sommets, plus il est facile pour la cible de reconnaitre une attaque. Une stratégie raisonable serait d'utiliser un arbre de 500 sommets, 
+		ce qui modifie la pertinence de la cible de 360\%, tout en ne représentant que 0.18\% du graphe du web. De plus une structure en arbre peut être difficile à reconnaitre si l'attaquant décide 
+		de modifier légèrement sa structure. Par exemple enlever certains liens pointant vers la cible peuvent donner cela : 
 	
 \section{Conclusions}
 
