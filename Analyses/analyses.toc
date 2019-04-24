@@ -4,22 +4,20 @@
 \contentsline {section}{\numberline {3}Plan}{4}
 \contentsline {section}{\numberline {4}I. Tests initiaux et hypoth\IeC {\`e}ses}{4}
 \contentsline {subsection}{\numberline {4.1}Explications du code}{4}
-\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultats des tests initiaux}{4}
-\contentsline {subsubsection}{\numberline {4.2.1}Stanford.txt sans modification}{4}
-\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}sultats}{5}
-\contentsline {subsection}{\numberline {4.3}Conclusion des tests initiaux}{5}
-\contentsline {subsubsection}{\numberline {4.3.1}Hypoth\IeC {\`e}ses}{6}
-\contentsline {section}{\numberline {5}II. Tests avec un nombre de graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{6}
-\contentsline {subsection}{\numberline {5.1}Explication du code}{6}
-\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultats des tests}{7}
-\contentsline {subsection}{\numberline {5.3}Analyse graphes en anneau}{7}
-\contentsline {subsection}{\numberline {5.4}Analyses Graphes complet}{9}
-\contentsline {subsection}{\numberline {5.5}Analyses Arbres}{11}
-\contentsline {subsection}{\numberline {5.6}Conclusion sur l'impact de chaque structure}{13}
-\contentsline {section}{\numberline {6}III. Exp\IeC {\'e}riences avec un graphe de degr\IeC {\'e} al\IeC {\'e}atoire}{13}
-\contentsline {subsection}{\numberline {6.1}R\IeC {\'e}sultats des tests}{13}
-\contentsline {subsection}{\numberline {6.2}Analyses}{15}
-\contentsline {section}{\numberline {7}IV. Exp\IeC {\'e}riences sur l'efficacit\IeC {\'e}}{15}
-\contentsline {subsection}{\numberline {7.1}R\IeC {\'e}sultats des tests}{15}
-\contentsline {subsection}{\numberline {7.2}Analyses}{16}
-\contentsline {section}{\numberline {8}Conclusions}{17}
+\contentsline {subsection}{\numberline {4.2}R\IeC {\'e}sultats des tests initiaux}{6}
+\contentsline {subsubsection}{\numberline {4.2.1}Stanford.txt sans modification}{6}
+\contentsline {subsubsection}{\numberline {4.2.2}R\IeC {\'e}sultats}{7}
+\contentsline {subsection}{\numberline {4.3}Conclusion des tests initiaux}{7}
+\contentsline {subsubsection}{\numberline {4.3.1}Hypoth\IeC {\`e}ses}{7}
+\contentsline {section}{\numberline {5}II. Tests avec un nombre de graphes g\IeC {\'e}n\IeC {\'e}r\IeC {\'e}s al\IeC {\'e}atoirement}{8}
+\contentsline {subsection}{\numberline {5.1}Explication du code}{8}
+\contentsline {subsection}{\numberline {5.2}R\IeC {\'e}sultats des tests}{9}
+\contentsline {subsection}{\numberline {5.3}Conclusion sur l'impact de chaque structure}{9}
+\contentsline {section}{\numberline {6}III. Exp\IeC {\'e}riences avec un graphe de degr\IeC {\'e} al\IeC {\'e}atoire}{9}
+\contentsline {subsection}{\numberline {6.1}R\IeC {\'e}sultats des tests}{10}
+\contentsline {subsection}{\numberline {6.2}Analyses}{12}
+\contentsline {section}{\numberline {7}IV. Exp\IeC {\'e}riences sur l'efficacit\IeC {\'e}}{12}
+\contentsline {subsection}{\numberline {7.1}R\IeC {\'e}sultats des tests}{12}
+\contentsline {subsection}{\numberline {7.2}Analyses}{13}
+\contentsline {section}{\numberline {8}Conclusions}{15}
+\contentsline {section}{\numberline {9}Annexe}{15}

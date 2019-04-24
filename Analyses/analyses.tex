@@ -65,7 +65,75 @@
 		\item 100 sommets sont ajoutés pour chaque test.
 	\end{itemize}
 	\subsection{Explications du code}
-	A faire.
+	Le code est contenu dans les fonctions $ajoutanneau$, $ajoutsommetseul$, $ajoutcomplet$ et $ajoutarbre$. Ces fonctions vont créer des structures à la fin du fichier. Ils
+	prennent en argument $nbajout$ : le nombre de sommets par structures, $nom$ : le nom du fichier contenant le graphe du web, $nbpages$ et $nbliens$ : le nombre de pages et de lien du graphe du web, $perticible$ la cible à attaquer et $nbstructure$ : le nombre de structures à ajouter.\\
+	Décrivons $ajoutanneau$ : 
+	\begin{lstlisting}
+FILE *g = fopen(nom,"a");
+for (int y = 0; y < nbstructure; y++) {
+	for (i = 1; i < nbajout; i++) {
+		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", 
+			nbpages+i+(y*nbajout), degre, 
+			nbpages+i+1+(y*nbajout), cible);
+	}
+	//ecriture du dernier sommet qui se relie au 
+	//premier sommet de l'anneau
+	fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", 
+		nbpages+i+(y*nbajout), degre, 
+		nbpages+1+(y*nbajout), cible);
+}
+	\end{lstlisting}
+	Ici $y$ et $i$ vont incrémenter respectivement le nombre de structures et le sommet suivant à ecrire. $i$ commence à 1 pour écrire le numéro de page suivant le dernier numéro de page du graphe. 
+	Ensuite on écris le nouveau nombre de pages et de lien du graphe de cette mainière :
+	\begin{lstlisting}
+	fprintf(h, "%d %d", nbpages+(nbajout*nbstructure),
+	 nbliens+(nbajout*nbstructure)*2);
+	\end{lstlisting}
+	Décrivons $ajoutcomplet$ :
+	\begin{lstlisting}
+for (int y = 0; y < nbstructure; y++) {
+	for (i = 1; i < nbajout + 1; i++) {
+		fprintf(g, "%d %d", nbpages+i+(y*nbajout), degre);
+		for(j = 1; j < nbajout + 1; j++){
+			if (nbpages+j == nbpages+i) {}
+			else {
+				fprintf(g, " %d %f", 
+					nbpages+j+(y*nbajout), x);}
+		}
+		fprintf(g, " %d %f\n", cible, x);
+}	
+	\end{lstlisting}
+	Ici le premier printf écris le numéro de la page courante et son degré. Le second printf va écrire les liens entre cette page et toutes les autres pages du graphe complet. Le if sert à vérifier que l'on écrit pas un lien de la page vers elle-même.\\
+	Décrivons $ajoutarbre$ :
+	\begin{lstlisting}
+for (int y = 0; y < nbstructure; y++) {
+	// Initialisation du sommet racine
+	racine = nbpages + 1+(y*nbajout);
+	fprintf(g, "%d %d %d 1.000000\n", racine, 1, cible);
+	// Sommets 2 a 2 (arbre binaire) et on pointe 
+	//vers le sommet pere 
+	// lui meme calcule par sa distance a la racine	
+	for (i = 1; i < nbajout - 1; i+=2) {
+		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", 
+			racine+i, degre, racine + compteur, cible);	
+		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", 
+			racine+i+1, degre, racine + compteur, cible);	
+		compteur++;
+	}
+	// Le dernier sommet dans le cas d'un nombre 
+	//PAIR de sommets 
+	// a entrer (pair car le sommet racine est deja 
+	//ecris hors de la boucle)
+	if (nbajout%2 == 0){ 
+		fprintf(g, "%d %d %d 0.500000 %d 0.500000\n", 
+			racine+i, degre, racine + compteur, cible);
+	}
+	//on reinitialise le compteur car on va commencer
+	//un nouvel arbre
+	compteur = 0;
+}
+	\end{lstlisting}
+	Ici $racine$ représente le sommet racine et va servir à ecrire les pages suivantes. Les pages sont écrites deux à deux et calculé avec leurs distance par rapport à $racine$. Elle sont écrite deux à deux car on écrit les deux fils d'un sommet père à chaque itérations. $compteur$ est utilisé dans le cas de la création de plusieurs arbres.
 
 	\subsection{Résultats des tests initiaux}
 		\subsubsection{Stanford.txt sans modification}
@@ -114,10 +182,10 @@
 		et $ajoutarbrealeatoire$. Ces fonctions reprennent en partie le code des trois fonctions presque eponyme décrite précedemment.
 		Regardons ce qui a changé. 
 		\begin{lstlisting}
-	while(nbsommetrestant > 0) {
-		nbajout = rand()%(100-nouveausommets);
-		if (nbajout <= 3) { nbajout = 3; }
-		nbsommetrestant -= nbajout;
+while(nbsommetrestant > 0) {
+	nbajout = rand()%(100-nouveausommets);
+	if (nbajout <= 3) { nbajout = 3; }
+	nbsommetrestant -= nbajout;
 		\end{lstlisting}
 		$nbajout$ représente le nombre de sommet que l'on va ajouter dans la première structure créer. Il choisis donc un nombre 
 		aléatoire entre 0 et 100 car le nombre de sommet total est limité a 100. Si le nombre choisis est inférieur a 3 on le fixe a 3 car créer
@@ -132,24 +200,18 @@
 		\includegraphics[scale = 0.5]{Captures/ranking3.PNG}\\
 		En regardant les espérances on observe que c'est l'anneau est l'abre qui impactent le plus la pertinence de la cible.
 		On observe aussi que les erreurs sont inférerieurs à 0,000015 on peut donc faire confiance aux résultats.\\
-
-	\subsection{Analyse graphes en anneau}
-		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
+		Regardons les trois courbes en annexe.\\
 		La courbe rouge représente la loi normale, la noire est la fonction de densité. 
-		
 
-	\subsection{Analyses Graphes complet}
-		\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
 
-	\subsection{Analyses Arbres}
-		\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
+
 
 	\subsection{Conclusion sur l'impact de chaque structure}
 
 
 \section{III.	Expériences avec un graphe de degré aléatoire}
 	Ici nous allons créer un graphe de 100 sommets de degré aléatoire. C'est à dire que chaque sommet sera relié au même nombre de sommets au sein du graphe.
-	
+
 	\subsection{Résultats des tests}
 		\includegraphics[scale = 0.5]{Captures/ranking4.PNG}\\
 		\includepdf{../R/Degre_aleatoire/degre.pdf}
@@ -194,5 +256,12 @@
 		Son avanatge majeur est qu'il est tres difficile a détecter car un seul sommet est directement relié a la cible.\\
 	
 \section{Conclusions}
+
+\section{Annexe}
+		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
+		
+		\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
+
+		\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
 
 \end{document}
