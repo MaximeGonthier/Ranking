@@ -32,10 +32,14 @@
 		\item arbre
 	\end{itemize}
 	Nous testerons ces différentes structures sur des pages cibles dont la pertinence, attribuée par l'algorithme Pagerank, est différente. Ainsi, nous déterminerons quelle est la structure la plus avantageuse pour obtenir la pertinence la plus forte possible.
+	Dans un premier temps, nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
+	Nous en déduirons des hypothèses sur l'efficacité de chaque structure et l'impact de la pertinence de la cible.\\
+	Dans un second temps, nous étudierons l'impact sur la pertinence du sommet cible de graphes générés en nombre aléatoire pour étudier quelle structure est la plus efficace.
+	Dans un troisième temps, nous testerons la même choses avec cette fois-ci un graphe dont les arcs le reliant à lui même sont générés aléatoirement. Cela signifie que le degré du graphe est généré aléatoirement.
+	Dans un dernier temps, nous ferons varier le nombre de sommets du graphe attaquant pour en déduire son efficacité.\\
 
 \section{Manuel utilisateur}
-	A changer (peut-être)\\
-	Notre application se lance grâce à la commande \texttt{make} suivi d'un fichier " .txt" à modifier. (Bon là c'est pas trop vrai)\\
+	Notre application se lance grâce à la commande \texttt{make all} suivi d'un fichier " .txt" à modifier.\\
 	Pour effacer les fichiers .o et l'executable : \texttt{make clean}.\\
 	Pour compiler : \texttt{make compil}. On peut ensuite lancer le programme avec \texttt{./ranking} suivi du fichier à modifier.\\
 	Une fois l'application lancée :\\
@@ -48,14 +52,6 @@
 	Dans un quatrième temps, l'utilisateur doit entrer le sommet cible. Le numéro du sommet cible est demandé une seconde fois pour savoir quel sommet sera donné en résultat.\\
 	\\
 	Le programme affiche le nombre de pages, le nombre de liens, le temps d'éxecution et la pertinence du sommet cible.
-
-\section{Plan}
-	(Est-ce qu'on ne devrait pas mettre ça dans l'intro et supprimer cette partie ??)\\
-	Dans un premier temps, nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
-	Nous en déduirons des hypothèses sur l'efficacité de chaque structure et l'impact de la pertinence de la cible sur cette même efficacité.\\(c'est pas "l'impact de l'efficacité sur la pertinence de la cible" ??)\\
-	Dans un second temps, nous étudierons l'impact sur la pertinence du sommet cible de graphes générés en nombre aléatoire pour étudier quelle structure est (globalement ??) la plus efficace.
-	Dans un troisième temps, nous testerons la même choses avec cette fois-ci un graphe dont les arcs le reliant à lui même sont générés aléatoirement. \\(degré aléatoire ??)\\
-	Dans un dernier temps, nous ferons varier le nombre de sommets du graphe attaquant pour en déduire son efficacité.\\(on ne dit jamais qu'on conclut, c'est malpoli, no joke)\\
 	
 \section{Tests initiaux et hypothèses}
 	L'algorithme power calculant les pertinences est contenu dans le fichier \texttt{ranking.c}. Il n'est pas détaillé dans ce rapport mais le fichier est commenté.\\
@@ -213,11 +209,9 @@ while(nbsommetrestant > 0) {
 		On observe aussi que les erreurs sont inférerieurs à 0,000015 on peut donc faire confiance aux résultats.\\
 		Regardons les trois courbes en annexe.\\
 		La courbe rouge représente la loi normale, la noire est la fonction de densité. 
-		
+		Comparons ces résultats avec les résultats des tests initiaux. Les résultats sont comparable car dans les deux cas 100 sommets sont ajoutés. Dans les tests initiaux les pertinence apres attaque pour l'anneau, le graphe complet et l'arbre étaie,t respectivement 1.71e-4, 1.05e-4 et 1.72e-4. On remarque donc qu'il n'y a que 0.6\% de différence pour l'anneau et 1.1\% pour l'arbre. En revanche pour le graphe complet il y a 9.5\% de différence ce qui est bien plus intéressant.
 
-
-
-	\subsection{Conclusion sur l'impact de chaque structure}
+	\subsection{Conclusion sur l'impact d'un nombre aléatoires de structures}
 
 
 \section{III.	Expériences avec un graphe de degré aléatoire}
