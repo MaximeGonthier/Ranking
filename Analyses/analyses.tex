@@ -31,12 +31,11 @@
 		\item anneau
 		\item arbre
 	\end{itemize}
-	Nous testerons ces différentes structures sur des pages cibles dont la pertinence, attribuée par l'algorithme Pagerank, est différente. Ainsi, nous déterminerons quelle est la structure la plus avantageuse pour obtenir la pertinence la plus forte possible.
-	Dans un premier temps, nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
-	Nous en déduirons des hypothèses sur l'efficacité de chaque structure et l'impact de la pertinence de la cible.\\
-	Dans un second temps, nous étudierons l'impact sur la pertinence du sommet cible de graphes générés en nombre aléatoire pour étudier quelle structure est la plus efficace.
-	Dans un troisième temps, nous testerons la même choses avec cette fois-ci un graphe dont les arcs le reliant à lui même sont générés aléatoirement. Cela signifie que le degré du graphe est généré aléatoirement.
-	Dans un dernier temps, nous ferons varier le nombre de sommets du graphe attaquant pour en déduire son efficacité.\\
+	Nous testerons ces différentes structures sur des pages cibles dont la pertinence, attribuée par l'algorithme Pagerank, est différente. Ainsi, nous déterminerons quelle est la structure la plus avantageuse pour obtenir la pertinence la plus forte possible.\\
+	Dans un premier temps, nous allons effectué des tests simples en utilisant les quatre types de structures énoncé ci-dessus ainsi que trois cibles de pertinences différentes (pertinence forte, moyenne et faible). Nous en déduirons des hypothèses sur l'efficacité de chaque structure et de l'impact sur la pertinence du sommet cible.\\
+	Dans un second temps, nous étudierons l'impact sur la pertinence du sommet cible de graphes générés en nombre aléatoire pour étudier quelle structure est la plus efficace.\\
+	Dans un troisième temps, nous testerons la même choses avec cette fois-ci un graphe dont les arcs le reliant à lui-même sont générés aléatoirement. Cela signifie que le degré du graphe est généré aléatoirement.
+	Dans un dernier temps, nous ferons varier le nombre de sommets du graphe attaquant pour en déduire son efficacité.
 
 \section{Manuel utilisateur}
 	Notre application se lance grâce à la commande \texttt{make all} suivi d'un fichier " .txt" à modifier.\\
@@ -153,28 +152,24 @@ for (int y = 0; y < nbstructure; y++) {
 			Voici les pertinences de base des trois sommets étudiés :\\
 			Pertinence forte : Page 280545 - 9.96199e-05\\
 			Pertinence moyenne : Page 281466 - 7.53954e-06\\
-			Pertinence faible : Page 281574 - 6.05222e-07\\
-			\\
+			Pertinence faible : Page 281574 - 6.05222e-07
 		\subsubsection{Résultats}
 			\includegraphics[scale = 0.5]{Captures/ranking1.PNG}
 
 	\subsection{Conclusion des tests initiaux}
-		Cinq structures différentes sont ajoutées : des sommets seuls, un graphe complet, un anneau, un arbre et un arbre a attaquant unique. L'arbre a attaquant unique est un arbre dont seul le sommet racin est relié 
-		à la cible. L'objectif de cette structure est de minimiser le nombre de sommets reliées a la cible pour ainsi minimiser les chances de se faire repérer lors de l'attaque.\\
-		On observe pour chaque cible que la structure la plus efficace est le sommet seul, suivis de l'arbe, de l'anneau, de l'arbre a attaquant unique et enfin du graphe complet.\\
-		La raison de cette ordre serait que pour des sommets seuls, la probabilité de pointer sur la cible est de 1/1 alors qu'elle est de 1/n pour un graphe complet
-		avec n le nombre de sommets. Ainsi la probabilité est dilué et donc la cible en sera moins modifié.\\
+		Cinq structures différentes sont ajoutées : des sommets seuls, un graphe complet, un anneau, un arbre et un arbre à attaquant unique(seul le sommet racine est relié à la cible). L'objectif de cette structure est de minimiser le nombre de sommets reliés à la cible pour minimiser les chances de se faire repérer lors de l'attaque.\\
+		On observe pour chaque cible que la structure la plus efficace est le sommet seul, suivi de l'arbe, de l'anneau, de l'arbre à attaquant unique et enfin du graphe complet.\\
+		La raison de cette ordre serait que pour des sommets seuls, la probabilité de pointer sur la cible est de $1/1$ alors qu'elle est de $1/n$ pour un graphe complet avec $n$ le nombre de sommets. Ainsi la probabilité est dilué et donc la cible en sera moins modifié.\\
 		On observe que pour chaque structure la différence de modification de la pertinence est presque identique entre les cibles faibles et moyennes.
-		Ainsi on peut en déduire que modifier la pertinence d'une cible à e-06 ou e-07 est de même difficulté.\\		
-		Pour le sommet sommet seul on observe que la modification de pertinence (la différence) pour une cible forte, moyenne ou faible sont respectivements
-		8.25e-05, 5.13e-05 et 5.13e-05. Ainsi on peut en déduire que modifier la pertinence est plus significatif quand la cible est déjà forte.
+		Ainsi on peut en déduire que modifier la pertinence d'une cible à $10^{-06}$ ou $10^{-05}$ est de même difficulté.\\		
+		Pour le sommet seul, on observe que la modification de pertinence (la différence) pour une cible forte, moyenne ou faible sont respectivements $8,25.10^{-05}$, $5.13.10^{-05}$ et $5,13.10^{-05}$. On peut donc en déduire que modifier la pertinence d'une cible est plus significative quand la cible est déjà à pertinence forte.
 			
-		\subsubsection{Hypothèses}
-			On suppose que les structures les plus efficaces sont les sommets seuls et les arbres. On suppose que changer la pertinence d'une cible devient 
-			plus difficile à partir d'une cible de pertinence Xe-05 et que c'est assez identique pour les cibles de pertinences Xe-06 et Xe-07.
+	\subsection{Hypothèses}
+		On suppose que les structures les plus efficaces sont les sommets seuls et les arbres. On suppose que changer la pertinence d'une cible devient 
+		plus difficile à partir d'une cible de pertinence $X.10^{-05}$ et que c'est assez identique pour les cibles de pertinences $X.10^{-06}$ et $X.10^{-07}$.
 
 
-\section{II.	Tests avec un nombre de graphes générés aléatoirement}
+\section{Tests avec un nombre de graphes générés aléatoirement}
 	Nous allons désormais insérer des graphes générés aléatoirement. Ce qui est aléatoire n'est pas la structure des graphes mais le nombre de garphes générés.\\
 	L'objectif de cette démarche est de déterminer quel structure est la plus efficace globalement.\\
 	C'est a dire quelle structure influe le plus sur la pertinence quelle que soit la situation.\\
