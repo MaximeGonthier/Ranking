@@ -12,7 +12,7 @@ SRC = main.c ajoutsommetsattaquants.c ranking.c
 OBJ = $(SRC: .c=.o)
 
 all: $(EXEC)
-	./$(EXEC) Stanford/Stanford.txt
+	./$(EXEC) graph/Stanford/Stanford.txt
 
 compil: $(EXEC)
 
