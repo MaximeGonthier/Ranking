@@ -53,8 +53,9 @@
 	\\
 	Le programme affiche le nombre de pages, le nombre de liens, le temps d'éxecution et la pertinence du sommet cible.
 	
-\section{I.	Tests initiaux et hypothèses}
-	L'algorithme power calculant les pertinences est contenu dans le fichier $ranking.c$. Il n'est pas détaillé dans ce rapport mais le fichier est commenté.
+\section{Tests initiaux et hypothèses}
+	L'algorithme power calculant les pertinences est contenu dans le fichier \texttt{ranking.c}. Il n'est pas détaillé dans ce rapport mais le fichier est commenté.\\
+	\\
 	On considère ici le graphe du web Stanford.txt. Ce graphe est modifié par l'ajout de sommets et d'arcs afin d'augmenter la valeur d'un sommet ciblé.\\
 	On considère que :\\
 	\begin{itemize}
@@ -64,11 +65,18 @@
 		\item Le sommet cible représente la page dont on souhaite augmenter la pertinence.
 		\item 100 sommets sont ajoutés pour chaque test.
 	\end{itemize}
+
 	\subsection{Explications du code}
-	Le code est contenu dans les fonctions $ajoutanneau$, $ajoutsommetseul$, $ajoutcomplet$ et $ajoutarbre$. Ces fonctions vont créer des structures à la fin du fichier. Ils
-	prennent en argument $nbajout$ : le nombre de sommets par structures, $nom$ : le nom du fichier contenant le graphe du web, $nbpages$ et $nbliens$ : le nombre de pages et de lien du graphe du web, $perticible$ la cible à attaquer et $nbstructure$ : le nombre de structures à ajouter.\\
-	Décrivons $ajoutanneau$ : 
-	\begin{lstlisting}
+		Les fonctions \texttt{ajoutanneau}, \texttt{ajoutsommetseul}, \texttt{ajoutcomplet} et \texttt{ajoutarbre} crée des structures à la fin du fichier. Ces fonctions ont pour arguments :
+		\begin{itemize}
+			\item \texttt{nbajout} : le nombre de sommets par structures,
+			\item \texttt{nom} : le nom du fichier contenant le graphe du web,
+			\item \texttt{nbpages} et \texttt{nbliens} : le nombre de pages et de liens du graphe du web,
+			\item \texttt{perticible} : la cible à attaquer,
+			\item \texttt{nbstructure} : le nombre de structures à ajouter.
+		\end{itemize}
+		La fonction \texttt{ajoutanneau} : 
+		\begin{lstlisting}
 FILE *g = fopen(nom,"a");
 for (int y = 0; y < nbstructure; y++) {
 	for (i = 1; i < nbajout; i++) {
@@ -83,13 +91,13 @@ for (int y = 0; y < nbstructure; y++) {
 		nbpages+1+(y*nbajout), cible);
 }
 	\end{lstlisting}
-	Ici $y$ et $i$ vont incrémenter respectivement le nombre de structures et le sommet suivant à ecrire. $i$ commence à 1 pour écrire le numéro de page suivant le dernier numéro de page du graphe. 
-	Ensuite on écris le nouveau nombre de pages et de lien du graphe de cette mainière :
+	Ici $y$ et $i$ vont incrémenter respectivement le nombre de structures et le sommet suivant à écrire. $i$ commence à 1 pour écrire le numéro de la page suivant le dernier numéro de page du graphe.
+	Les nouveaux nombres de pages et de liens du graphe sont écrits de cette mainière :
 	\begin{lstlisting}
 	fprintf(h, "%d %d", nbpages+(nbajout*nbstructure),
 	 nbliens+(nbajout*nbstructure)*2);
 	\end{lstlisting}
-	Décrivons $ajoutcomplet$ :
+	La fonction \texttt{ajoutcomplet} :
 	\begin{lstlisting}
 for (int y = 0; y < nbstructure; y++) {
 	for (i = 1; i < nbajout + 1; i++) {
@@ -103,8 +111,8 @@ for (int y = 0; y < nbstructure; y++) {
 		fprintf(g, " %d %f\n", cible, x);
 }	
 	\end{lstlisting}
-	Ici le premier printf écris le numéro de la page courante et son degré. Le second printf va écrire les liens entre cette page et toutes les autres pages du graphe complet. Le if sert à vérifier que l'on écrit pas un lien de la page vers elle-même.\\
-	Décrivons $ajoutarbre$ :
+	Le premier \texttt{fprintf} écrit le numéro de la page courante et son degré. Le second \texttt{fprintf} écrit les liens entre cette page et toutes les autres pages du graphe complet. Le \texttt{if} sert à vérifier que l'on écrit pas un lien de la page vers elle-même.\\
+	La fonction \texttt{ajoutarbre} :
 	\begin{lstlisting}
 for (int y = 0; y < nbstructure; y++) {
 	// Initialisation du sommet racine
@@ -133,7 +141,7 @@ for (int y = 0; y < nbstructure; y++) {
 	compteur = 0;
 }
 	\end{lstlisting}
-	Ici $racine$ représente le sommet racine et va servir à ecrire les pages suivantes. Les pages sont écrites deux à deux et calculé avec leurs distance par rapport à $racine$. Elle sont écrite deux à deux car on écrit les deux fils d'un sommet père à chaque itérations. $compteur$ est utilisé dans le cas de la création de plusieurs arbres.
+	\texttt{racine} représente le sommet racine et permet d'écrire les pages suivantes. Les pages sont écrites deux à deux et calculées avec leur distance par rapport à \texttt{racine}. Elles sont écrites deux à deux car on écrit les deux fils d'un sommet père à chaque itération. \texttt{compteur} est utilisé dans le cas de la création de plusieurs arbres.
 
 	\subsection{Résultats des tests initiaux}
 		\subsubsection{Stanford.txt sans modification}
