@@ -23,35 +23,39 @@
 
 \newpage
 \section{Introduction}
-	Le but de ce projet est de simuler, d'évaluer et de proposer la méthode la plus efficae pour un Google Bombing. Il s'agit d'une technique d'attaque sur le graphe du web afin d'augmenter la pertinence d'une page cible. Pour cela, plusieurs attaquants créent des pages et y insèrent des liens vers une page cible à attaquer. Plusieurs structures de pages attaquantes sont possibles :
+	Le but de ce projet est de simuler, d'évaluer et de proposer la méthode la plus efficae pour un Google Bombing. Il s'agit d'une technique d'attaque sur le graphe du web permettant aux attaquants d'augmenter la pertinence d'une page cible.\\
+	Pour cela, plusieurs attaquants créent des pages et y insèrent des liens vers une page cible. Plusieurs structures de pages attaquantes sont possibles :
 	\begin{itemize}
 		\item seul
 		\item complet
 		\item anneau
 		\item arbre
 	\end{itemize}
-	Nous allons tester ces différentes structures sur des pages de pertinences différentes et déterminer quelle est la structures la plus avantageuse pour obtenir la pertinence la plus forte possible.
+	Nous testerons ces différentes structures sur des pages cibles dont la pertinence, attribuée par l'algorithme Pagerank, est différente. Ainsi, nous déterminerons quelle est la structure la plus avantageuse pour obtenir la pertinence la plus forte possible.
 
 \section{Manuel utilisateur}
-	Notre application se lance grâce à la commande \texttt{make all} suivie de fichier ".txt" à modifier.
-	\texttt{make clean} pour nettoyer et \texttt{make compil} pour simplement compiler.\\
-	Apres le make all voila ce qui s'affiche : \\
+	A changer (peut-être)\\
+	Notre application se lance grâce à la commande \texttt{make} suivi d'un fichier " .txt" à modifier. (Bon là c'est pas trop vrai)\\
+	Pour effacer les fichiers .o et l'executable : \texttt{make clean}.\\
+	Pour compiler : \texttt{make compil}. On peut ensuite lancer le programme avec \texttt{./ranking} suivi du fichier à modifier.\\
+	Une fois l'application lancée :\\
 	\includegraphics[scale = 0.5]{Captures/manuel.png}\\
-	Dans un premier temps l'utilisateur choisis la structure qu'il veut ajouter au graphe du web.
-	Il y a des structures simples (arbre, anneau, graphe complet sommet seuls), des structures moins conventionelles (arbre a attaquant unique, un arbre ou seul le sommet racine pointe vers la cible).
-	On peut aussi ajouter un nombre de structures aléatoires (avec une limitation de 100 sommets). On peut également insérer un graphe de degré aléatoire ou un graphe dont le degré est une probabilité.
-	Ensuite l'utilisateur va entrer le nombre de structures qu'il veut, cela ne s'applique pas pour les structures numéro 5,6 et 7. 
-	Ensuite on entre le nombre de sommets de la ou les structures à ajouter. 
-	Puis on entre le sommet cible. Le numéro du sommet cible est demandé une seconde fois pour savoir quel sommet sera donné en résultats.
-	Enfin le programme affiche le nombre de pages/liens, le temps d'éxecution et la pertinence du sommet cible.\\
-	
+	\\
+	Dans un premier temps, l'utilisateur doit choisir la structure qu'il veut ajouter au graphe du web qu'il aura préalablement donné.
+	Il y a des structures simples (arbre, anneau, graphe complet sommet seuls), des structures moins conventionelles (arbre à attaquant unique, arbre où seul le sommet racine pointe vers la cible). L'utilisateur peut aussi ajouter un nombre de structures aléatoires (avec une limitation de 100 sommets). Il peut également insérer un graphe de degré aléatoire ou un graphe dont le degré est une probabilité.\\
+	Dans un deuxième temps,  l'utilisateur doit entrer le nombre de structures qu'il souhaite. Attention, cela ne s'applique pas pour les structures numéro 5, 6 et 7.\\
+	Dans un troisième temps, l'utilisateur doit entrer le nombre de sommets de la/les structure(s) à ajouter.\\
+	Dans un quatrième temps, l'utilisateur doit entrer le sommet cible. Le numéro du sommet cible est demandé une seconde fois pour savoir quel sommet sera donné en résultat.\\
+	\\
+	Le programme affiche le nombre de pages, le nombre de liens, le temps d'éxecution et la pertinence du sommet cible.
 
 \section{Plan}
-	Dans un premier temps nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
-	Nous en déduirons des hypothèses sur l'eficacité de chaque structure et l'impact de la pertinence de la cible sur cette même efficacité.
-	Dans un second temps nous étudierons l'impact sur la pertinence de graphes générés en nombre aléatoire pour étudier qu'elle structure est globalement la plus efficace.
-	Puis nous testerons la meme choses avec cette fois ci un graphe dont les arcs le reliant a lui meme sont générées aléatoirement.
-	Enfin nous ferons varier le nombre de sommets du graphe ataquant pour en déduire son efficacité et nous conclurons.
+	(Est-ce qu'on ne devrait pas mettre ça dans l'intro et supprimer cette partie ??)\\
+	Dans un premier temps, nous allons effectué des tests simples en utilisant quatre type de structures différentes ainsi que trois cibles de pertinences différentes.
+	Nous en déduirons des hypothèses sur l'efficacité de chaque structure et l'impact de la pertinence de la cible sur cette même efficacité.\\(c'est pas "l'impact de l'efficacité sur la pertinence de la cible" ??)\\
+	Dans un second temps, nous étudierons l'impact sur la pertinence du sommet cible de graphes générés en nombre aléatoire pour étudier quelle structure est (globalement ??) la plus efficace.
+	Dans un troisième temps, nous testerons la même choses avec cette fois-ci un graphe dont les arcs le reliant à lui même sont générés aléatoirement. \\(degré aléatoire ??)\\
+	Dans un dernier temps, nous ferons varier le nombre de sommets du graphe attaquant pour en déduire son efficacité.\\(on ne dit jamais qu'on conclut, c'est malpoli, no joke)\\
 	
 \section{I.	Tests initiaux et hypothèses}
 	L'algorithme power calculant les pertinences est contenu dans le fichier $ranking.c$. Il n'est pas détaillé dans ce rapport mais le fichier est commenté.
