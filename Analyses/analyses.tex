@@ -207,17 +207,17 @@ while(nbsommetrestant > 0) {
 		Créer plusieurs structures pour attaquer la cible n'est pas efficace pour les structures de l'anneau et de l'arbre. Cependant, la structure du graphe complet est plus efficace si on en crée plusieurs. 
 
 \section{Expériences avec un graphe de degré aléatoire}
-	Ici nous allons créer un graphe de 100 sommets de degré aléatoire. C'est à dire que chaque sommet sera relié au même nombre de sommets au sein du graphe.
+	Nous allons créer un graphe de $100$ sommets de degré aléatoire. C'est-à-dire que chaque sommet sera relié au même nombre de sommets au sein du graphe.\\
+	\\
+	"??? Bah non aléatoire ça veut pas dire que c'est le même nombre de sommet"
 
 	\subsection{Résultats des tests}
 		\includegraphics[scale = 0.5]{Captures/ranking4.PNG}\\
 		\includepdf{../R/Degre_aleatoire/degre.pdf}
 	
 	\subsection{Analyses}
-		On observe sur le graphique que plus le degré est fort, moins la pertinence de la cible est modifié. Ici l'espérance de la pertinence de la cible apres attaque est de 1.13e-04, ce qui est 
-		meilleur que la pertience de la cible lors des tests initiaux avec un graphe complet a 100 sommets (1.05e-04). Ainsi cette structure est plus eficace que le graphe complet.
-		De plus cette structure a l'avantage d'etre moins detectable que l'anneau ou le graphe complet car le degré varie. En effet détecter un anneau ou un graphe complet est beaucoup plus aisé 
-		que de détecter un graphe de degré X.
+		On observe sur le graphique que plus le degré est fort, moins la pertinence de la cible est impacté. L'espérance de la pertinence de la cible après attaque est de $1,13.10^{-4}$, ce qui est meilleur que la pertience de la cible lors des tests initiaux avec un graphe complet à $100$ sommets ($1,05.10^{-4}$). Donc, cette structure est plus efficace que le graphe complet. De plus, cette structure a l'avantage d'être moins "détectable" que l'anneau ou le graphe complet car le degré varie.
+	
 	
 \section{Expériences sur l'efficacité}
 	
