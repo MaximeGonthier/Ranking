@@ -245,13 +245,20 @@ while(nbsommetrestant > 0) {
 		Mais cette structure reste très utile pour des cibles moyennes ou faible. Ainsi une startégie intéressante pour les cibles faibles serait d'utiliser un arbre à attaquant unique. Son avantage majeur est qu'il est tres difficil à détecter car un seul sommet est directement relié à la cible.
 	
 \section{Conclusions}
-	Dans un premier temps nous avons pu constater que nos hypothèses initiales ont été vérifié. La pertinence de la cible de vient signifactive à partir de Xe-5, et l'arbre est la structure la plus efficace. Nous avons remarqué qu'utiliser plusieurs structures n'améliore pas l'efficacité du changement de pertinence. Un graphe de degré aléatoire est plus efficace qu'un graphe complet mais moins qu'un anneau, l'intérêt de cette structure est donc d'améliorer la discrétion de l'attaque. Finalement nous avons conclu que l'abre était le plus efficace quelquesoit le nombre de sommets attaquant et quelquesoit la cible. De plus des structures alternatives de l'arbre peuvent aider à rendre l'attaque plus discrète. Cette structure est donc la plus efficace particulièrement pour les cibles fortes. Pour les cibles moyennes et faibles, un arbre a attaquant unique serait un choix judicieux car il sera trés dur à detecter pour la cible et qu'il reste tres efficace pour des cibles moyennes ou faible.
+	Tout d'abord, nous avons pu constater que nos hypothèses initiales sont vérifiées. La pertinence de la cible devient signifactive à partir de $X.10^{-5}$, et l'arbre est la structure la plus efficace. Nous avons remarqué qu'utiliser plusieurs structures n'améliore pas l'efficacité du changement de pertinence. Un graphe de degré aléatoire est plus efficace qu'un graphe complet mais moins qu'un anneau, l'intérêt de cette structure est donc d'améliorer la discrétion de l'attaque.\\
+	Finalement, nous concluons que l'abre est le plus efficace quelque soit le nombre de sommets attaquant et quelque soit la cible (pertinence forte, moyenne ou faible). De plus des structures alternatives à l'arbre peuvent aider à rendre l'attaque encore plus discrète.\\
+	\\
+	La structure de l'arbre est donc la plus efficace, particulièrement pour les cibles fortes.\\
+	Pour les cibles moyennes et faibles, un arbre à attaquant unique (seul le sommet racine pointe vers la cible) est un choix judicieux car il est très dur à détecter et améliore de manière notable la pertinence pour ces types de cibles.
 
 \section{Annexe}
-		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
-		
-		\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
+	Annexe 1 :\\
+	\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
 
-		\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
+	Annexe 2 :\\
+	\includepdf{../R/Nombre_de_graphe_aleatoire/Complet.pdf}
+
+	Annexe 3 :\\
+	\includepdf{../R/Nombre_de_graphe_aleatoire/Arbre.pdf}
 
 \end{document}
