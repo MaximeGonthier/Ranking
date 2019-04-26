@@ -171,31 +171,25 @@ for (int y = 0; y < nbstructure; y++) {
 
 \section{Tests avec un nombre de graphes générés aléatoirement}
 	Nous allons désormais insérer des graphes générés aléatoirement. Ce qui est aléatoire n'est pas la structure des graphes mais le nombre de garphes générés.\\
-	L'objectif de cette démarche est de déterminer quel structure est la plus efficace globalement.\\
-	C'est a dire quelle structure influe le plus sur la pertinence quelle que soit la situation.\\
-	De plus les resultats nous aiderons aussi a determiner l'impact qu'a une certaine structure sur la cible de manière plus générale 
-	que dans les cas prédéfinis de la partie précedente.
-	Le nombre de sommet des graphes ajoutées est fixé a 100.
-	La cible est également fixé ainsi que la structure des graphes ajoutées.
-	On va par exemple insérez 5 graphes complet de nombre de sommet respectivement : 25, 10, 5, 6 et 4. Tous reliées au sommet cible.
-	Dans un premier temps nous allons expliquer le code derrière cette démarche puis nous analyserons les résultats.
+	L'objectif de cette démarche est de déterminer quel structure est la plus efficace globalement, c'est-à-dire quelle structure influe le plus sur la pertinence quelle que soit la situation.\\
+	De plus, les résultats nous aiderons aussi à déterminer l'impact qu'à une certaine structure sur la cible de manière plus générale que dans les cas prédéfinis de la partie précedente.
+	Le nombre de sommet des graphes ajoutés est fixé à $100$.
+	La cible est également fixée ainsi que la structure des graphes ajoutés.\\
+	Par exemple, 5 graphes complets de nombre de sommet sont insérés, respectivement : 25, 10, 5, 6 et 4. Tous sont reliés au sommet cible.\\
+	Tout d'abord, le code derrière cette démarche.
+	Puis, l'analyse des résultats.
 
 	\subsection{Explication du code}
-		Tous est dans le fichier $ajoutsommetsattanquants.c$. Les fonctions utilisées sont $ajoutanneaualeatoire$, $ajoutcompletaleatoire$
-		et $ajoutarbrealeatoire$. Ces fonctions reprennent en partie le code des trois fonctions presque eponyme décrite précedemment.
-		Regardons ce qui a changé. 
+		Tous est dans le fichier \texttt{ajoutsommetsattanquants.c}. Les fonctions utilisées sont \texttt{ajoutanneaualeatoire}, \texttt{ajoutcompletaleatoire}
+		et \texttt{ajoutarbrealeatoire}. Ces fonctions reprennent en partie le code des trois fonctions presque éponyme décrites précedemment.
+		Regardons ce qui a changé :
 		\begin{lstlisting}
 while(nbsommetrestant > 0) {
 	nbajout = rand()%(100-nouveausommets);
 	if (nbajout <= 3) { nbajout = 3; }
 	nbsommetrestant -= nbajout;
 		\end{lstlisting}
-		$nbajout$ représente le nombre de sommet que l'on va ajouter dans la première structure créer. Il choisis donc un nombre 
-		aléatoire entre 0 et 100 car le nombre de sommet total est limité a 100. Si le nombre choisis est inférieur a 3 on le fixe a 3 car créer
-		des anneau ou des graphes complets de tailles inférieure a 3 reviens juste a créer des sommets seuls.
-		$nbajout$ est enlevé au nombre de sommet restant a ajouter. Puis on lance la construction de la structure comme vu précedemment 
-		avec $nbajout$ représentant le nombre de sommets. A la fin de cette itération $nbajout$ reprends un nombre aléatoire qui cette fois
-		prend une valeur entre 0 et 100 moins le nombre de sommets ajouté precedement représenté par $nouveausommets$.
+		\texttt{nbajout} représente le nombre de sommets que l'on ajoute dans la première structure créée. Il récupère un nombre aléatoire compris entre $0$ et $100$ car le nombre de sommets total est limité a $100$. Si le nombre obtenu est inférieur à $3$ on le fixe à $3$ car créer des anneaux ou des graphes complets de tailles inférieure à $3$ revient à créer des sommets seuls. \texttt{nbajout} est enlevé au nombre de sommets à ajouter. Puis, on lance la construction de la structure comme vu précedemment avec \texttt{nbajout} représentant le nombre de sommets. A la fin de cette itération \texttt{nbajout} reprend un nombre aléatoire qui compris entre $0$ et $100$ moins le nombre de sommets ajoutés précédement représenté par \texttt{nouveausommets}.
 
 	\subsection{Résultats des tests}
 		\includegraphics[scale = 0.5]{Captures/ranking2.PNG}\\
