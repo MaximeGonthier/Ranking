@@ -202,9 +202,9 @@ while(nbsommetrestant > 0) {
 		Comparons ces résultats avec les résultats des tests initiaux. Les résultats sont comparable car dans les deux cas 100 sommets sont ajoutés. Dans les tests initiaux les pertinence apres attaque pour l'anneau, le graphe complet et l'arbre étaie,t respectivement 1.71e-4, 1.05e-4 et 1.72e-4. On remarque donc qu'il n'y a que 0.6\% de différence pour l'anneau et 1.1\% pour l'arbre. En revanche pour le graphe complet il y a 9.5\% de différence ce qui est bien plus intéressant.
 
 	\subsection{Conclusion sur l'impact d'un nombre aléatoires de structures}
+		Créer plusieurs structures pour attaquer la cible n'est pas efficace pour l'anneau ou l'abre. En revanche le graphe complet est plus efficace si on en créer plusieurs. 
 
-
-\section{III.	Expériences avec un graphe de degré aléatoire}
+\section{Expériences avec un graphe de degré aléatoire}
 	Ici nous allons créer un graphe de 100 sommets de degré aléatoire. C'est à dire que chaque sommet sera relié au même nombre de sommets au sein du graphe.
 
 	\subsection{Résultats des tests}
@@ -212,17 +212,17 @@ while(nbsommetrestant > 0) {
 		\includepdf{../R/Degre_aleatoire/degre.pdf}
 	
 	\subsection{Analyses}
-		On observe que plus le degré est fort, moins la pertinence de la cible est modifié. Ici l'espérance de la pertinence de la cible apres attaque est de 1.13e-04, ce qui est 
+		On observe sur le graphique que plus le degré est fort, moins la pertinence de la cible est modifié. Ici l'espérance de la pertinence de la cible apres attaque est de 1.13e-04, ce qui est 
 		meilleur que la pertience de la cible lors des tests initiaux avec un graphe complet a 100 sommets (1.05e-04). Ainsi cette structure est plus eficace que le graphe complet.
 		De plus cette structure a l'avantage d'etre moins detectable que l'anneau ou le graphe complet car le degré varie. En effet détecter un anneau ou un graphe complet est beaucoup plus aisé 
 		que de détecter un graphe de degré X.
 	
-\section{IV.	Expériences sur l'efficacité}
+\section{Expériences sur l'efficacité}
 	
 	\subsection{Résultats des tests}
 		\includegraphics[scale = 0.5]{Captures/ranking5.PNG}\\
 		Ici nous avons testé chaque structure sur trois cibles différentes, tout en faisant varier le nombre de sommets par structure. 
-		Le pourcentage de modification est calculé ainsi que l'efficacité calculé en divisant la différence par rapport a la pertinence initiale par le nombre de sommets ajoutés.\\
+		Le pourcentage de modification est calculé. L'efficacité est calculé en divisant la différence par rapport a la pertinence initiale par le nombre de sommets ajoutés.\\
 	\subsection{Analyses}
 		On observe que, toute pertinences confondus, la structure qui modifie le plus la cible est l'arbre, suivis de l'anneau, de l'arbre à attaquant unique et enfin du graphe complet.
 		Cela confirme nos hypothèses des tests initiaux. La raison de cet efficacité est que la pertinence ne se disperse que tres peu dans ces structures, ce qui permet d'attaquer 
@@ -238,7 +238,7 @@ while(nbsommetrestant > 0) {
 		Ce phénomène arrive quelquesoit la pertinence de la cible. Ainsi on peut en conclure que pour une attaque la plus efficace possible il faut augmenter le nombre de sommets au maximum.
 		Cependant plus il y a de sommets, plus il est facile pour la cible de reconnaitre une attaque. Une stratégie raisonable serait d'utiliser un arbre de 500 sommets, 
 		ce qui modifie la pertinence de la cible de 360\%, tout en ne représentant que 0.18\% du graphe du web. De plus une structure en arbre peut être difficile à reconnaitre si l'attaquant décide 
-		de modifier légèrement sa structure. Par exemple enlever certains liens pointant vers la cible peuvent donner cela : 
+		de modifier légèrement sa structure. Par exemple enlever certains liens pointant vers la cible peuvent donner cela : \\
 		\includegraphics[scale = 0.5]{Captures/diagramme1.png}\\
 		\includegraphics[scale = 0.5]{Captures/diagramme2.png}\\
 		La cible ne peut voir que les pages qui pointe directement sur elle, c'est à dire les sommets en rouge.
@@ -248,9 +248,10 @@ while(nbsommetrestant > 0) {
 		On observe que les valeurs d'efficacité les plus grandes sont pour l'arbre a attaquant unique. Cela s'explique par le fait que un seul sommet est relié a la cible dans cette structure.
 		Cependant les pourcentages de modifications sont bien plus faible que pour l'arbre ( 38\% contre 72\% pour une cible forte à 100 sommets attaquants).
 		Mais cette structure reste très utile pour des cibles moyennes ou faible. Ainsi une startégie interessante pour les cibles faibles serait d'utiliser un arbre a attaquant unique.
-		Son avanatge majeur est qu'il est tres difficile a détecter car un seul sommet est directement relié a la cible.\\
+		Son avantage majeur est qu'il est tres difficile a détecter car un seul sommet est directement relié a la cible.\\
 	
 \section{Conclusions}
+	Dans un premier temps nous avons pu constater que nos hypothèses initiales ont été vérifié. La pertinence de la cible de vient signifactive à partir de Xe-5, et l'arbre est la structure la plus efficace. Nous avons remarqué qu'utiliser plusieurs structures n'améliore pas l'efficacité du changement de pertinence. Un graphe de degré aléatoire est plus efficace qu'un graphe complet mais moins qu'un anneau, l'intérêt de cette structure est donc d'améliorer la discrétion de l'attaque. Finalement nous avons conclu que l'abre était le plus efficace quelquesoit le nombre de sommets attaquant et quelquesoit la cible. De plus des structures alternatives de l'arbre peuvent aider à rendre l'attaque plus discrète. Cette structure est donc la plus efficace particulièrement pour les cibles fortes. Pour les cibles moyennes et faibles, un arbre a attaquant unique serait un choix judicieux car il sera trés dur à detecter pour la cible et qu'il reste tres efficace pour des cibles moyennes ou faible.
 
 \section{Annexe}
 		\includepdf{../R/Nombre_de_graphe_aleatoire/Anneau.pdf}
