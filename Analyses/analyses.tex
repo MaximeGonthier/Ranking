@@ -218,39 +218,31 @@ while(nbsommetrestant > 0) {
 	\subsection{Analyses}
 		On observe sur le graphique que plus le degré est fort, moins la pertinence de la cible est impacté. L'espérance de la pertinence de la cible après attaque est de $1,13.10^{-4}$, ce qui est meilleur que la pertience de la cible lors des tests initiaux avec un graphe complet à $100$ sommets ($1,05.10^{-4}$). Donc, cette structure est plus efficace que le graphe complet. De plus, cette structure a l'avantage d'être moins "détectable" que l'anneau ou le graphe complet car le degré varie.
 	
-	
+
 \section{Expériences sur l'efficacité}
 	
 	\subsection{Résultats des tests}
 		\includegraphics[scale = 0.5]{Captures/ranking5.PNG}\\
-		Ici nous avons testé chaque structure sur trois cibles différentes, tout en faisant varier le nombre de sommets par structure. 
-		Le pourcentage de modification est calculé. L'efficacité est calculé en divisant la différence par rapport a la pertinence initiale par le nombre de sommets ajoutés.\\
+		Nous avons testé chaque structure sur trois cibles différentes, tout en faisant varier le nombre de sommets par structure. 
+		Le pourcentage de modification est calculé. L'efficacité est calculé en divisant la différence par rapport à la pertinence initiale par le nombre de sommets ajoutés.
 	\subsection{Analyses}
-		On observe que, toute pertinences confondus, la structure qui modifie le plus la cible est l'arbre, suivis de l'anneau, de l'arbre à attaquant unique et enfin du graphe complet.
-		Cela confirme nos hypothèses des tests initiaux. La raison de cet efficacité est que la pertinence ne se disperse que tres peu dans ces structures, ce qui permet d'attaquer 
-		la cible efficacement. Par exemple dans un anneau chaque sommet recoit la pertinence d'un de ses voisins puis pointe sur la cible. Ainsi la pertinence est équitablement répartie et peut dispersé au sein de la structure.
-		Pour l'arbre on observe un phénomène similaire car chaque sommet est relié à son sommet père et à la cible. On peut expliquer la légère différence entre arbre et anneau par le fait 
-		que plus on monte dans l'arbre, plus la pertinence est forte. Ainsi les attaques des sommets les plus haut dans l'arbre sont plus efficaces sur la cible.\\
-		
-		On observe que, pour toute structures confondus, la différence avec la pertinence initiale est quasiment identique entre une cible moyenne (7.54e-06) et faible (6.05e-07).
-		C'est à dire que on modifie autant la cible qu'elle soit de pertinence moyenne ou faible. Ainsi on peut en conclure que les cibles en dessous de Xe-06 sont toutes trés similaires à attaquer.\\
-		
-		Pour l'anneau, le graphe complet et l'arbre on observe que la différence avec la pertinence initiale augmente de manière linéaire avec l'augmentation du nombre de sommets.
-		par exemple pour l'arbre avec une cible forte on passe de 7.22e-5, 1.80e-4, 3.59e-4, 7.15e-4 pour 100, 250, 500 et 1000 sommets. Ce qui est presque parfaitement linéaire.
-		Ce phénomène arrive quelquesoit la pertinence de la cible. Ainsi on peut en conclure que pour une attaque la plus efficace possible il faut augmenter le nombre de sommets au maximum.
-		Cependant plus il y a de sommets, plus il est facile pour la cible de reconnaitre une attaque. Une stratégie raisonable serait d'utiliser un arbre de 500 sommets, 
-		ce qui modifie la pertinence de la cible de 360\%, tout en ne représentant que 0.18\% du graphe du web. De plus une structure en arbre peut être difficile à reconnaitre si l'attaquant décide 
-		de modifier légèrement sa structure. Par exemple enlever certains liens pointant vers la cible peuvent donner cela : \\
+		On observe que, toutes pertinences confondues, la structure qui modifie le plus la cible est l'arbre, suivie de l'anneau, de l'arbre à attaquant unique et enfin du graphe complet. Cela confirme nos hypothèses des tests initiaux. La raison de cette efficacité est que la pertinence ne se disperse que très peu dans ces structures, ce qui permet d'attaquer la cible efficacement. Par exemple, dans un anneau chaque sommet reçoit la pertinence d'un de ses voisins puis pointe sur la cible. Ainsi la pertinence est équitablement répartie et peu dispersée au sein de la structure.\\
+		Pour l'arbre on observe un phénomène similaire car chaque sommet est relié à son sommet père et à la cible. On peut expliquer la légère différence entre arbre et anneau par le fait que plus on monte dans l'arbre, plus la pertinence est forte. Ainsi les attaques des sommets les plus hauts dans l'arbre sont plus efficaces sur la cible.\\
+		\\
+		On observe que, pour toutes structures confondues, la différence avec la pertinence initiale est quasiment identique entre une cible moyenne ($7,5.10^{-6}$) et faible ($6,05.10^{-7}$), c'est-à-dire qu'on modifie autant la cible qu'elle soit de pertinence moyenne ou faible.\\
+		Nous pouvons en conclure que les cibles en dessous de $X.10^{-6}$ sont toutes très similaires à attaquer.\\
+		\\
+		Pour l'anneau, le graphe complet et l'arbre on observe que la différence avec la pertinence initiale augmente de manière linéaire avec l'augmentation du nombre de sommets.\\
+		Par exemple, pour l'arbre attaquant une cible à pertinence forte, on passe de $7,22.10^{-5}$, $1,80.10^{-4}$, $3,59.10^{-4}$, $7,15.10^{-4}$ pour $100$, $250$, $500$ et $1000$ sommets. Ce qui est presque linéaire. Ce phénomène arrive quelque soit la pertinence de la cible.\\
+		Donc, nous pouvons en conclure que pour obtenir une attaque la plus efficace possible il faut augmenter le nombre de sommets au maximum. Cependant, plus il y a de sommets, plus il est facile de "détecter" une attaque. Une stratégie raisonable serait d'utiliser un arbre de $500$ sommets, ce qui modifie la pertinence de la cible de $360$\% tout en ne représentant que $0,18$\% du graphe du web. De plus, une structure en arbre peut être difficile à reconnaitre si l'attaquant décide de modifier légèrement sa structure. Par exemple, enlever certains liens pointant vers la cible peuvent donner cela : \\
 		\includegraphics[scale = 0.5]{Captures/diagramme1.png}\\
 		\includegraphics[scale = 0.5]{Captures/diagramme2.png}\\
-		La cible ne peut voir que les pages qui pointe directement sur elle, c'est à dire les sommets en rouge.
-		La seconde structure est légèrement moins efficace mais elle rend plus difficile la detection de l'arbre par la cible. En effet les sommets ne sont plus reliées ensemble en forme d'arbre du point de vu la cible.
+		La cible ne peut détecter que les pages qui pointent directement sur elle, c'est-à-dire les sommets en rouge.\\
+		La seconde structure est légèrement moins efficace mais elle rend plus difficile la détection de l'attaque. En effet, les sommets ne sont plus reliés ensemble en forme d'arbre du "point de vue" de la cible.\\
 		C'est donc une stratégie possible.\\
-		
-		On observe que les valeurs d'efficacité les plus grandes sont pour l'arbre a attaquant unique. Cela s'explique par le fait que un seul sommet est relié a la cible dans cette structure.
-		Cependant les pourcentages de modifications sont bien plus faible que pour l'arbre ( 38\% contre 72\% pour une cible forte à 100 sommets attaquants).
-		Mais cette structure reste très utile pour des cibles moyennes ou faible. Ainsi une startégie interessante pour les cibles faibles serait d'utiliser un arbre a attaquant unique.
-		Son avantage majeur est qu'il est tres difficile a détecter car un seul sommet est directement relié a la cible.\\
+		\\
+		Nous observons que les valeurs d'efficacité les plus grandes sont pour l'arbre à attaquant unique. Cela s'explique par le fait que un seul sommet est relié à la cible dans cette structure. Néanmois, les pourcentages de modifications sont bien plus faible que pour l'arbre ($38$\% contre $72$\% pour une cible à pertinence forte à $100$ sommets attaquant).\\
+		Mais cette structure reste très utile pour des cibles moyennes ou faible. Ainsi une startégie intéressante pour les cibles faibles serait d'utiliser un arbre à attaquant unique. Son avantage majeur est qu'il est tres difficil à détecter car un seul sommet est directement relié à la cible.
 	
 \section{Conclusions}
 	Dans un premier temps nous avons pu constater que nos hypothèses initiales ont été vérifié. La pertinence de la cible de vient signifactive à partir de Xe-5, et l'arbre est la structure la plus efficace. Nous avons remarqué qu'utiliser plusieurs structures n'améliore pas l'efficacité du changement de pertinence. Un graphe de degré aléatoire est plus efficace qu'un graphe complet mais moins qu'un anneau, l'intérêt de cette structure est donc d'améliorer la discrétion de l'attaque. Finalement nous avons conclu que l'abre était le plus efficace quelquesoit le nombre de sommets attaquant et quelquesoit la cible. De plus des structures alternatives de l'arbre peuvent aider à rendre l'attaque plus discrète. Cette structure est donc la plus efficace particulièrement pour les cibles fortes. Pour les cibles moyennes et faibles, un arbre a attaquant unique serait un choix judicieux car il sera trés dur à detecter pour la cible et qu'il reste tres efficace pour des cibles moyennes ou faible.
